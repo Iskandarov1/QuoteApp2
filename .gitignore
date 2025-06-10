@@ -1,0 +1,24 @@
+# Build artifacts
+bin/
+obj/
+
+# Rider
+.idea/
+*.sln.iml
+
+# VS Code
+.vscode/
+
+# User-specific
+*.user
+*.suo
+
+# DotNet
+*.DotSettings.user
+*.vs/
+
+# Secrets & settings
+appsettings*.json
+
+# OS files
+.DS_Store
