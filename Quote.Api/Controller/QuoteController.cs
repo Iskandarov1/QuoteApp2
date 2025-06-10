@@ -15,11 +15,11 @@ using Quote.Domain.Core.Primitives.Result;
 
 namespace Quote.Api.Controller;
 
-
-[Microsoft.AspNetCore.Components.Route("[controller]")]
+[ApiController]
+[Route("api/[controller]")]
 public class QuoteController(IMediator mediator):ApiController(mediator)
 {
-    [HttpGet(ApiRoutes.Quotes.GetAll)]
+    [HttpGet()]
     [ProducesResponseType(typeof(PagedList<QuoteResponse>), StatusCodes.Status200OK)]
     [ProducesResponseType(StatusCodes.Status404NotFound)]
     [Produces("application/json")]
@@ -29,7 +29,7 @@ public class QuoteController(IMediator mediator):ApiController(mediator)
             .Bind(query => Mediator.Send(query, HttpContext.RequestAborted))
             .Match(Ok, NotFound);
     
-    [HttpGet(ApiRoutes.Quotes.GetById)]
+    [HttpGet("{QuoteId:guid}")]
     [ProducesResponseType(typeof(QuoteResponse), StatusCodes.Status200OK)]
     [ProducesResponseType(StatusCodes.Status404NotFound)]
     [Produces("application/json")]

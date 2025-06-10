@@ -85,13 +85,4 @@ public interface IDbContext
 	/// <returns>The <typeparamref name="IQueryable<TEntity>"/> with the specified predicate if it exists, otherwise null.</returns>
 	Maybe<IQueryable<TEntity>> Where<TEntity>(Expression<Func<TEntity, bool>> predicate)
 		where TEntity : Entity;
-
-	/// <summary>
-	/// Executes the specified SQL command asynchronously and returns the number of affected rows.
-	/// </summary>
-	/// <param name="sql">The SQL command.</param>
-	/// <param name="parameters">The parameters collection.</param>
-	/// <param name="cancellationToken">The cancellation token.</param>
-	/// <returns>The number of rows affected.</returns>
-	Task<int> ExecuteSqlAsync(string sql, IEnumerable<NpgsqlParameter> parameters, CancellationToken cancellationToken = default);
 }

@@ -14,16 +14,16 @@ public sealed class Quote : AggregateRoot
 {
     private Quote() {}
 
-    public Quote(Guid id, Author author, Textt textt, Category category) : base(id)
+    public Quote( Author author, Textt textt, Category category) : base()
     {
         Author = author;
         Textt = textt;
         Category = category;
     }
     
-     [Column("author_id")] public Author Author { get; private set; }
-     [Column("quote_text", TypeName = "nvarchar(400)")] public Textt Textt { get; private set; }
-     [Column("category_id")] public Category Category { get; private set; }
+     public Author Author { get; private set; }
+     public Textt Textt { get; private set; }
+      public Category Category { get; private set; }
 
      public void Update(Author author, Textt textt, Category category)
      {
@@ -35,6 +35,6 @@ public sealed class Quote : AggregateRoot
      }
 
      public static Quote Create(Author author, Textt textt, Category category) =>
-         new(Guid.NewGuid(), author, textt, category);
+         new(author, textt, category);
 }
 

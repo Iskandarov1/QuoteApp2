@@ -7,12 +7,21 @@
     </PropertyGroup>
 
     <ItemGroup>
+        <PackageReference Include="Asp.Versioning.Mvc" Version="8.0.0" />
         <PackageReference Include="MediatR" Version="12.5.0" />
         <PackageReference Include="Microsoft.AspNetCore.OpenApi" Version="8.0.10"/>
+        <PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="9.0.5">
+          <PrivateAssets>all</PrivateAssets>
+          <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+        </PackageReference>
+        <PackageReference Include="Microsoft.Extensions.DependencyInjection.Abstractions" Version="9.0.5" />
         <PackageReference Include="Swashbuckle.AspNetCore" Version="6.6.2"/>
     </ItemGroup>
+    
     <ItemGroup>
         <ProjectReference Include="..\Quote.Application\Quote.Application.csproj" />
+        <ProjectReference Include="..\Quote.Infrastructure\Quote.Infrastructure.csproj" />
+        <ProjectReference Include="..\Quote.Persistence\Quote.Persistence.csproj" />
         <ProjectReference Include="..\Quote.Contracts\Quote.Contracts.csproj" />
     </ItemGroup>
 

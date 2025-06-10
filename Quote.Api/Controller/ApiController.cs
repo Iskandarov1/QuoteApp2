@@ -4,8 +4,7 @@ using Microsoft.AspNetCore.Mvc;
 using Quote.Domain.Core.Primitives;
 
 namespace Quote.Api.Controller
-{
-    [Route("api")]
+{   [ApiController]
     public class ApiController : ControllerBase
     {
         public ApiController(IMediator mediator) => Mediator = mediator;
