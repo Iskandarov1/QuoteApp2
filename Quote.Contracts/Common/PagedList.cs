@@ -19,36 +19,35 @@ public sealed class PagedList<T>
 	/// <summary>
 	/// Gets the current page.
 	/// </summary>
-	[JsonPropertyName("page")]
 	public int Page { get; }
 
 	/// <summary>
 	/// Gets the page size. The maximum page size is 100.
 	/// </summary>
-	[JsonPropertyName("page_size")]
+	//[JsonPropertyName("page_size")]
 	public int PageSize { get; }
 
 	/// <summary>
 	/// Gets the total number of items.
 	/// </summary>
-	[JsonPropertyName("total_count")]
+	//[JsonPropertyName("total_count")]
 	public int TotalCount { get; }
 
 	/// <summary>
 	/// Gets the flag indicating whether the next page exists.
 	/// </summary>
-	[JsonPropertyName("has_next_page")]
+	//[JsonPropertyName("has_next_page")]
 	public bool HasNextPage => (Page < 1 ? 1 : Page) * PageSize < TotalCount;
 
 	/// <summary>
 	/// Gets the flag indicating whether the previous page exists.
 	/// </summary>
-	[JsonPropertyName("has_previous_page")]
+	//[JsonPropertyName("has_previous_page")]
 	public bool HasPreviousPage => Page > 1;
 
 	/// <summary>
 	/// Gets the items.
 	/// </summary>
-	[JsonPropertyName("items")]
+	//[JsonPropertyName("items")]
 	public IReadOnlyCollection<T> Items { get; }
 }

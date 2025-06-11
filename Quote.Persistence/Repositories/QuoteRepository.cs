@@ -8,15 +8,6 @@ namespace Quote.Persistence.Repositories;
 /// <summary>
 /// Represents the quote repository.
 /// </summary>
-internal sealed class QuoteRepository : GenericRepository<Domain.Entities.Quote>, IQuoteRepository
+internal sealed class QuoteRepository(IDbContext dbContext) : GenericRepository<Domain.Entities.Quote>(dbContext), IQuoteRepository
 {
-    /// <summary>
-    /// Initializes a new instance of the <see cref="QuoteRepository"/> class.
-    /// </summary>
-    /// <param name="dbContext">The database context.</param>
-    public QuoteRepository(IDbContext dbContext)
-        : base(dbContext)
-    {
-    }
-    
 }

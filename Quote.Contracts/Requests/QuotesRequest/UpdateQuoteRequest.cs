@@ -3,7 +3,7 @@ using System.Text.Json.Serialization;
 
 namespace Quote.Contracts.Requests.QuotesRequest;
 
-public class UpdateQuoteRequest
+public record UpdateQuoteRequest
 {
     [property:JsonPropertyName("quote_id")]
     [Required] Guid QuoteId { get; init; }
@@ -15,5 +15,5 @@ public class UpdateQuoteRequest
     [Required, MaxLength(400) ] public string Text { get; init; }
     
     [property:JsonPropertyName("category")]
-    [Required]public string Category { get; init; }
+    [Required]public Guid CategoryId { get; init; }
 }

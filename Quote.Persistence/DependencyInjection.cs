@@ -31,7 +31,7 @@ public static class DependencyInjection
 
         services.AddScoped<IDbContext>(serviceProvider => serviceProvider.GetRequiredService<QuoteContext>());
         services.AddScoped<IUnitOfWork>(serviceProvider => serviceProvider.GetRequiredService<QuoteContext>());
-
+        services.AddScoped<ICategoryRepository, CategoryRepository>();
         services.TryAddScoped<IQuoteRepository, QuoteRepository>();
 
         return services;

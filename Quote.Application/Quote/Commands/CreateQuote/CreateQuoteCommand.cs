@@ -7,4 +7,4 @@ public sealed record CreateQuoteCommand(
 
     string Author,
     string Text,
-    string Category) : ICommand<Result<Guid>>;
+    Guid CategoryId) : ICommand<Result<Guid>>;

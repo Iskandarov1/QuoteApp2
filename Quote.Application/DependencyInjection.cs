@@ -1,6 +1,9 @@
 using System.Reflection;
 using Microsoft.Extensions.DependencyInjection;
 using MediatR;
+using Microsoft.Extensions.DependencyInjection.Extensions;
+using Quote.Application.Resources;
+using Quote.Domain.Core.Localizations;
 
 namespace Quote.Application;
 
@@ -14,7 +17,9 @@ public static class DependencyInjection
     public static IServiceCollection AddApplication(this IServiceCollection services)
     {
         services.AddMediatR(cfg => cfg.RegisterServicesFromAssembly(Assembly.GetExecutingAssembly()));
-        
+        services.TryAddTransient<ISharedViewLocalizer, ApplicationSharedViewLocalizer>();
+
         return services;
+        
     }
 }

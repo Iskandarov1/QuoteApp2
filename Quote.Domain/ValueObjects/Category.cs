@@ -1,4 +1,5 @@
 using Quote.Domain.Core.Errors;
+using Quote.Domain.Core.Localizations;
 using Quote.Domain.Core.Primitives;
 using Quote.Domain.Core.Primitives.Result;
 
@@ -32,12 +33,11 @@ namespace Quote.Domain.ValueObjects
         /// </summary>
         /// <param name="">The first name value.</param>
         /// <returns>The result of the first name creation process containing the first name or an error.</returns>
-        public static Result<Category> Create(string category) =>
-            Result.Create(category, DomainErrors.Quote.Category.NullOrEmpty)
-                .Ensure(f => !string.IsNullOrWhiteSpace(f), DomainErrors.Quote.Category.NullOrEmpty)
-                .Ensure(f => f.Length <= MaxLength, DomainErrors.Quote.Category.LongerThanAllowed)
+        public static Result<Category> Create(string value, string field, ISharedViewLocalizer sharedViewLocalizer) =>
+            Result.Create(value, new Error(CaseConverter.PascalToSnakeCase(field), sharedViewLocalizer[DomainErrors.Item.NullOrEmptyError]))
+                .Ensure(n => !string.IsNullOrWhiteSpace(n), new Error(CaseConverter.PascalToSnakeCase(field), sharedViewLocalizer[DomainErrors.Item.NullOrEmptyError]))
+                .Ensure(n => n.Length <= MaxLength, new Error(CaseConverter.PascalToSnakeCase(field), string.Format(sharedViewLocalizer[DomainErrors.Item.LongerThanAllowed], MaxLength)))
                 .Map(f => new Category(f));
-
         /// <inheritdoc />
         public override string ToString() => Value;
 

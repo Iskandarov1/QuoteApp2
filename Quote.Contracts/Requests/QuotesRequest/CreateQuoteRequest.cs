@@ -3,7 +3,7 @@ using System.Text.Json.Serialization;
 
 namespace Quote.Contracts.Requests.QuotesRequest;
 
-public class CreateQuoteRequest
+public record CreateQuoteRequest
 {
     [property:JsonPropertyName("author")]
     [Required] public string Author { get; init; }
@@ -13,5 +13,5 @@ public class CreateQuoteRequest
     public string Text { get; init; }
     
     [property:JsonPropertyName("category")]
-    [Required] public string Category { get; init; }
+    [Required] public Guid CategoryId { get; init; }
 }

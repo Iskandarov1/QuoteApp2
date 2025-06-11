@@ -1,11 +1,13 @@
 using MediatR;
 using Microsoft.AspNetCore.Mvc;
 using Quote.Api.Contracts;
+using Quote.Application.Category.Commands.DeleteCategory;
 using Quote.Application.Quote.Commands.CreateQuote;
 using Quote.Application.Quote.Commands.DeleteQuote;
 using Quote.Application.Quote.Commands.UpdateQuote;
 using Quote.Application.Quote.Queries.GetAllQuotes;
 using Quote.Application.Quote.Queries.GetByIdQuote;
+using Quote.Application.Quote.Queries.GetRandomQuote;
 using Quote.Contracts.Common;
 using Quote.Contracts.Requests.QuotesRequest;
 using Quote.Contracts.Responses.QuotesResponse;
@@ -29,7 +31,7 @@ public class QuoteController(IMediator mediator):ApiController(mediator)
             .Bind(query => Mediator.Send(query, HttpContext.RequestAborted))
             .Match(Ok, NotFound);
     
-    [HttpGet("{QuoteId:guid}")]
+    [HttpGet(ApiRoutes.Quotes.GetById)]
     [ProducesResponseType(typeof(QuoteResponse), StatusCodes.Status200OK)]
     [ProducesResponseType(StatusCodes.Status404NotFound)]
     [Produces("application/json")]
@@ -48,7 +50,7 @@ public class QuoteController(IMediator mediator):ApiController(mediator)
             .Map(request => new CreateQuoteCommand(
                 request.Author,
                 request.Text,
-                request.Category))
+                request.CategoryId))
             .Bind(command => Mediator.Send(command, HttpContext.RequestAborted))
             .Match(Ok, BadRequest);
 
@@ -62,7 +64,7 @@ public class QuoteController(IMediator mediator):ApiController(mediator)
                 quoteId,
                 request.Author,
                 request.Text,
-                request.Category))
+                request.CategoryId))
             .Bind(command => Mediator.Send(command, HttpContext.RequestAborted))
             .Match(Ok, BadRequest);
 
@@ -74,5 +76,16 @@ public class QuoteController(IMediator mediator):ApiController(mediator)
         await Result.Success(new DeleteQuoteCommand(quoteId))
             .Bind(command => Mediator.Send(command, HttpContext.RequestAborted))
             .Match(Ok, BadRequest);
-
+    
+    [HttpGet(ApiRoutes.Quotes.Random)]
+    [ProducesResponseType(typeof(QuoteResponse), StatusCodes.Status200OK)]
+    [ProducesResponseType(StatusCodes.Status404NotFound)]
+    [Produces("application/json")]
+    public async Task<IActionResult> GetRandom() =>
+        await Maybe<GetRandomQuoteQuery>
+            .From(new GetRandomQuoteQuery())
+            .Bind(query => Mediator.Send(query, HttpContext.RequestAborted))
+            .Match(Ok, NotFound);
+    
+   
 }

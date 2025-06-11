@@ -48,6 +48,11 @@ public static class DomainErrors
 
 
     }
+    public static class Category
+    {
+        public static Error NotFound => new("category.not_found", "The category with the specified identifier was not found.");
+        public static Error AlreadyExists => new("category.already_exists", "A category with this name already exists.");
+    }
     public static class User
     {
         public static Error NotFound => new Error("User.NotFound", "The user with the specified identifier was not found.");

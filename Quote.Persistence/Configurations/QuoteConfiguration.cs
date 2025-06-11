@@ -16,29 +16,22 @@ internal sealed class QuoteConfiguration : IEntityTypeConfiguration<Domain.Entit
 
         builder.HasKey(quote => quote.Id);
 
-        builder.OwnsOne(quote => quote.Author, authorBuilder =>
-        {
-            authorBuilder.Property(author => author.Value)
-                .HasColumnName("author")
-                .HasMaxLength(100)
-                .IsRequired();
-        });
+        builder.Property(item => item.Author)
+            .HasMaxLength(100)
+            .IsRequired();
+        
+        builder.Property(item => item.Textt)
+            .HasMaxLength(200)
+            .IsRequired();
 
-        builder.OwnsOne(quote => quote.Textt, textBuilder =>
-        {
-            textBuilder.Property(text => text.Value)
-                .HasColumnName("quote_text")
-                .HasMaxLength(400)
-                .IsRequired();
-        });
-
-        builder.OwnsOne(quote => quote.Category, categoryBuilder =>
-        {
-            categoryBuilder.Property(category => category.Value)
-                .HasColumnName("category")
-                .HasMaxLength(100)
-                .IsRequired();
-        });
+        builder.Property(item => item.CategoryId)
+            .HasMaxLength(100)
+            .IsRequired();
+        
+        builder.HasOne(q => q.Category)
+            .WithMany()
+            .HasForeignKey(q => q.CategoryId)
+            .OnDelete(DeleteBehavior.Restrict);
 
         builder.Property(quote => quote.CreatedAt)
             .IsRequired();

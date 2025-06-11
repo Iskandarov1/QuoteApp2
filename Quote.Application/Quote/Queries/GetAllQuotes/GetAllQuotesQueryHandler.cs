@@ -12,27 +12,27 @@ public class GetAllQuotesQueryHandler(IDbContext dbContext):IQueryHandler<GetAll
     public async Task<Maybe<PagedList<QuoteResponse>>> Handle(GetAllQuotesQuery request, CancellationToken cancellationToken)
     {
         var query = from quote in dbContext.Set<Domain.Entities.Quote>().AsNoTracking()
+            join category in dbContext.Set<Domain.Entities.Category>().AsNoTracking()
+                on quote.CategoryId equals category.Id 
             where !string.IsNullOrWhiteSpace(request.Filter)
-                ? EF.Functions.Like(quote.Author.Value.ToLower(), $"%{request.Filter.ToLowerInvariant()}%") ||
-                  EF.Functions.Like(quote.Textt.Value.ToLower(), $"%{request.Filter.ToLowerInvariant()}%") ||
-                  EF.Functions.Like(quote.Category.Value.ToLower(), $"%{request.Filter.ToLowerInvariant()}%")
+                ? EF.Functions.Like(quote.Author.ToLower(), $"%{request.Filter.ToLowerInvariant()}%") ||
+                  EF.Functions.Like(quote.Textt.ToLower(), $"%{request.Filter.ToLowerInvariant()}%")
                 : true
             orderby quote.CreatedAt descending
             select new QuoteResponse(
                 quote.Id,
-                quote.Author.Value,
-                quote.Textt.Value,
-                quote.Category.Value);
+                quote.Author,
+                quote.Textt,
+                quote.CategoryId,
+                category.Name);
 
         int totalCount = await query.CountAsync(cancellationToken);
 
         var responsesPage = await query
-			.Skip(request.Page < 1 ? 0 : (request.Page - 1) * request.PageSize)
-			.Take(request.PageSize)
-			.ToArrayAsync(cancellationToken);
+            .Skip(request.Page < 1 ? 0 : (request.Page - 1) * request.PageSize)
+            .Take(request.PageSize)
+            .ToArrayAsync(cancellationToken);
 
-        return Maybe<PagedList<QuoteResponse>>.From(
-            new PagedList<QuoteResponse>(responsesPage,request.Page,request.PageSize,totalCount)
-            );
+        return new PagedList<QuoteResponse>(responsesPage,request.Page,request.PageSize,totalCount);
     }
 }

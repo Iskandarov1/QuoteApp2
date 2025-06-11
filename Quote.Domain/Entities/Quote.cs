@@ -5,33 +5,30 @@ using Quote.Domain.Core.Events;
 using Quote.Domain.Core.Primitives;
 using Quote.Domain.Events.Quotes;
 using Quote.Domain.ValueObjects;
-
-
 namespace Quote.Domain.Entities;
-
-
 public sealed class Quote : AggregateRoot
 {
     private Quote() {}
 
-    public Quote( Author author, Textt textt, Category category) : base()
+    public Quote( string author, string textt, Guid category) : base()
     {
-        Author = author;
-        Textt = textt;
-        Category = category;
+        this.Author = author;
+        this.Textt = textt;
+        this.CategoryId = CategoryId;
     }
     
-     public Author Author { get; private set; }
-     public Textt Textt { get; private set; }
-      public Category Category { get; private set; }
-
-     public void Update(Author author, Textt textt, Category category)
+    [Column("author")]public string Author { get; private set; }
+    [Column("quote_text")]public string Textt { get; private set; }
+    [Column("category_id")]public Guid CategoryId { get; private set; }
+    
+    public Category Category { get; set; }
+     public Quote Update(string author, string textt, Guid category)
      {
-         Author = author;
-         Textt = textt;
-         Category = category;
+         this.Author = author;
+         this.Textt = textt;
+         this.CategoryId = CategoryId;
          
-         AddDomainEvent(new QuoteUpdatedDomainEvent(Id));
+         return this;
      }
      
 }

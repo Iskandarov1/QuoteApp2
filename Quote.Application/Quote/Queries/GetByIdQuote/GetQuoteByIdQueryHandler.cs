@@ -11,17 +11,19 @@ public class GetQuoteByIdQueryHandler(IDbContext dbContext):IQueryHandler<GetQuo
     public async Task<Maybe<QuoteResponse>> Handle(GetQuoteByIdQuery request, CancellationToken cancellationToken)
     {
         var response = await (from quote in dbContext.Set<Domain.Entities.Quote>().AsNoTracking()
+            join category in dbContext.Set<Domain.Entities.Category>() on quote.CategoryId equals category.Id 
             where quote.Id == request.QuoteId
             select new QuoteResponse(
                 quote.Id,
-                quote.Author.Value,
-                quote.Textt.Value,
-                quote.Category.Value))
+                quote.Author,
+                quote.Textt,
+                quote.CategoryId,
+                category.Name))
             .FirstOrDefaultAsync(cancellationToken);
         if (response is null)
         {
             return Maybe<QuoteResponse>.None;
         }
-        return  Maybe<QuoteResponse>.From(response);
+        return response;
     }
 }
