@@ -1,7 +1,7 @@
 using App.Application.Abstractions.Messaging;
 using Microsoft.EntityFrameworkCore;
 using Quote.Application.Core.Abstractions.Data;
-using Quote.Contracts.Responses.QuoteResponse;
+using Quote.Contracts.Responses.QuotesResponse;
 using Quote.Domain.Core.Primitives.Maybe;
 
 namespace Quote.Application.Quote.Queries.GetByIdQuote;
@@ -18,7 +18,10 @@ public class GetQuoteByIdQueryHandler(IDbContext dbContext):IQueryHandler<GetQuo
                 quote.Textt.Value,
                 quote.Category.Value))
             .FirstOrDefaultAsync(cancellationToken);
-
-        return response is not null ? Maybe<QuoteResponse>.From(response) : Maybe<QuoteResponse>.None;
+        if (response is null)
+        {
+            return Maybe<QuoteResponse>.None;
+        }
+        return  Maybe<QuoteResponse>.From(response);
     }
 }

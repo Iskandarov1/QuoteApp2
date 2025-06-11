@@ -2,7 +2,7 @@
 using Quote.Application.Core.Abstractions.Data;
 using Quote.Domain.Core.Primitives;
 using Quote.Domain.Core.Primitives.Maybe;
-using Quote.Persistence.Specifications;
+
 
 namespace Quote.Persistence.Repositories;
 
@@ -74,22 +74,7 @@ internal abstract class GenericRepository<TEntity>
 	/// </summary>
 	/// <param name="entities">The entities to be removed from the database.</param>
 	public void RemoveRange(IEnumerable<TEntity> entities) => DbContext.RemoveRange(entities);
-	/// <summary>
-	/// Checks if any entity meets the specified specification.
-	/// </summary>
-	/// <param name="specification">The specification.</param>
-	/// <returns>True if any entity meets the specified specification, otherwise false.</returns>
-	protected async Task<bool> AnyAsync(Specification<TEntity> specification, CancellationToken cancellationToken = default) =>
-		await DbContext.Set<TEntity>().AnyAsync(specification, cancellationToken);
-
-	/// <summary>
-	/// Gets the first entity that meets the specified specification.
-	/// </summary>
-	/// <param name="specification">The specification.</param>
-	/// <returns>The maybe instance that may contain the first entity that meets the specified specification.</returns>
-	protected async Task<Maybe<TEntity>> FirstOrDefaultAsync(Specification<TEntity> specification, CancellationToken cancellationToken = default) =>
-		await DbContext.Set<TEntity>().FirstOrDefaultAsync(specification, cancellationToken);
-
+	
 	/// <summary>
 	/// Gets the single entity that meets the predicate.
 	/// </summary>

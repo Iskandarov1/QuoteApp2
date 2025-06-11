@@ -21,7 +21,7 @@ public class CreateQuoteCommandHandler(
         if (validation.IsFailure)
             return Result.Failure<Guid>(validation.Error);
 
-        var quote = QuoteEntity.Create(
+        var quote = new QuoteEntity(
             author.Value, 
             text.Value, 
             category.Value);

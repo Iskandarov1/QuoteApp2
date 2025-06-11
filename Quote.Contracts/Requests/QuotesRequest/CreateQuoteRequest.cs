@@ -1,7 +1,7 @@
 using System.ComponentModel.DataAnnotations;
 using System.Text.Json.Serialization;
 
-namespace Quote.Contracts.Requests.QuoteRequest;
+namespace Quote.Contracts.Requests.QuotesRequest;
 
 public class CreateQuoteRequest
 {

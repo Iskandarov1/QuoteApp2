@@ -33,8 +33,6 @@ public sealed class Quote : AggregateRoot
          
          AddDomainEvent(new QuoteUpdatedDomainEvent(Id));
      }
-
-     public static Quote Create(Author author, Textt textt, Category category) =>
-         new(author, textt, category);
+     
 }
 

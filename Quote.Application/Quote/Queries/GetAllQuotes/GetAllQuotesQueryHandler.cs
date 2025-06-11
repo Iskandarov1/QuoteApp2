@@ -2,7 +2,7 @@ using App.Application.Abstractions.Messaging;
 using Microsoft.EntityFrameworkCore;
 using Quote.Application.Core.Abstractions.Data;
 using Quote.Contracts.Common;
-using Quote.Contracts.Responses.QuoteResponse;
+using Quote.Contracts.Responses.QuotesResponse;
 using Quote.Domain.Core.Primitives.Maybe;
 
 namespace Quote.Application.Quote.Queries.GetAllQuotes;
@@ -27,9 +27,9 @@ public class GetAllQuotesQueryHandler(IDbContext dbContext):IQueryHandler<GetAll
         int totalCount = await query.CountAsync(cancellationToken);
 
         var responsesPage = await query
-            .Skip(request.Page < 1 ? 0 : (request.Page - 1) * request.PageSize)
-            .Take(request.PageSize)
-            .ToArrayAsync(cancellationToken);
+			.Skip(request.Page < 1 ? 0 : (request.Page - 1) * request.PageSize)
+			.Take(request.PageSize)
+			.ToArrayAsync(cancellationToken);
 
         return Maybe<PagedList<QuoteResponse>>.From(
             new PagedList<QuoteResponse>(responsesPage,request.Page,request.PageSize,totalCount)

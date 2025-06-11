@@ -1,6 +1,6 @@
 using System.Text.Json.Serialization;
 
-namespace Quote.Contracts.Responses.QuoteResponse;
+namespace Quote.Contracts.Responses.QuotesResponse;
 
 public sealed record QuoteResponse(
     [property:JsonPropertyName("quote_id")] Guid QuoteId,
