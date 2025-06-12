@@ -5,42 +5,42 @@ using Quote.Application.Subscribers.Commands.CreateSubscription;
 using Quote.Application.Subscribers.Commands.RemoveSubscriptionCommand;
 using Quote.Application.Subscribers.Queries.GetActiveSubscribers;
 using Quote.Contracts.Requests.SubscriberRequest;
+using Quote.Domain.Core.Errors;
 using Quote.Domain.Core.Primitives.Maybe;
+using Quote.Domain.Core.Primitives.Result;
+using Quote.Domain.Repositories;
 
 namespace Quote.Api.Controller;
 
 [ApiController]
 [Route("[controller]")]
-public class SubscriptionController(IMediator mediator) : ApiController(mediator)
+public class SubscriptionController(IMediator mediator,IUniqueFileStorage storage) : ApiController(mediator)
 {
     [HttpPost("subscribe")]
-    public async Task<IActionResult> Subscribe([FromBody] CreateSubscriberRequest request, CancellationToken cancellationToken)
-    {
-        var command = new CreateSubscriptionCommand(
-            request.FirstName,
-            request.LastName,
-            request.Email,
-            request.TelegramUser);
+    [ProducesResponseType(StatusCodes.Status200OK)]
+    [ProducesResponseType(typeof(ApiErrorResponse), StatusCodes.Status400BadRequest)]
+    [Produces("application/json")]
+    public async Task<IActionResult> Subscribe([FromForm] CreateSubscriberRequest request) =>
+        await Result.Create(request, DomainErrors.General.UnProcessableRequest)
+            .Map(req => new CreateSubscriptionCommand(
+                req.FirstName,
+                req.LastName,
+                req.Email,
+                req.TelegramUser,
+                req.AttachedFile is null ? null : storage.Save(req.AttachedFile)))                
+            .Bind(cmd => Mediator.Send(cmd, HttpContext.RequestAborted))
+            .Match(id => Ok(new                     
+                    { SubscriberId = id, Message = "Successfully subscribed!" }), BadRequest); 
 
-        var result = await Mediator.Send(command, cancellationToken);
-
-        if (result.IsSuccess)
-            return Ok(new { SubscriberId = result.Value, Message = "Successfully subscribed!" });
-
-        return BadRequest(result.Error);
-    }
-
+    
     [HttpDelete("{subscriberId:guid}")]
-    public async Task<IActionResult> Unsubscribe(RemoveSubscriptionCommand request, CancellationToken cancellationToken)
-    {
-        var command = new RemoveSubscriptionCommand(request.FirstName,request.LastName,request.Email,request.TelegramUser);
-        var result = await Mediator.Send(command, cancellationToken);
+    [ProducesResponseType(StatusCodes.Status200OK)]
+    [ProducesResponseType(typeof(ApiErrorResponse), StatusCodes.Status400BadRequest)] 
+    public async Task<IActionResult> Unsubscribe(RemoveSubscriptionCommand request, CancellationToken cancellationToken) =>
+        await Result.Success(new RemoveSubscriptionCommand(request.Email,request.TelegramUser))
+            .Bind(cmd => Mediator.Send(cmd, HttpContext.RequestAborted))
+            .Match(_ => Ok(new { Message = "Successfully unsubscribed!" }), BadRequest);
 
-        if (result.IsSuccess)
-            return Ok(new { Message = "Successfully unsubscribed!" });
-
-        return BadRequest(result.Error);
-    }
     
     [HttpGet("active")]
     public async Task<IActionResult> GetActiveSubscribers([FromQuery] GetActiveSubscribersQuery request) =>

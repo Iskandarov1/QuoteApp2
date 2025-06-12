@@ -10,6 +10,7 @@
       <PackageReference Include="Microsoft.Extensions.DependencyInjection.Abstractions" Version="9.0.5" />
       <PackageReference Include="Microsoft.Extensions.Localization" Version="9.0.5" />
       <PackageReference Include="Microsoft.Extensions.Localization.Abstractions" Version="9.0.6" />
+      <PackageReference Include="UploadStream" Version="3.1.1" />
     </ItemGroup>
 
 </Project>

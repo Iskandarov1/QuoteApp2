@@ -8,14 +8,16 @@ public class Subscriber : AggregateRoot
 {
     private Subscriber(){}
     
-    public Subscriber(string? firstName, string? lastName, string? email,long? telegramUser) : base()
+    public Subscriber(string? firstName, string? lastName, string? email, long? telegramUser, string? attachedFilePath = null) : base()
     {
        this.FirstName = firstName;
         this.LastName = lastName;
         this.Email = email;
         this.TelegramUser = telegramUser;
+        this.AttachedFilePath = attachedFilePath;
         IsActive = true;
     }
+    
     public void Activate()
     {
         IsActive = true;
@@ -27,8 +29,8 @@ public class Subscriber : AggregateRoot
     [Column("email")] public string? Email { get; private set; }
     [Column("is_active")] public bool IsActive { get; private set; }
     [Column("telegram_user")] public long? TelegramUser { get; private set; }
+    [Column("attached_file_path")] public string? AttachedFilePath { get; private set; }
     public NotificationPreference PreferredNotificationMethod { get; private set; }
-
 
     public enum NotificationPreference
     {
@@ -36,16 +38,16 @@ public class Subscriber : AggregateRoot
         Telegram = 2
     }
 
-    public static Subscriber CreateWithEmail(string? email, string? firstName,string? lastName)
+    public static Subscriber CreateWithEmail(string? email, string? firstName, string? lastName, string? attachedFilePath = null)
     {
-        var subscriber = new Subscriber( firstName,lastName,email,null);
+        var subscriber = new Subscriber(firstName, lastName, email, null, attachedFilePath);
         subscriber.PreferredNotificationMethod = NotificationPreference.Email;
         return subscriber;
     }
 
     public static Subscriber CreateWithTelegram(long? telegramUser)
     {
-        var subscriber = new Subscriber( null, null ,null,telegramUser);
+        var subscriber = new Subscriber(null, null, null, telegramUser);
         subscriber.PreferredNotificationMethod = NotificationPreference.Telegram;
         return subscriber;
     }
@@ -57,8 +59,4 @@ public class Subscriber : AggregateRoot
         this.Email = email;
         return this;
     }
-    
-  
-
-
 }

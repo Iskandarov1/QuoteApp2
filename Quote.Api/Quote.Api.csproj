@@ -26,5 +26,9 @@
         <ProjectReference Include="..\Quote.Contracts\Quote.Contracts.csproj" />
         <ProjectReference Include="..\Quote.Services.BackgroundTasks\Quote.Services.BackgroundTasks.csproj" />
     </ItemGroup>
+    
+    <ItemGroup>
+      <Folder Include="Forms\" />
+    </ItemGroup>
 
 </Project>

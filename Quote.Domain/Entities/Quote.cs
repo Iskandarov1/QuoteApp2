@@ -14,7 +14,7 @@ public sealed class Quote : AggregateRoot
     {
         this.Author = author;
         this.Textt = textt;
-        this.CategoryId = CategoryId;
+        this.CategoryId = category;
     }
     
     [Column("author")]public string Author { get; private set; }

@@ -7,4 +7,5 @@ public sealed record CreateSubscriptionCommand(
     string? FirstName,
     string? LastName,
     string? Email,
-    long? TelegramUser):ICommand<Result<Guid>>;
+    long? TelegramUser = null,
+    string? AttachedFilePath = null):ICommand<Result<Guid>>;

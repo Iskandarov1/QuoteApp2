@@ -19,7 +19,10 @@ internal sealed class SubscriberConfiguration : IEntityTypeConfiguration<Subscri
             .HasMaxLength(50);
 
         builder.Property(item => item.Email)
-            .HasMaxLength(50);
+            .HasMaxLength(255);
+
+        builder.Property(item => item.AttachedFilePath)
+            .HasMaxLength(500);
 
         builder.Property(item => item.IsActive)
             .IsRequired()
@@ -45,8 +48,5 @@ internal sealed class SubscriberConfiguration : IEntityTypeConfiguration<Subscri
             .HasFilter("telegram_user IS NOT NULL");
 
         builder.HasIndex(item => item.CreatedAt);
-
-
-
     }
 }

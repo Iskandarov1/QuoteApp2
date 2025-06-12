@@ -151,7 +151,7 @@ public class TelegramBotService : BackgroundService
     }
     private async Task HandleUnsubscribe(long chatId, IMediator mediator, CancellationToken cancellationToken)
     {
-        var command = new RemoveSubscriptionCommand(null,null,null,chatId);
+        var command = new RemoveSubscriptionCommand(null,chatId);
         var result = await mediator.Send(command, cancellationToken);
 
         if (result.IsSuccess)
