@@ -24,6 +24,7 @@
         <ProjectReference Include="..\Quote.Infrastructure\Quote.Infrastructure.csproj" />
         <ProjectReference Include="..\Quote.Persistence\Quote.Persistence.csproj" />
         <ProjectReference Include="..\Quote.Contracts\Quote.Contracts.csproj" />
+        <ProjectReference Include="..\Quote.Services.BackgroundTasks\Quote.Services.BackgroundTasks.csproj" />
     </ItemGroup>
 
 </Project>

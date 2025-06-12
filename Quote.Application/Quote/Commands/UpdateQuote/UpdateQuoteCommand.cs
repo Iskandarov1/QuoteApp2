@@ -1,4 +1,4 @@
-using App.Application.Abstractions.Messaging;
+using Quote.Application.Core.Abstractions.Messaging;
 using Quote.Domain.Core.Primitives.Result;
 
 namespace Quote.Application.Quote.Commands.UpdateQuote;

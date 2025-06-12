@@ -96,15 +96,21 @@ public sealed class QuoteContext(
     /// Updates the entities implementing <see cref="IAuditableEntity"/> interface.
     /// </summary>
     /// <param name="utcNow">The current date and time in UTC format.</param>
-    private void UpdateAuditableEntities(DateTime utcNow)
-    {
-        foreach (EntityEntry<IAuditableEntity> entityEntry in ChangeTracker.Entries<IAuditableEntity>())
-        {
-            if (entityEntry.State == EntityState.Added)
-            {
-                entityEntry.Property(nameof(IAuditableEntity.CreatedAt)).CurrentValue = utcNow;
-            }
+    private async Task UpdateAuditableEntities(DateTime utcNow, CancellationToken cancellationToken = default)
+	{
+		foreach (EntityEntry<IAuditableEntity> entityEntry in ChangeTracker.Entries<IAuditableEntity>())
+		{
+			if (entityEntry.State == EntityState.Added)
+			{
+				entityEntry.Property(nameof(IAuditableEntity.CreatedAt)).CurrentValue = utcNow;
+				
+			}
 
-        }
-    }
+			if (entityEntry.State == EntityState.Modified)
+			{
+				entityEntry.Property(nameof(IAuditableEntity.UpdatedAt)).CurrentValue = utcNow;
+			
+			}
+		}
+	}
 }

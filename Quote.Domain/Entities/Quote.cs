@@ -26,7 +26,7 @@ public sealed class Quote : AggregateRoot
      {
          this.Author = author;
          this.Textt = textt;
-         this.CategoryId = CategoryId;
+         this.CategoryId = category;
          
          return this;
      }

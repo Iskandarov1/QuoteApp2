@@ -1,5 +1,5 @@
 using System.ComponentModel;
-using App.Application.Abstractions.Messaging;
+using Quote.Application.Core.Abstractions.Messaging;
 using Quote.Contracts.Common;
 using Quote.Contracts.Responses.CategoriesResponse;
 using Quote.Domain.Core.Primitives.Maybe;

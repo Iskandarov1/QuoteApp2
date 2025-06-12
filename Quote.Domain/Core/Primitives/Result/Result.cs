@@ -63,9 +63,7 @@ public class Result
 	/// <param name="value">The result value.</param>
 	/// <param name="error">The error in case the value is null.</param>
 	/// <returns>A new instance of <see cref="Result{TValue}"/> with the specified value or an error.</returns>
-	public static Result<TValue> Create<TValue>(TValue value, Error error)
-		where TValue : class
-		=> value is null ? Failure<TValue>(error) : Success(value);
+	public static Result<TValue> Create<TValue>(TValue value, Error error) => value is null ? Failure<TValue>(error) : Success(value);
 
 	/// <summary>
 	/// Returns a failure <see cref="Result"/> with the specified error.

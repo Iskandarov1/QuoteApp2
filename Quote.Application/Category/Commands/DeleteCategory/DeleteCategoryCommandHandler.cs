@@ -1,5 +1,5 @@
-using App.Application.Abstractions.Messaging;
 using Quote.Application.Core.Abstractions.Data;
+using Quote.Application.Core.Abstractions.Messaging;
 using Quote.Domain.Core.Errors;
 using Quote.Domain.Core.Localizations;
 using Quote.Domain.Core.Primitives.Result;

@@ -22,7 +22,7 @@ namespace Quote.Persistence.Migrations
 
             NpgsqlModelBuilderExtensions.UseIdentityByDefaultColumns(modelBuilder);
 
-            modelBuilder.Entity("Quote.Domain.Entities.Quote", b =>
+            modelBuilder.Entity("Quote.Domain.Entities.Category", b =>
                 {
                     b.Property<Guid>("Id")
                         .ValueGeneratedOnAdd()
@@ -33,80 +33,134 @@ namespace Quote.Persistence.Migrations
                         .HasColumnType("timestamp with time zone")
                         .HasColumnName("created_at");
 
+                    b.Property<string>("Name")
+                        .IsRequired()
+                        .HasMaxLength(100)
+                        .HasColumnType("character varying(100)")
+                        .HasColumnName("category_name");
+
+                    b.Property<DateTime?>("UpdatedAt")
+                        .HasColumnType("timestamp with time zone")
+                        .HasColumnName("updated_at");
+
                     b.HasKey("Id");
+
+                    b.HasIndex("CreatedAt");
+
+                    b.HasIndex("Name")
+                        .IsUnique();
+
+                    b.ToTable("Category");
+                });
+
+            modelBuilder.Entity("Quote.Domain.Entities.Quote", b =>
+                {
+                    b.Property<Guid>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("uuid")
+                        .HasColumnName("id");
+
+                    b.Property<string>("Author")
+                        .IsRequired()
+                        .HasMaxLength(100)
+                        .HasColumnType("character varying(100)")
+                        .HasColumnName("author");
+
+                    b.Property<Guid>("CategoryId")
+                        .HasMaxLength(100)
+                        .HasColumnType("uuid")
+                        .HasColumnName("category_id");
+
+                    b.Property<DateTime>("CreatedAt")
+                        .HasColumnType("timestamp with time zone")
+                        .HasColumnName("created_at");
+
+                    b.Property<string>("Textt")
+                        .IsRequired()
+                        .HasMaxLength(200)
+                        .HasColumnType("character varying(200)")
+                        .HasColumnName("quote_text");
+
+                    b.Property<DateTime?>("UpdatedAt")
+                        .HasColumnType("timestamp with time zone")
+                        .HasColumnName("updated_at");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("CategoryId");
 
                     b.HasIndex("CreatedAt");
 
                     b.ToTable("Quote");
                 });
 
+            modelBuilder.Entity("Quote.Domain.Entities.Subscriber", b =>
+                {
+                    b.Property<Guid>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("uuid")
+                        .HasColumnName("id");
+
+                    b.Property<DateTime>("CreatedAt")
+                        .HasColumnType("timestamp with time zone")
+                        .HasColumnName("created_at");
+
+                    b.Property<string>("Email")
+                        .HasMaxLength(50)
+                        .HasColumnType("character varying(50)")
+                        .HasColumnName("email");
+
+                    b.Property<string>("FirstName")
+                        .HasMaxLength(50)
+                        .HasColumnType("character varying(50)")
+                        .HasColumnName("first_name");
+
+                    b.Property<bool>("IsActive")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("boolean")
+                        .HasDefaultValue(true)
+                        .HasColumnName("is_active");
+
+                    b.Property<string>("LastName")
+                        .HasMaxLength(50)
+                        .HasColumnType("character varying(50)")
+                        .HasColumnName("last_name");
+
+                    b.Property<int>("PreferredNotificationMethod")
+                        .HasColumnType("integer");
+
+                    b.Property<long?>("TelegramUser")
+                        .HasColumnType("bigint")
+                        .HasColumnName("telegram_user");
+
+                    b.Property<DateTime?>("UpdatedAt")
+                        .HasColumnType("timestamp with time zone")
+                        .HasColumnName("updated_at");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("CreatedAt");
+
+                    b.HasIndex("Email")
+                        .IsUnique()
+                        .HasFilter("email IS NOT NULL");
+
+                    b.HasIndex("TelegramUser")
+                        .IsUnique()
+                        .HasFilter("telegram_user IS NOT NULL");
+
+                    b.ToTable("Subscriber");
+                });
+
             modelBuilder.Entity("Quote.Domain.Entities.Quote", b =>
                 {
-                    b.OwnsOne("Quote.Domain.ValueObjects.Author", "Author", b1 =>
-                        {
-                            b1.Property<Guid>("QuoteId")
-                                .HasColumnType("uuid");
-
-                            b1.Property<string>("Value")
-                                .IsRequired()
-                                .HasMaxLength(100)
-                                .HasColumnType("character varying(100)")
-                                .HasColumnName("author");
-
-                            b1.HasKey("QuoteId");
-
-                            b1.ToTable("Quote");
-
-                            b1.WithOwner()
-                                .HasForeignKey("QuoteId");
-                        });
-
-                    b.OwnsOne("Quote.Domain.ValueObjects.Category", "Category", b1 =>
-                        {
-                            b1.Property<Guid>("QuoteId")
-                                .HasColumnType("uuid");
-
-                            b1.Property<string>("Value")
-                                .IsRequired()
-                                .HasMaxLength(100)
-                                .HasColumnType("character varying(100)")
-                                .HasColumnName("category");
-
-                            b1.HasKey("QuoteId");
-
-                            b1.ToTable("Quote");
-
-                            b1.WithOwner()
-                                .HasForeignKey("QuoteId");
-                        });
-
-                    b.OwnsOne("Quote.Domain.ValueObjects.Textt", "Textt", b1 =>
-                        {
-                            b1.Property<Guid>("QuoteId")
-                                .HasColumnType("uuid");
-
-                            b1.Property<string>("Value")
-                                .IsRequired()
-                                .HasMaxLength(400)
-                                .HasColumnType("character varying(400)")
-                                .HasColumnName("quote_text");
-
-                            b1.HasKey("QuoteId");
-
-                            b1.ToTable("Quote");
-
-                            b1.WithOwner()
-                                .HasForeignKey("QuoteId");
-                        });
-
-                    b.Navigation("Author")
+                    b.HasOne("Quote.Domain.Entities.Category", "Category")
+                        .WithMany()
+                        .HasForeignKey("CategoryId")
+                        .OnDelete(DeleteBehavior.Restrict)
                         .IsRequired();
 
-                    b.Navigation("Category")
-                        .IsRequired();
-
-                    b.Navigation("Textt")
-                        .IsRequired();
+                    b.Navigation("Category");
                 });
 #pragma warning restore 612, 618
         }

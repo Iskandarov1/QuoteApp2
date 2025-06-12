@@ -21,7 +21,7 @@ namespace Quote.Api.Controller;
 [Route("api/[controller]")]
 public class QuoteController(IMediator mediator):ApiController(mediator)
 {
-    [HttpGet()]
+    [HttpGet("")]
     [ProducesResponseType(typeof(PagedList<QuoteResponse>), StatusCodes.Status200OK)]
     [ProducesResponseType(StatusCodes.Status404NotFound)]
     [Produces("application/json")]

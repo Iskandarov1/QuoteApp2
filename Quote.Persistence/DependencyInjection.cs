@@ -28,11 +28,18 @@ public static class DependencyInjection
             options.EnableDetailedErrors();
         });
         
+        services.AddDbContext<QuoteSingletonDbContext>(options =>
+        {
+            options.UseNpgsql(connectionString);
+            options.EnableSensitiveDataLogging();
+            options.EnableDetailedErrors();
+        }, ServiceLifetime.Singleton);
 
         services.AddScoped<IDbContext>(serviceProvider => serviceProvider.GetRequiredService<QuoteContext>());
         services.AddScoped<IUnitOfWork>(serviceProvider => serviceProvider.GetRequiredService<QuoteContext>());
         services.AddScoped<ICategoryRepository, CategoryRepository>();
         services.TryAddScoped<IQuoteRepository, QuoteRepository>();
+        services.AddScoped<ISubscriberRepository, SubscriberRepository>();
 
         return services;
     }

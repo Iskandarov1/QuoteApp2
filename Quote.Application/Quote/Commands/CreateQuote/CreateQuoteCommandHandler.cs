@@ -1,5 +1,5 @@
-using App.Application.Abstractions.Messaging;
 using Quote.Application.Core.Abstractions.Data;
+using Quote.Application.Core.Abstractions.Messaging;
 using Quote.Contracts.Requests.QuotesRequest;
 using Quote.Domain.Core.Errors;
 using Quote.Domain.Core.Localizations;
@@ -35,7 +35,7 @@ public class CreateQuoteCommandHandler(
             author.Value, 
             text.Value, 
             request.CategoryId);
-
+        
         quoteRepository.Insert(quote);
         await unitOfWork.SaveChangesAsync(cancellationToken);
 

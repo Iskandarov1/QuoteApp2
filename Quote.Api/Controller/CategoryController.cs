@@ -1,5 +1,4 @@
 using MediatR;
-using Microsoft.AspNetCore.Components;
 using Microsoft.AspNetCore.Mvc;
 using Quote.Api.Contracts;
 using Quote.Application.Category.Commands.CreateCategory;
@@ -7,12 +6,9 @@ using Quote.Application.Category.Commands.DeleteCategory;
 using Quote.Application.Category.Commands.UpdateCategory;
 using Quote.Application.Category.Queries.GetAllCategories;
 using Quote.Application.Category.Queries.GetByIdCategory;
-using Quote.Application.Quote.Commands.CreateQuote;
 using Quote.Contracts.Common;
 using Quote.Contracts.Requests.CategoriesRequest;
-using Quote.Contracts.Requests.QuotesRequest;
 using Quote.Contracts.Responses.CategoriesResponse;
-using Quote.Contracts.Responses.QuotesResponse;
 using Quote.Domain.Core.Errors;
 using Quote.Domain.Core.Primitives.Maybe;
 using Quote.Domain.Core.Primitives.Result;
@@ -21,7 +17,7 @@ namespace Quote.Api.Controller;
 
 
 [ApiController]
-[Microsoft.AspNetCore.Components.Route("api/[controller]")]
+[Route("api/[controller]")]
 public class CategoryController(IMediator mediator) : ApiController(mediator)
 {
     [HttpGet()]

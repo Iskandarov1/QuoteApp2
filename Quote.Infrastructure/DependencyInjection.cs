@@ -1,6 +1,9 @@
 using Quote.Application.Core.Abstractions.Common;
 using Quote.Infrastructure.Common;
 using Microsoft.Extensions.DependencyInjection;
+using Quote.Application.Core.Abstractions.Services;
+using Quote.Domain.Core.Abstractions;
+using Quote.Infrastructure.Services;
 
 namespace Quote.Infrastructure;
 
@@ -14,6 +17,10 @@ public static class DependencyInjection
     public static IServiceCollection AddInfrastructure(this IServiceCollection services)
     {
         services.AddSingleton<IDateTime, MachineDateTime>();
+
+        services.AddScoped<IEmailService, EmailService>();
+        services.AddScoped<IQuoteEmailService, QuoteEmailService>();
+        services.AddScoped<ITelegramService, TelegramService>();
 
         return services;
     }
