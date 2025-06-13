@@ -18,5 +18,10 @@ internal sealed class CategoryConfiguration : IEntityTypeConfiguration<Category>
 
         builder.Property(c => c.CreatedAt).IsRequired();
         builder.HasIndex(c => c.CreatedAt);
+
+        builder.Property(c => c.IsDelete).HasDefaultValue(false);
+        builder.HasIndex(c => c.IsDelete);
+        
+        builder.HasQueryFilter(c => !c.IsDelete);
     }
 }

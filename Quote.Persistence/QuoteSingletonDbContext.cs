@@ -82,6 +82,45 @@ public sealed class QuoteSingletonDbContext : DbContext
         }
     }
     
+    private void UpdateSoftDeletableEntities(DateTime utcNow)
+    {
+        foreach (EntityEntry<ISoftDeletableEntity> entityEntry in ChangeTracker.Entries<ISoftDeletableEntity>())
+        {
+            if (entityEntry.State != EntityState.Deleted)
+            {
+                continue;
+            }
+
+            entityEntry.Property(nameof(ISoftDeletableEntity.DeletedAt)).CurrentValue = utcNow;
+
+            entityEntry.Property(nameof(ISoftDeletableEntity.IsDelete)).CurrentValue = true;
+
+            entityEntry.State = EntityState.Modified;
+
+            UpdateDeletedEntityEntryReferencesToUnchanged(entityEntry);
+        }
+    }
+
+    /// <summary>
+    /// Updates the specified entity entry's referenced entries in the Deleted state to the modified state.
+    /// This method is recursive.
+    /// </summary>
+    /// <param name="entityEntry">The entity entry.</param>
+    private static void UpdateDeletedEntityEntryReferencesToUnchanged(EntityEntry entityEntry)
+    {
+        if (!entityEntry.References.Any())
+        {
+            return;
+        }
+
+        foreach (ReferenceEntry referenceEntry in entityEntry.References.Where(r => r.TargetEntry?.State == EntityState.Deleted))
+        {
+            referenceEntry.TargetEntry.State = EntityState.Unchanged;
+
+            UpdateDeletedEntityEntryReferencesToUnchanged(referenceEntry.TargetEntry);
+        }
+    }
+    
 
     public override async ValueTask DisposeAsync()
     {

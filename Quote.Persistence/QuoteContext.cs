@@ -77,7 +77,7 @@ public sealed class QuoteContext(
     {
         var utcNow = dateTime.UtcNow;
 
-        UpdateAuditableEntities(utcNow);
+        await UpdateAuditableEntities(utcNow, cancellationToken);
         
         return await base.SaveChangesAsync(cancellationToken);
     }
@@ -113,4 +113,38 @@ public sealed class QuoteContext(
 			}
 		}
 	}
+    
+    private async Task UpdateSoftDeletableEntities(DateTime utcNow, CancellationToken cancellationToken = default)
+    {
+        foreach (EntityEntry<ISoftDeletableEntity> entityEntry in ChangeTracker.Entries<ISoftDeletableEntity>())
+        {
+            if (entityEntry.State != EntityState.Deleted)
+            {
+                continue;
+            }
+
+            entityEntry.Property(nameof(ISoftDeletableEntity.DeletedAt)).CurrentValue = utcNow;
+
+            entityEntry.Property(nameof(ISoftDeletableEntity.IsDelete)).CurrentValue = true;
+
+            entityEntry.State = EntityState.Modified;
+
+            UpdateDeletedEntityEntryReferencesToUnchanged(entityEntry);
+        }
+    }
+    
+    private static void UpdateDeletedEntityEntryReferencesToUnchanged(EntityEntry entityEntry)
+    {
+        if (!entityEntry.References.Any())
+        {
+            return;
+        }
+
+        foreach (ReferenceEntry referenceEntry in entityEntry.References.Where(r => r.TargetEntry?.State == EntityState.Deleted))
+        {
+            referenceEntry.TargetEntry.State = EntityState.Unchanged;
+
+            UpdateDeletedEntityEntryReferencesToUnchanged(referenceEntry.TargetEntry);
+        }
+    }
 }

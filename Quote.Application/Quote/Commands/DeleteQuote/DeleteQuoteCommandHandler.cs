@@ -18,8 +18,9 @@ public class DeleteQuoteCommandHandler(
         {
             return Result.Failure(DomainErrors.Quote.NotFound);
         }
-        
-        quoteRepository.Remove(maybeQuote.Value);
+
+        maybeQuote.Value.IsDelete = true;
+        quoteRepository.Update(maybeQuote.Value);
 
         await unitOfWork.SaveChangesAsync(cancellationToken);
 

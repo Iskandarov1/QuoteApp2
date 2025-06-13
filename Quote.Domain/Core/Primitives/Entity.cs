@@ -5,7 +5,7 @@ namespace Quote.Domain.Core.Primitives;
 /// <summary>
 /// Represents the base class that all entities derive from.
 /// </summary>
-public abstract class Entity : IEquatable<Entity>, IAuditableEntity
+public abstract class Entity : IEquatable<Entity>, IAuditableEntity,ISoftDeletableEntity
 {
 	/// <summary>
 	/// Initializes a new instance of the <see cref="Entity"/> class.
@@ -94,7 +94,6 @@ public abstract class Entity : IEquatable<Entity>, IAuditableEntity
 	[Column("created_at")] public DateTime CreatedAt { get; set; }
 	[Column("updated_at")] public DateTime? UpdatedAt { get; set; }
 	
-
-	//[Timestamp]
-	//public uint Version { get; set; }
+	[Column("deleted_at")] public DateTime? DeletedAt { get; }
+	[Column("is_deleted")] public bool IsDelete { get; set; }
 }

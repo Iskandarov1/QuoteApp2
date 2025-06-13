@@ -33,6 +33,12 @@ namespace Quote.Persistence.Migrations
                         .HasColumnType("timestamp with time zone")
                         .HasColumnName("created_at");
 
+                    b.Property<bool>("IsDelete")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("boolean")
+                        .HasDefaultValue(false)
+                        .HasColumnName("is_deleted");
+
                     b.Property<string>("Name")
                         .IsRequired()
                         .HasMaxLength(100)
@@ -46,6 +52,8 @@ namespace Quote.Persistence.Migrations
                     b.HasKey("Id");
 
                     b.HasIndex("CreatedAt");
+
+                    b.HasIndex("IsDelete");
 
                     b.HasIndex("Name")
                         .IsUnique();
@@ -75,6 +83,12 @@ namespace Quote.Persistence.Migrations
                         .HasColumnType("timestamp with time zone")
                         .HasColumnName("created_at");
 
+                    b.Property<bool>("IsDelete")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("boolean")
+                        .HasDefaultValue(false)
+                        .HasColumnName("is_deleted");
+
                     b.Property<string>("Textt")
                         .IsRequired()
                         .HasMaxLength(200)
@@ -90,6 +104,8 @@ namespace Quote.Persistence.Migrations
                     b.HasIndex("CategoryId");
 
                     b.HasIndex("CreatedAt");
+
+                    b.HasIndex("IsDelete");
 
                     b.ToTable("Quote");
                 });
@@ -125,6 +141,10 @@ namespace Quote.Persistence.Migrations
                         .HasColumnType("boolean")
                         .HasDefaultValue(true)
                         .HasColumnName("is_active");
+
+                    b.Property<bool>("IsDelete")
+                        .HasColumnType("boolean")
+                        .HasColumnName("is_deleted");
 
                     b.Property<string>("LastName")
                         .HasMaxLength(50)

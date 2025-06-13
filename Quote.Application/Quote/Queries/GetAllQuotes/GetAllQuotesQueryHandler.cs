@@ -14,9 +14,9 @@ public class GetAllQuotesQueryHandler(IDbContext dbContext):IQueryHandler<GetAll
         var query = from quote in dbContext.Set<Domain.Entities.Quote>().AsNoTracking()
             join category in dbContext.Set<Domain.Entities.Category>().AsNoTracking()
                 on quote.CategoryId equals category.Id 
-            where !string.IsNullOrWhiteSpace(request.Filter)
-                ? EF.Functions.Like(quote.Author.ToLower(), $"%{request.Filter.ToLowerInvariant()}%") ||
-                  EF.Functions.Like(quote.Textt.ToLower(), $"%{request.Filter.ToLowerInvariant()}%")
+            where !string.IsNullOrWhiteSpace(request.Author)
+                ? quote.Author.Contains(request.Author) ||
+                  quote.Textt.Contains(request.Author)
                 : true
             orderby quote.CreatedAt descending
             select new QuoteResponse(

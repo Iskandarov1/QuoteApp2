@@ -13,10 +13,15 @@ public class GetAllCategoriesQueryhandler(IDbContext dbContext) : IQueryHandler<
     public async Task<Maybe<PagedList<CategoryResponse>>> Handle(GetAllCategoriesQuery request, CancellationToken cancellationToken)
     {
         var query = dbContext.Set<Domain.Entities.Category>().AsNoTracking();
-        
-        if (!string.IsNullOrWhiteSpace(request.Filter))
+
+        if (request.CategoryId.HasValue)
         {
-            query = query.Where(c => c.Name.Contains(request.Filter));
+            query = query.Where(c => c.Id == request.CategoryId.Value);
+        }
+        
+        if (!string.IsNullOrWhiteSpace(request.Text))
+        {
+            query = query.Where(c => c.Name.Contains(request.Text));
         }
         
         var categories = query

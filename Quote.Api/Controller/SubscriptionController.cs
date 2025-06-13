@@ -33,7 +33,7 @@ public class SubscriptionController(IMediator mediator,IUniqueFileStorage storag
                     { SubscriberId = id, Message = "Successfully subscribed!" }), BadRequest); 
 
     
-    [HttpDelete("{subscriberId:guid}")]
+    [HttpDelete("subscriber/{id:Guid}")]
     [ProducesResponseType(StatusCodes.Status200OK)]
     [ProducesResponseType(typeof(ApiErrorResponse), StatusCodes.Status400BadRequest)] 
     public async Task<IActionResult> Unsubscribe(RemoveSubscriptionCommand request, CancellationToken cancellationToken) =>
@@ -51,6 +51,5 @@ public class SubscriptionController(IMediator mediator,IUniqueFileStorage storag
             .Bind(command => Mediator.Send(command))
             .Match(result => Ok(result), BadRequest);
     
-
     
 }

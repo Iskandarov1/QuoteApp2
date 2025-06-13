@@ -7,7 +7,8 @@ using Quote.Domain.Core.Primitives.Maybe;
 namespace Quote.Application.Category.Queries.GetAllCategories;
 
 public sealed record GetAllCategoriesQuery (
-    string? Filter,
+    string? Text,
+    Guid? CategoryId,
     //[property: Required]
     [property: DefaultValue(0)] int Page = 0, 
     //[property: Required]

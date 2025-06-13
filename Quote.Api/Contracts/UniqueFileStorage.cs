@@ -15,13 +15,13 @@ namespace Quote.Api.Contracts;
         {
             Directory.CreateDirectory(_root);
 
-            // ---------- 1. compute hash ----------
+
             using var sha  = SHA256.Create();
             using var mem  = new MemoryStream();
             file.CopyTo(mem);
             var hash = Convert.ToHexString(sha.ComputeHash(mem)).ToLowerInvariant();
 
-            // ---------- 2. final path ----------
+
             var ext      = Path.GetExtension(file.FileName);
             var fileName = $"{hash}{ext}";
             var path     = Path.Combine(_root, fileName);

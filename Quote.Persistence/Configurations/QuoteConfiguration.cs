@@ -19,7 +19,7 @@ internal sealed class QuoteConfiguration : IEntityTypeConfiguration<Domain.Entit
         builder.Property(item => item.Author)
             .HasMaxLength(100)
             .IsRequired();
-        
+
         builder.Property(item => item.Textt)
             .HasMaxLength(200)
             .IsRequired();
@@ -27,7 +27,7 @@ internal sealed class QuoteConfiguration : IEntityTypeConfiguration<Domain.Entit
         builder.Property(item => item.CategoryId)
             .HasMaxLength(100)
             .IsRequired();
-        
+
         builder.HasOne(q => q.Category)
             .WithMany()
             .HasForeignKey(q => q.CategoryId)
@@ -35,7 +35,12 @@ internal sealed class QuoteConfiguration : IEntityTypeConfiguration<Domain.Entit
 
         builder.Property(quote => quote.CreatedAt)
             .IsRequired();
-        
+
         builder.HasIndex(quote => quote.CreatedAt);
+        
+        builder.Property(q => q.IsDelete).HasDefaultValue(false);
+        builder.HasIndex(q => q.IsDelete);
+        
+        builder.HasQueryFilter(q => !q.IsDelete);
     }
 }

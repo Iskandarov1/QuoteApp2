@@ -8,7 +8,7 @@ using Quote.Domain.Core.Primitives.Maybe;
 namespace Quote.Application.Quote.Queries.GetAllQuotes;
 
 public sealed record GetAllQuotesQuery(
-    string? Filter,
+    string? Author,
     //[property: Required]
     [property: DefaultValue(0)] int Page = 0, 
     //[property: Required]
