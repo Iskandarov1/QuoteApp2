@@ -9,6 +9,7 @@ namespace Quote.Persistence;
 public sealed class QuoteSingletonDbContext : DbContext
 {
     private readonly IDateTime dateTime;
+    private readonly SemaphoreSlim _semaphore = new(1, 1);
 
     public QuoteSingletonDbContext(
         DbContextOptions<QuoteSingletonDbContext> options,
@@ -18,17 +19,42 @@ public sealed class QuoteSingletonDbContext : DbContext
     }
 
     /// <summary>
+    /// Thread-safe method to execute delete operations
+    /// </summary>
+    public async Task<int> ExecuteDeleteAsync<TEntity>(
+        IQueryable<TEntity> query,
+        CancellationToken cancellationToken = default)
+        where TEntity : class
+    {
+        await _semaphore.WaitAsync(cancellationToken);
+        try
+        {
+            return await query.ExecuteDeleteAsync(cancellationToken);
+        }
+        finally
+        {
+            _semaphore.Release();
+        }
+    }
+
+    /// <summary>
     /// Saves all of the pending changes in the unit of work.
     /// </summary>
     /// <param name="cancellationToken">The cancellation token.</param>
     /// <returns>The number of entities that have been saved.</returns>
     public override async Task<int> SaveChangesAsync(CancellationToken cancellationToken = default)
     {
-        var utcNow = this.dateTime.UtcNow;
-
-        this.UpdateAuditableEntities(utcNow);
-
-        return await base.SaveChangesAsync(cancellationToken);
+        await _semaphore.WaitAsync(cancellationToken);
+        try
+        {
+            var utcNow = this.dateTime.UtcNow;
+            this.UpdateAuditableEntities(utcNow);
+            return await base.SaveChangesAsync(cancellationToken);
+        }
+        finally
+        {
+            _semaphore.Release();
+        }
     }
 
     /// <inheritdoc />
@@ -54,5 +80,12 @@ public sealed class QuoteSingletonDbContext : DbContext
                 entityEntry.Property(nameof(IAuditableEntity.UpdatedAt)).CurrentValue = utcNow;
             }
         }
+    }
+    
+
+    public override async ValueTask DisposeAsync()
+    {
+        _semaphore?.Dispose();
+        await base.DisposeAsync();
     }
 }

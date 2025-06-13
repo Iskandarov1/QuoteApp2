@@ -8,7 +8,7 @@ namespace Quote.Api.Contracts;
         IWebHostEnvironment env,
         ILogger<UniqueFileStorage> logger) : IUniqueFileStorage
     {
-        private readonly string _root = Path.Combine(env.ContentRootPath, "Forms");   // <-- target dir
+        private readonly string _root = Path.Combine(env.ContentRootPath, "Forms");  
         private const string LogName = "upload.log";
 
         public string Save(IFormFile file, CancellationToken ct = default)
@@ -30,12 +30,12 @@ namespace Quote.Api.Contracts;
             if (!File.Exists(path))
             {
                 action = "save";
-                mem.Position = 0;                      // rewind
+                mem.Position = 0;                     
                  using var fs = File.Create(path, 81920, FileOptions.WriteThrough);
                 mem.CopyTo(fs);
             }
 
-            // ---------- 3. append log ----------
+
             var logLine =
                 $"{DateTime.UtcNow:O}\t{file.FileName}\t{fileName}\t{action}{Environment.NewLine}";
             File.AppendAllText(Path.Combine(_root, LogName), logLine);
@@ -43,6 +43,6 @@ namespace Quote.Api.Contracts;
             logger.LogInformation("Upload {Action}: {Original} -> {Stored}",
                 action, file.FileName, path);
 
-            return path;                               // string? expected by the command :contentReference[oaicite:0]{index=0}
+            return path;                               
         }
     }

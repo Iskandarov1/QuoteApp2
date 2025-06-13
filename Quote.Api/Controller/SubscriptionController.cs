@@ -41,8 +41,10 @@ public class SubscriptionController(IMediator mediator,IUniqueFileStorage storag
             .Bind(cmd => Mediator.Send(cmd, HttpContext.RequestAborted))
             .Match(_ => Ok(new { Message = "Successfully unsubscribed!" }), BadRequest);
 
-    
     [HttpGet("active")]
+    [ProducesResponseType(StatusCodes.Status200OK)]
+    [ProducesResponseType(typeof(ApiErrorResponse), StatusCodes.Status400BadRequest)]
+    [Produces("application/json")]
     public async Task<IActionResult> GetActiveSubscribers([FromQuery] GetActiveSubscribersQuery request) =>
         await Maybe<GetActiveSubscribersQuery>
             .From(request)

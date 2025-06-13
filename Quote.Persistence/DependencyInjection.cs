@@ -18,7 +18,6 @@ public static class DependencyInjection
         string connectionString = configuration.GetConnectionString(ConnectionString.SettingsKey)
         ?? throw new InvalidOperationException("Connection string 'DefaultConnection' not found.");
 
-
         services.AddSingleton(new ConnectionString(connectionString));
 
         services.AddDbContext<QuoteContext>(options =>
@@ -28,12 +27,18 @@ public static class DependencyInjection
             options.EnableDetailedErrors();
         });
         
-        services.AddDbContext<QuoteSingletonDbContext>(options =>
+
+        services.AddSingleton<QuoteSingletonDbContext>(serviceProvider =>
         {
-            options.UseNpgsql(connectionString);
-            options.EnableSensitiveDataLogging();
-            options.EnableDetailedErrors();
-        }, ServiceLifetime.Singleton);
+            var optionsBuilder = new DbContextOptionsBuilder<QuoteSingletonDbContext>();
+            optionsBuilder.UseNpgsql(connectionString);
+            optionsBuilder.EnableSensitiveDataLogging();
+            optionsBuilder.EnableDetailedErrors();
+            
+            var dateTime = new SystemDateTime();
+            
+            return new QuoteSingletonDbContext(optionsBuilder.Options, dateTime);
+        });
 
         services.AddScoped<IDbContext>(serviceProvider => serviceProvider.GetRequiredService<QuoteContext>());
         services.AddScoped<IUnitOfWork>(serviceProvider => serviceProvider.GetRequiredService<QuoteContext>());

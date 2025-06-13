@@ -13,6 +13,7 @@ public static class DependencyInjection
 
         services.AddHostedService<DailyQuoteNotificationWorker>();
         services.AddHostedService<TelegramBotService>();
+        services.AddHostedService<CleanUpOldQuotesService>();
 
 
         return services;
