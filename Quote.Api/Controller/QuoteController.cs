@@ -35,9 +35,9 @@ public class QuoteController(IMediator mediator):ApiController(mediator)
     [ProducesResponseType(typeof(QuoteResponse), StatusCodes.Status200OK)]
     [ProducesResponseType(StatusCodes.Status404NotFound)]
     [Produces("application/json")]
-    public async Task<IActionResult> GetById(Guid QuoteId) =>
+    public async Task<IActionResult> GetById(Guid Id) =>
         await Maybe<GetQuoteByIdQuery>
-            .From(new GetQuoteByIdQuery(QuoteId))
+            .From(new GetQuoteByIdQuery(Id))
             .Bind(query => Mediator.Send(query, HttpContext.RequestAborted))
             .Match(Ok, NotFound);
 
@@ -58,10 +58,10 @@ public class QuoteController(IMediator mediator):ApiController(mediator)
     [ProducesResponseType(StatusCodes.Status200OK)]
     [ProducesResponseType(typeof(ApiErrorResponse), StatusCodes.Status400BadRequest)]
     [Produces("application/json")]
-    public async Task<IActionResult> Update(Guid quoteId, UpdateQuoteRequest request) =>
+    public async Task<IActionResult> Update(Guid Id, UpdateQuoteRequest request) =>
         await Result.Create(request, DomainErrors.General.UnProcessableRequest)
             .Map(request => new UpdateQuoteCommand(
-                quoteId,
+                Id,
                 request.Author,
                 request.Text,
                 request.CategoryId))
@@ -72,8 +72,8 @@ public class QuoteController(IMediator mediator):ApiController(mediator)
     [ProducesResponseType(StatusCodes.Status200OK)]
     [ProducesResponseType(typeof(ApiErrorResponse), StatusCodes.Status400BadRequest)]
     [Produces("application/json")]
-    public async Task<IActionResult> Delete(Guid quoteId) =>
-        await Result.Success(new DeleteQuoteCommand(quoteId))
+    public async Task<IActionResult> Delete(Guid Id) =>
+        await Result.Success(new DeleteQuoteCommand(Id))
             .Bind(command => Mediator.Send(command, HttpContext.RequestAborted))
             .Match(Ok, BadRequest);
     

@@ -9,17 +9,16 @@ namespace Quote.Application.Category.Commands.DeleteCategory;
 
 public class DeleteCategoryCommandHandler(
     ICategoryRepository categoryRepository,
-    IUnitOfWork unitOfWork,
-    ISharedViewLocalizer sharedViewLocalizer):ICommandHandler<DeleteCategoryCommand,Result>
+    IUnitOfWork unitOfWork):ICommandHandler<DeleteCategoryCommand,Result>
 {
     public async Task<Result> Handle(DeleteCategoryCommand request, CancellationToken cancellationToken)
     {
-        var maybeCategory = await categoryRepository.GetByIdAsync(request.CategoryId, cancellationToken);
+        var maybeCategory = await categoryRepository.GetByIdAsync(request.Id, cancellationToken);
         if (maybeCategory.HasNoValue)
             return Result.Failure(DomainErrors.Category.NotFound);
         
-        categoryRepository.Remove(maybeCategory);
-        unitOfWork.SaveChangesAsync(cancellationToken);
+        categoryRepository.Remove(maybeCategory.Value);
+        await unitOfWork.SaveChangesAsync(cancellationToken);
 
         return Result.Success();
     }

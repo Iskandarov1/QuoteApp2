@@ -76,7 +76,7 @@ public class CreateSubscriptionCommandHandler(
             return Result.Success(emailSubscriber.Id);
         }
         
-        // Handle Telegram subscription
+
         if (request.TelegramUser.HasValue)
         {
             var existingTelegramSubscriber = await subscriberRepository.GetByTelegramChatIdAsync(request.TelegramUser.Value, cancellationToken);

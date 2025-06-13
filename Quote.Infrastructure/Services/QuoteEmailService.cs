@@ -4,7 +4,9 @@ using Quote.Domain.Core.Abstractions;
 
 namespace Quote.Infrastructure.Services;
 
-public class QuoteEmailService(IEmailService emailSerive, ILogger<QuoteEmailService> logger)
+public class QuoteEmailService(
+    IEmailService emailSerive, 
+    ILogger<QuoteEmailService> logger)
     : IQuoteEmailService
 {
 

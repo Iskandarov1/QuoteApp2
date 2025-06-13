@@ -16,14 +16,17 @@ public class UpdateCategoryCommandHandler(
 {
     public async Task<Result<Guid>> Handle(UpdateCategoryCommand request, CancellationToken cancellationToken)
     {
-        var maybeCategory = await categoryRepository.GetByIdAsync(request.CategoryId, cancellationToken);
+        var maybeCategory = await categoryRepository.GetByIdAsync(request.Id);
 
-        if (maybeCategory.HasValue)
+        if (!maybeCategory.HasValue)
             return Result.Failure<Guid>(DomainErrors.Category.NotFound);
 
         var category = Domain.ValueObjects.Category.Create(request.Name,
             CaseConverter.PascalToSnakeCase(nameof(UpdateCategoryRequest.Name)), sharedViewLocalizer);
-        
+        if (category.IsFailure)
+            return Result.Failure<Guid>(category.Error);
+
+
         categoryRepository.Update(
             maybeCategory.Value.Update(
                 category.Value));

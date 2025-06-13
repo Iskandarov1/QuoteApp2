@@ -30,13 +30,13 @@ public class CategoryController(IMediator mediator) : ApiController(mediator)
             .Bind(query => Mediator.Send(query, HttpContext.RequestAborted))
             .Match(Ok, NotFound);
     
-    [HttpGet("{categoryId:guid}")]
+    [HttpGet("category/{id:Guid}")]
     [ProducesResponseType(typeof(CategoryResponse), StatusCodes.Status200OK)]
     [ProducesResponseType(StatusCodes.Status404NotFound)]
     [Produces("application/json")]
-    public async Task<IActionResult> GetById(Guid categoryId) =>
+    public async Task<IActionResult> GetById(Guid Id) =>
         await Maybe<GetCategoryByIdQuery>
-            .From(new GetCategoryByIdQuery(categoryId))
+            .From(new GetCategoryByIdQuery(Id))
             .Bind(query => Mediator.Send(query, HttpContext.RequestAborted))
             .Match(Ok, NotFound);
     
@@ -50,24 +50,23 @@ public class CategoryController(IMediator mediator) : ApiController(mediator)
             .Bind(command => Mediator.Send(command, HttpContext.RequestAborted))
             .Match(Ok, BadRequest);
     
-    [HttpPut("{categoryId:guid}")]
+    [HttpPut()]
     [ProducesResponseType(StatusCodes.Status200OK)]
     [ProducesResponseType(typeof(ApiErrorResponse), StatusCodes.Status400BadRequest)]
     [Produces("application/json")]
-    public async Task<IActionResult> Update(Guid categoryId, UpdateCategoryRequest request) =>
+    public async Task<IActionResult> Update(UpdateCategoryRequest request) =>
         await Result.Create(request, DomainErrors.General.UnProcessableRequest)
             .Map(request => new UpdateCategoryCommand(
-                categoryId,
-                request.Name))
+                request.Id, request.Name))
             .Bind(command => Mediator.Send(command, HttpContext.RequestAborted))
             .Match(Ok, BadRequest);
     
-    [HttpDelete("{categoryId:guid}")]
+    [HttpDelete("category/{id:Guid}")]
     [ProducesResponseType(StatusCodes.Status200OK)]
     [ProducesResponseType(typeof(ApiErrorResponse), StatusCodes.Status400BadRequest)]
     [Produces("application/json")]
-    public async Task<IActionResult> Delete(Guid categoryId) =>
-        await Result.Success(new DeleteCategoryCommand(categoryId))
+    public async Task<IActionResult> Delete(Guid id) =>
+        await Result.Success(new DeleteCategoryCommand(id))
             .Bind(command => Mediator.Send(command, HttpContext.RequestAborted))
             .Match(Ok, BadRequest);
     

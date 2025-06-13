@@ -3,14 +3,10 @@ using System.Text.Json.Serialization;
 
 namespace Quote.Contracts.Requests.CategoriesRequest;
 
-public record UpdateCategoryRequest
-{
-    [property:JsonPropertyName("category_id")]
-    [Required]
-    public Guid CategoryId { get; init; }
+public record UpdateCategoryRequest(
+    [property: JsonPropertyName("id")]
+    Guid Id,
     
-    [property:JsonPropertyName("name")]
-    [Required, MaxLength(100)]
-    public string Name { get; init; }
-    
-}
+    [property: JsonPropertyName("name")]
+    string Name
+);

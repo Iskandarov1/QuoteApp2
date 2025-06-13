@@ -6,7 +6,9 @@ using Quote.Domain.Repositories;
 
 namespace Quote.Application.Quote.Commands.DeleteQuote;
 
-public class DeleteQuoteCommandHandler(IQuoteRepository quoteRepository,IUnitOfWork unitOfWork):ICommandHandler<DeleteQuoteCommand,Result>
+public class DeleteQuoteCommandHandler(
+    IQuoteRepository quoteRepository,
+    IUnitOfWork unitOfWork):ICommandHandler<DeleteQuoteCommand,Result>
 {
     public async Task<Result> Handle(DeleteQuoteCommand request, CancellationToken cancellationToken)
     {
