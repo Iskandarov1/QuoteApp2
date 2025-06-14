@@ -1,0 +1,1691 @@
+2025-06-14 10:41:07.863 +05:00 [INF] 🔄 Quote notification cycle starting at "2025-06-14T05:41:07.8608760+00:00"
+2025-06-14 10:41:07.901 +05:00 [INF] Sending quotes to all subscribers for demo at "2025-06-14T05:41:07.9009740+00:00"
+2025-06-14 10:41:08.198 +05:00 [ERR] Failed to send quote notifications
+System.InvalidOperationException: The 'NotificationPreference' property 'Subscriber.PreferredNotificationMethod' could not be mapped because the database provider does not support this type. Consider converting the property value to a type supported by the database using a value converter. See https://aka.ms/efcore-docs-value-converters for more information. Alternately, exclude the property from the model using the '[NotMapped]' attribute or by using 'EntityTypeBuilder.Ignore' in 'OnModelCreating'.
+   at Microsoft.EntityFrameworkCore.Infrastructure.ModelValidator.ThrowPropertyNotMappedException(String propertyType, IConventionTypeBase typeBase, IConventionProperty unmappedProperty)
+   at Microsoft.EntityFrameworkCore.Infrastructure.RelationalModelValidator.ThrowPropertyNotMappedException(String propertyType, IConventionTypeBase typeBase, IConventionProperty unmappedProperty)
+   at Microsoft.EntityFrameworkCore.Infrastructure.ModelValidator.<ValidatePropertyMapping>g__Validate|7_0(IConventionTypeBase typeBase, <>c__DisplayClass7_0&)
+   at Microsoft.EntityFrameworkCore.Infrastructure.ModelValidator.ValidatePropertyMapping(IModel model, IDiagnosticsLogger`1 logger)
+   at Microsoft.EntityFrameworkCore.Infrastructure.ModelValidator.Validate(IModel model, IDiagnosticsLogger`1 logger)
+   at Microsoft.EntityFrameworkCore.Infrastructure.RelationalModelValidator.Validate(IModel model, IDiagnosticsLogger`1 logger)
+   at Npgsql.EntityFrameworkCore.PostgreSQL.Infrastructure.Internal.NpgsqlModelValidator.Validate(IModel model, IDiagnosticsLogger`1 logger)
+   at Microsoft.EntityFrameworkCore.Infrastructure.ModelRuntimeInitializer.Initialize(IModel model, Boolean designTime, IDiagnosticsLogger`1 validationLogger)
+   at Microsoft.EntityFrameworkCore.Infrastructure.ModelSource.CreateModel(DbContext context, ModelCreationDependencies modelCreationDependencies, Boolean designTime)
+   at Microsoft.EntityFrameworkCore.Infrastructure.ModelSource.GetModel(DbContext context, ModelCreationDependencies modelCreationDependencies, Boolean designTime)
+   at Microsoft.EntityFrameworkCore.Internal.DbContextServices.CreateModel(Boolean designTime)
+   at Microsoft.EntityFrameworkCore.Internal.DbContextServices.get_Model()
+   at Microsoft.EntityFrameworkCore.Infrastructure.EntityFrameworkServicesBuilder.<>c.<TryAddCoreServices>b__8_4(IServiceProvider p)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteRuntimeResolver.VisitFactory(FactoryCallSite factoryCallSite, RuntimeResolverContext context)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteVisitor`2.VisitCallSiteMain(ServiceCallSite callSite, TArgument argument)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteRuntimeResolver.VisitCache(ServiceCallSite callSite, RuntimeResolverContext context, ServiceProviderEngineScope serviceProviderEngine, RuntimeResolverLock lockType)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteRuntimeResolver.VisitScopeCache(ServiceCallSite callSite, RuntimeResolverContext context)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteVisitor`2.VisitCallSite(ServiceCallSite callSite, TArgument argument)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteRuntimeResolver.VisitConstructor(ConstructorCallSite constructorCallSite, RuntimeResolverContext context)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteVisitor`2.VisitCallSiteMain(ServiceCallSite callSite, TArgument argument)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteRuntimeResolver.VisitCache(ServiceCallSite callSite, RuntimeResolverContext context, ServiceProviderEngineScope serviceProviderEngine, RuntimeResolverLock lockType)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteRuntimeResolver.VisitScopeCache(ServiceCallSite callSite, RuntimeResolverContext context)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteVisitor`2.VisitCallSite(ServiceCallSite callSite, TArgument argument)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteRuntimeResolver.VisitConstructor(ConstructorCallSite constructorCallSite, RuntimeResolverContext context)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteVisitor`2.VisitCallSiteMain(ServiceCallSite callSite, TArgument argument)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteRuntimeResolver.VisitCache(ServiceCallSite callSite, RuntimeResolverContext context, ServiceProviderEngineScope serviceProviderEngine, RuntimeResolverLock lockType)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteRuntimeResolver.VisitScopeCache(ServiceCallSite callSite, RuntimeResolverContext context)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteVisitor`2.VisitCallSite(ServiceCallSite callSite, TArgument argument)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteRuntimeResolver.VisitConstructor(ConstructorCallSite constructorCallSite, RuntimeResolverContext context)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteVisitor`2.VisitCallSiteMain(ServiceCallSite callSite, TArgument argument)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteRuntimeResolver.VisitCache(ServiceCallSite callSite, RuntimeResolverContext context, ServiceProviderEngineScope serviceProviderEngine, RuntimeResolverLock lockType)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteRuntimeResolver.VisitScopeCache(ServiceCallSite callSite, RuntimeResolverContext context)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteVisitor`2.VisitCallSite(ServiceCallSite callSite, TArgument argument)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteRuntimeResolver.VisitConstructor(ConstructorCallSite constructorCallSite, RuntimeResolverContext context)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteVisitor`2.VisitCallSiteMain(ServiceCallSite callSite, TArgument argument)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteRuntimeResolver.VisitCache(ServiceCallSite callSite, RuntimeResolverContext context, ServiceProviderEngineScope serviceProviderEngine, RuntimeResolverLock lockType)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteRuntimeResolver.VisitScopeCache(ServiceCallSite callSite, RuntimeResolverContext context)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteVisitor`2.VisitCallSite(ServiceCallSite callSite, TArgument argument)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteRuntimeResolver.VisitConstructor(ConstructorCallSite constructorCallSite, RuntimeResolverContext context)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteVisitor`2.VisitCallSiteMain(ServiceCallSite callSite, TArgument argument)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteRuntimeResolver.VisitCache(ServiceCallSite callSite, RuntimeResolverContext context, ServiceProviderEngineScope serviceProviderEngine, RuntimeResolverLock lockType)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteRuntimeResolver.VisitScopeCache(ServiceCallSite callSite, RuntimeResolverContext context)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteVisitor`2.VisitCallSite(ServiceCallSite callSite, TArgument argument)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteRuntimeResolver.Resolve(ServiceCallSite callSite, ServiceProviderEngineScope scope)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.DynamicServiceProviderEngine.<>c__DisplayClass2_0.<RealizeService>b__0(ServiceProviderEngineScope scope)
+   at Microsoft.Extensions.DependencyInjection.ServiceProvider.GetService(ServiceIdentifier serviceIdentifier, ServiceProviderEngineScope serviceProviderEngineScope)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.ServiceProviderEngineScope.GetService(Type serviceType)
+   at Microsoft.Extensions.DependencyInjection.ServiceProviderServiceExtensions.GetRequiredService(IServiceProvider provider, Type serviceType)
+   at Microsoft.Extensions.DependencyInjection.ServiceProviderServiceExtensions.GetRequiredService[T](IServiceProvider provider)
+   at Microsoft.EntityFrameworkCore.DbContext.get_DbContextDependencies()
+   at Microsoft.EntityFrameworkCore.DbContext.get_ContextServices()
+   at Microsoft.EntityFrameworkCore.DbContext.get_InternalServiceProvider()
+   at Microsoft.EntityFrameworkCore.DbContext.get_DbContextDependencies()
+   at Microsoft.EntityFrameworkCore.DbContext.Set[TEntity]()
+   at Quote.Services.BackgroundTasks.Services.DailyQuoteNotificationWorker.SendDailyQuotesToSubscribers(CancellationToken cancellationToken) in /Users/iskandarovs/RiderProjects/YY/QuoteApp/Quote.Services.BackgroundTasks/Services/DailyQuoteNotificationWorker.cs:line 55
+2025-06-14 10:41:08.206 +05:00 [ERR] Error occurred during quote notification
+System.InvalidOperationException: The 'NotificationPreference' property 'Subscriber.PreferredNotificationMethod' could not be mapped because the database provider does not support this type. Consider converting the property value to a type supported by the database using a value converter. See https://aka.ms/efcore-docs-value-converters for more information. Alternately, exclude the property from the model using the '[NotMapped]' attribute or by using 'EntityTypeBuilder.Ignore' in 'OnModelCreating'.
+   at Microsoft.EntityFrameworkCore.Infrastructure.ModelValidator.ThrowPropertyNotMappedException(String propertyType, IConventionTypeBase typeBase, IConventionProperty unmappedProperty)
+   at Microsoft.EntityFrameworkCore.Infrastructure.RelationalModelValidator.ThrowPropertyNotMappedException(String propertyType, IConventionTypeBase typeBase, IConventionProperty unmappedProperty)
+   at Microsoft.EntityFrameworkCore.Infrastructure.ModelValidator.<ValidatePropertyMapping>g__Validate|7_0(IConventionTypeBase typeBase, <>c__DisplayClass7_0&)
+   at Microsoft.EntityFrameworkCore.Infrastructure.ModelValidator.ValidatePropertyMapping(IModel model, IDiagnosticsLogger`1 logger)
+   at Microsoft.EntityFrameworkCore.Infrastructure.ModelValidator.Validate(IModel model, IDiagnosticsLogger`1 logger)
+   at Microsoft.EntityFrameworkCore.Infrastructure.RelationalModelValidator.Validate(IModel model, IDiagnosticsLogger`1 logger)
+   at Npgsql.EntityFrameworkCore.PostgreSQL.Infrastructure.Internal.NpgsqlModelValidator.Validate(IModel model, IDiagnosticsLogger`1 logger)
+   at Microsoft.EntityFrameworkCore.Infrastructure.ModelRuntimeInitializer.Initialize(IModel model, Boolean designTime, IDiagnosticsLogger`1 validationLogger)
+   at Microsoft.EntityFrameworkCore.Infrastructure.ModelSource.CreateModel(DbContext context, ModelCreationDependencies modelCreationDependencies, Boolean designTime)
+   at Microsoft.EntityFrameworkCore.Infrastructure.ModelSource.GetModel(DbContext context, ModelCreationDependencies modelCreationDependencies, Boolean designTime)
+   at Microsoft.EntityFrameworkCore.Internal.DbContextServices.CreateModel(Boolean designTime)
+   at Microsoft.EntityFrameworkCore.Internal.DbContextServices.get_Model()
+   at Microsoft.EntityFrameworkCore.Infrastructure.EntityFrameworkServicesBuilder.<>c.<TryAddCoreServices>b__8_4(IServiceProvider p)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteRuntimeResolver.VisitFactory(FactoryCallSite factoryCallSite, RuntimeResolverContext context)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteVisitor`2.VisitCallSiteMain(ServiceCallSite callSite, TArgument argument)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteRuntimeResolver.VisitCache(ServiceCallSite callSite, RuntimeResolverContext context, ServiceProviderEngineScope serviceProviderEngine, RuntimeResolverLock lockType)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteRuntimeResolver.VisitScopeCache(ServiceCallSite callSite, RuntimeResolverContext context)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteVisitor`2.VisitCallSite(ServiceCallSite callSite, TArgument argument)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteRuntimeResolver.VisitConstructor(ConstructorCallSite constructorCallSite, RuntimeResolverContext context)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteVisitor`2.VisitCallSiteMain(ServiceCallSite callSite, TArgument argument)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteRuntimeResolver.VisitCache(ServiceCallSite callSite, RuntimeResolverContext context, ServiceProviderEngineScope serviceProviderEngine, RuntimeResolverLock lockType)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteRuntimeResolver.VisitScopeCache(ServiceCallSite callSite, RuntimeResolverContext context)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteVisitor`2.VisitCallSite(ServiceCallSite callSite, TArgument argument)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteRuntimeResolver.VisitConstructor(ConstructorCallSite constructorCallSite, RuntimeResolverContext context)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteVisitor`2.VisitCallSiteMain(ServiceCallSite callSite, TArgument argument)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteRuntimeResolver.VisitCache(ServiceCallSite callSite, RuntimeResolverContext context, ServiceProviderEngineScope serviceProviderEngine, RuntimeResolverLock lockType)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteRuntimeResolver.VisitScopeCache(ServiceCallSite callSite, RuntimeResolverContext context)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteVisitor`2.VisitCallSite(ServiceCallSite callSite, TArgument argument)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteRuntimeResolver.VisitConstructor(ConstructorCallSite constructorCallSite, RuntimeResolverContext context)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteVisitor`2.VisitCallSiteMain(ServiceCallSite callSite, TArgument argument)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteRuntimeResolver.VisitCache(ServiceCallSite callSite, RuntimeResolverContext context, ServiceProviderEngineScope serviceProviderEngine, RuntimeResolverLock lockType)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteRuntimeResolver.VisitScopeCache(ServiceCallSite callSite, RuntimeResolverContext context)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteVisitor`2.VisitCallSite(ServiceCallSite callSite, TArgument argument)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteRuntimeResolver.VisitConstructor(ConstructorCallSite constructorCallSite, RuntimeResolverContext context)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteVisitor`2.VisitCallSiteMain(ServiceCallSite callSite, TArgument argument)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteRuntimeResolver.VisitCache(ServiceCallSite callSite, RuntimeResolverContext context, ServiceProviderEngineScope serviceProviderEngine, RuntimeResolverLock lockType)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteRuntimeResolver.VisitScopeCache(ServiceCallSite callSite, RuntimeResolverContext context)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteVisitor`2.VisitCallSite(ServiceCallSite callSite, TArgument argument)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteRuntimeResolver.VisitConstructor(ConstructorCallSite constructorCallSite, RuntimeResolverContext context)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteVisitor`2.VisitCallSiteMain(ServiceCallSite callSite, TArgument argument)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteRuntimeResolver.VisitCache(ServiceCallSite callSite, RuntimeResolverContext context, ServiceProviderEngineScope serviceProviderEngine, RuntimeResolverLock lockType)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteRuntimeResolver.VisitScopeCache(ServiceCallSite callSite, RuntimeResolverContext context)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteVisitor`2.VisitCallSite(ServiceCallSite callSite, TArgument argument)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteRuntimeResolver.Resolve(ServiceCallSite callSite, ServiceProviderEngineScope scope)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.DynamicServiceProviderEngine.<>c__DisplayClass2_0.<RealizeService>b__0(ServiceProviderEngineScope scope)
+   at Microsoft.Extensions.DependencyInjection.ServiceProvider.GetService(ServiceIdentifier serviceIdentifier, ServiceProviderEngineScope serviceProviderEngineScope)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.ServiceProviderEngineScope.GetService(Type serviceType)
+   at Microsoft.Extensions.DependencyInjection.ServiceProviderServiceExtensions.GetRequiredService(IServiceProvider provider, Type serviceType)
+   at Microsoft.Extensions.DependencyInjection.ServiceProviderServiceExtensions.GetRequiredService[T](IServiceProvider provider)
+   at Microsoft.EntityFrameworkCore.DbContext.get_DbContextDependencies()
+   at Microsoft.EntityFrameworkCore.DbContext.get_ContextServices()
+   at Microsoft.EntityFrameworkCore.DbContext.get_InternalServiceProvider()
+   at Microsoft.EntityFrameworkCore.DbContext.get_DbContextDependencies()
+   at Microsoft.EntityFrameworkCore.DbContext.Set[TEntity]()
+   at Quote.Services.BackgroundTasks.Services.DailyQuoteNotificationWorker.SendDailyQuotesToSubscribers(CancellationToken cancellationToken) in /Users/iskandarovs/RiderProjects/YY/QuoteApp/Quote.Services.BackgroundTasks/Services/DailyQuoteNotificationWorker.cs:line 55
+   at Quote.Services.BackgroundTasks.Services.DailyQuoteNotificationWorker.ExecuteAsync(CancellationToken stoppingToken) in /Users/iskandarovs/RiderProjects/YY/QuoteApp/Quote.Services.BackgroundTasks/Services/DailyQuoteNotificationWorker.cs:line 33
+2025-06-14 10:41:08.237 +05:00 [INF] Starting quote cleanup at "2025-06-14T05:41:08.2371290+00:00"
+2025-06-14 10:41:08.247 +05:00 [ERR] Failed to cleanup old quotes
+System.InvalidOperationException: The 'NotificationPreference' property 'Subscriber.PreferredNotificationMethod' could not be mapped because the database provider does not support this type. Consider converting the property value to a type supported by the database using a value converter. See https://aka.ms/efcore-docs-value-converters for more information. Alternately, exclude the property from the model using the '[NotMapped]' attribute or by using 'EntityTypeBuilder.Ignore' in 'OnModelCreating'.
+   at Microsoft.EntityFrameworkCore.Infrastructure.ModelValidator.ThrowPropertyNotMappedException(String propertyType, IConventionTypeBase typeBase, IConventionProperty unmappedProperty)
+   at Microsoft.EntityFrameworkCore.Infrastructure.RelationalModelValidator.ThrowPropertyNotMappedException(String propertyType, IConventionTypeBase typeBase, IConventionProperty unmappedProperty)
+   at Microsoft.EntityFrameworkCore.Infrastructure.ModelValidator.<ValidatePropertyMapping>g__Validate|7_0(IConventionTypeBase typeBase, <>c__DisplayClass7_0&)
+   at Microsoft.EntityFrameworkCore.Infrastructure.ModelValidator.ValidatePropertyMapping(IModel model, IDiagnosticsLogger`1 logger)
+   at Microsoft.EntityFrameworkCore.Infrastructure.ModelValidator.Validate(IModel model, IDiagnosticsLogger`1 logger)
+   at Microsoft.EntityFrameworkCore.Infrastructure.RelationalModelValidator.Validate(IModel model, IDiagnosticsLogger`1 logger)
+   at Npgsql.EntityFrameworkCore.PostgreSQL.Infrastructure.Internal.NpgsqlModelValidator.Validate(IModel model, IDiagnosticsLogger`1 logger)
+   at Microsoft.EntityFrameworkCore.Infrastructure.ModelRuntimeInitializer.Initialize(IModel model, Boolean designTime, IDiagnosticsLogger`1 validationLogger)
+   at Microsoft.EntityFrameworkCore.Infrastructure.ModelSource.CreateModel(DbContext context, ModelCreationDependencies modelCreationDependencies, Boolean designTime)
+   at Microsoft.EntityFrameworkCore.Infrastructure.ModelSource.GetModel(DbContext context, ModelCreationDependencies modelCreationDependencies, Boolean designTime)
+   at Microsoft.EntityFrameworkCore.Internal.DbContextServices.CreateModel(Boolean designTime)
+   at Microsoft.EntityFrameworkCore.Internal.DbContextServices.get_Model()
+   at Microsoft.EntityFrameworkCore.Infrastructure.EntityFrameworkServicesBuilder.<>c.<TryAddCoreServices>b__8_4(IServiceProvider p)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteRuntimeResolver.VisitFactory(FactoryCallSite factoryCallSite, RuntimeResolverContext context)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteVisitor`2.VisitCallSiteMain(ServiceCallSite callSite, TArgument argument)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteRuntimeResolver.VisitCache(ServiceCallSite callSite, RuntimeResolverContext context, ServiceProviderEngineScope serviceProviderEngine, RuntimeResolverLock lockType)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteRuntimeResolver.VisitScopeCache(ServiceCallSite callSite, RuntimeResolverContext context)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteVisitor`2.VisitCallSite(ServiceCallSite callSite, TArgument argument)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteRuntimeResolver.VisitConstructor(ConstructorCallSite constructorCallSite, RuntimeResolverContext context)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteVisitor`2.VisitCallSiteMain(ServiceCallSite callSite, TArgument argument)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteRuntimeResolver.VisitCache(ServiceCallSite callSite, RuntimeResolverContext context, ServiceProviderEngineScope serviceProviderEngine, RuntimeResolverLock lockType)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteRuntimeResolver.VisitScopeCache(ServiceCallSite callSite, RuntimeResolverContext context)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteVisitor`2.VisitCallSite(ServiceCallSite callSite, TArgument argument)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteRuntimeResolver.VisitConstructor(ConstructorCallSite constructorCallSite, RuntimeResolverContext context)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteVisitor`2.VisitCallSiteMain(ServiceCallSite callSite, TArgument argument)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteRuntimeResolver.VisitCache(ServiceCallSite callSite, RuntimeResolverContext context, ServiceProviderEngineScope serviceProviderEngine, RuntimeResolverLock lockType)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteRuntimeResolver.VisitScopeCache(ServiceCallSite callSite, RuntimeResolverContext context)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteVisitor`2.VisitCallSite(ServiceCallSite callSite, TArgument argument)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteRuntimeResolver.VisitConstructor(ConstructorCallSite constructorCallSite, RuntimeResolverContext context)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteVisitor`2.VisitCallSiteMain(ServiceCallSite callSite, TArgument argument)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteRuntimeResolver.VisitCache(ServiceCallSite callSite, RuntimeResolverContext context, ServiceProviderEngineScope serviceProviderEngine, RuntimeResolverLock lockType)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteRuntimeResolver.VisitScopeCache(ServiceCallSite callSite, RuntimeResolverContext context)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteVisitor`2.VisitCallSite(ServiceCallSite callSite, TArgument argument)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteRuntimeResolver.VisitConstructor(ConstructorCallSite constructorCallSite, RuntimeResolverContext context)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteVisitor`2.VisitCallSiteMain(ServiceCallSite callSite, TArgument argument)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteRuntimeResolver.VisitCache(ServiceCallSite callSite, RuntimeResolverContext context, ServiceProviderEngineScope serviceProviderEngine, RuntimeResolverLock lockType)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteRuntimeResolver.VisitScopeCache(ServiceCallSite callSite, RuntimeResolverContext context)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteVisitor`2.VisitCallSite(ServiceCallSite callSite, TArgument argument)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteRuntimeResolver.VisitConstructor(ConstructorCallSite constructorCallSite, RuntimeResolverContext context)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteVisitor`2.VisitCallSiteMain(ServiceCallSite callSite, TArgument argument)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteRuntimeResolver.VisitCache(ServiceCallSite callSite, RuntimeResolverContext context, ServiceProviderEngineScope serviceProviderEngine, RuntimeResolverLock lockType)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteRuntimeResolver.VisitScopeCache(ServiceCallSite callSite, RuntimeResolverContext context)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteVisitor`2.VisitCallSite(ServiceCallSite callSite, TArgument argument)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteRuntimeResolver.Resolve(ServiceCallSite callSite, ServiceProviderEngineScope scope)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.DynamicServiceProviderEngine.<>c__DisplayClass2_0.<RealizeService>b__0(ServiceProviderEngineScope scope)
+   at Microsoft.Extensions.DependencyInjection.ServiceProvider.GetService(ServiceIdentifier serviceIdentifier, ServiceProviderEngineScope serviceProviderEngineScope)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.ServiceProviderEngineScope.GetService(Type serviceType)
+   at Microsoft.Extensions.DependencyInjection.ServiceProviderServiceExtensions.GetRequiredService(IServiceProvider provider, Type serviceType)
+   at Microsoft.Extensions.DependencyInjection.ServiceProviderServiceExtensions.GetRequiredService[T](IServiceProvider provider)
+   at Microsoft.EntityFrameworkCore.DbContext.get_DbContextDependencies()
+   at Microsoft.EntityFrameworkCore.DbContext.Set[TEntity]()
+   at Quote.Services.BackgroundTasks.Services.CleanUpOldQuotesService.CleanUpQuotes(CancellationToken stoppingToken) in /Users/iskandarovs/RiderProjects/YY/QuoteApp/Quote.Services.BackgroundTasks/Services/CleanUpOldQuotesService.cs:line 40
+2025-06-14 10:41:08.277 +05:00 [INF] Now listening on: http://localhost:5050
+2025-06-14 10:41:08.277 +05:00 [INF] Application started. Press Ctrl+C to shut down.
+2025-06-14 10:41:08.277 +05:00 [INF] Hosting environment: Development
+2025-06-14 10:41:08.277 +05:00 [INF] Content root path: /Users/iskandarovs/RiderProjects/YY/QuoteApp/Quote.Api
+2025-06-14 10:41:08.551 +05:00 [INF] Request starting HTTP/1.1 GET http://localhost:5050/swagger/index.html - null null
+2025-06-14 10:41:08.650 +05:00 [INF] Request finished HTTP/1.1 GET http://localhost:5050/swagger/index.html - 200 null text/html;charset=utf-8 104.1535ms
+2025-06-14 10:41:08.699 +05:00 [INF] Request starting HTTP/1.1 GET http://localhost:5050/swagger/v1/swagger.json - null null
+2025-06-14 10:41:08.768 +05:00 [INF] Request finished HTTP/1.1 GET http://localhost:5050/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 69.5834ms
+2025-06-14 10:41:08.931 +05:00 [INF] Telegram bot QuoteSenderWBot started
+2025-06-14 10:41:15.120 +05:00 [INF] Request starting HTTP/1.1 GET http://localhost:5050/api/category?Page=0&PageSize=10 - null null
+2025-06-14 10:41:15.129 +05:00 [WRN] Failed to determine the https port for redirect.
+2025-06-14 10:41:15.133 +05:00 [INF] Executing endpoint 'Quote.Api.Controller.CategoryController.GetAll (Quote.Api)'
+2025-06-14 10:41:15.165 +05:00 [INF] Route matched with {action = "GetAll", controller = "Category"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetAll(Quote.Application.Category.Queries.GetCategories.GetCategoriesQuery) on controller Quote.Api.Controller.CategoryController (Quote.Api).
+2025-06-14 10:41:15.187 +05:00 [INF] Executing action method Quote.Api.Controller.CategoryController.GetAll (Quote.Api) - Validation state: "Valid"
+2025-06-14 10:41:15.228 +05:00 [INF] Executed action Quote.Api.Controller.CategoryController.GetAll (Quote.Api) in 60.3545ms
+2025-06-14 10:41:15.228 +05:00 [INF] Executed endpoint 'Quote.Api.Controller.CategoryController.GetAll (Quote.Api)'
+2025-06-14 10:41:15.228 +05:00 [ERR] An unhandled exception has occurred while executing the request.
+System.InvalidOperationException: The 'NotificationPreference' property 'Subscriber.PreferredNotificationMethod' could not be mapped because the database provider does not support this type. Consider converting the property value to a type supported by the database using a value converter. See https://aka.ms/efcore-docs-value-converters for more information. Alternately, exclude the property from the model using the '[NotMapped]' attribute or by using 'EntityTypeBuilder.Ignore' in 'OnModelCreating'.
+   at Microsoft.EntityFrameworkCore.Infrastructure.ModelValidator.ThrowPropertyNotMappedException(String propertyType, IConventionTypeBase typeBase, IConventionProperty unmappedProperty)
+   at Microsoft.EntityFrameworkCore.Infrastructure.RelationalModelValidator.ThrowPropertyNotMappedException(String propertyType, IConventionTypeBase typeBase, IConventionProperty unmappedProperty)
+   at Microsoft.EntityFrameworkCore.Infrastructure.ModelValidator.<ValidatePropertyMapping>g__Validate|7_0(IConventionTypeBase typeBase, <>c__DisplayClass7_0&)
+   at Microsoft.EntityFrameworkCore.Infrastructure.ModelValidator.ValidatePropertyMapping(IModel model, IDiagnosticsLogger`1 logger)
+   at Microsoft.EntityFrameworkCore.Infrastructure.ModelValidator.Validate(IModel model, IDiagnosticsLogger`1 logger)
+   at Microsoft.EntityFrameworkCore.Infrastructure.RelationalModelValidator.Validate(IModel model, IDiagnosticsLogger`1 logger)
+   at Npgsql.EntityFrameworkCore.PostgreSQL.Infrastructure.Internal.NpgsqlModelValidator.Validate(IModel model, IDiagnosticsLogger`1 logger)
+   at Microsoft.EntityFrameworkCore.Infrastructure.ModelRuntimeInitializer.Initialize(IModel model, Boolean designTime, IDiagnosticsLogger`1 validationLogger)
+   at Microsoft.EntityFrameworkCore.Infrastructure.ModelSource.CreateModel(DbContext context, ModelCreationDependencies modelCreationDependencies, Boolean designTime)
+   at Microsoft.EntityFrameworkCore.Infrastructure.ModelSource.GetModel(DbContext context, ModelCreationDependencies modelCreationDependencies, Boolean designTime)
+   at Microsoft.EntityFrameworkCore.Internal.DbContextServices.CreateModel(Boolean designTime)
+   at Microsoft.EntityFrameworkCore.Internal.DbContextServices.get_Model()
+   at Microsoft.EntityFrameworkCore.Infrastructure.EntityFrameworkServicesBuilder.<>c.<TryAddCoreServices>b__8_4(IServiceProvider p)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteRuntimeResolver.VisitFactory(FactoryCallSite factoryCallSite, RuntimeResolverContext context)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteVisitor`2.VisitCallSiteMain(ServiceCallSite callSite, TArgument argument)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteRuntimeResolver.VisitCache(ServiceCallSite callSite, RuntimeResolverContext context, ServiceProviderEngineScope serviceProviderEngine, RuntimeResolverLock lockType)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteRuntimeResolver.VisitScopeCache(ServiceCallSite callSite, RuntimeResolverContext context)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteVisitor`2.VisitCallSite(ServiceCallSite callSite, TArgument argument)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteRuntimeResolver.VisitConstructor(ConstructorCallSite constructorCallSite, RuntimeResolverContext context)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteVisitor`2.VisitCallSiteMain(ServiceCallSite callSite, TArgument argument)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteRuntimeResolver.VisitCache(ServiceCallSite callSite, RuntimeResolverContext context, ServiceProviderEngineScope serviceProviderEngine, RuntimeResolverLock lockType)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteRuntimeResolver.VisitScopeCache(ServiceCallSite callSite, RuntimeResolverContext context)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteVisitor`2.VisitCallSite(ServiceCallSite callSite, TArgument argument)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteRuntimeResolver.VisitConstructor(ConstructorCallSite constructorCallSite, RuntimeResolverContext context)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteVisitor`2.VisitCallSiteMain(ServiceCallSite callSite, TArgument argument)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteRuntimeResolver.VisitCache(ServiceCallSite callSite, RuntimeResolverContext context, ServiceProviderEngineScope serviceProviderEngine, RuntimeResolverLock lockType)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteRuntimeResolver.VisitScopeCache(ServiceCallSite callSite, RuntimeResolverContext context)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteVisitor`2.VisitCallSite(ServiceCallSite callSite, TArgument argument)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteRuntimeResolver.VisitConstructor(ConstructorCallSite constructorCallSite, RuntimeResolverContext context)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteVisitor`2.VisitCallSiteMain(ServiceCallSite callSite, TArgument argument)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteRuntimeResolver.VisitCache(ServiceCallSite callSite, RuntimeResolverContext context, ServiceProviderEngineScope serviceProviderEngine, RuntimeResolverLock lockType)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteRuntimeResolver.VisitScopeCache(ServiceCallSite callSite, RuntimeResolverContext context)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteVisitor`2.VisitCallSite(ServiceCallSite callSite, TArgument argument)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteRuntimeResolver.VisitConstructor(ConstructorCallSite constructorCallSite, RuntimeResolverContext context)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteVisitor`2.VisitCallSiteMain(ServiceCallSite callSite, TArgument argument)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteRuntimeResolver.VisitCache(ServiceCallSite callSite, RuntimeResolverContext context, ServiceProviderEngineScope serviceProviderEngine, RuntimeResolverLock lockType)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteRuntimeResolver.VisitScopeCache(ServiceCallSite callSite, RuntimeResolverContext context)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteVisitor`2.VisitCallSite(ServiceCallSite callSite, TArgument argument)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteRuntimeResolver.VisitConstructor(ConstructorCallSite constructorCallSite, RuntimeResolverContext context)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteVisitor`2.VisitCallSiteMain(ServiceCallSite callSite, TArgument argument)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteRuntimeResolver.VisitCache(ServiceCallSite callSite, RuntimeResolverContext context, ServiceProviderEngineScope serviceProviderEngine, RuntimeResolverLock lockType)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteRuntimeResolver.VisitScopeCache(ServiceCallSite callSite, RuntimeResolverContext context)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteVisitor`2.VisitCallSite(ServiceCallSite callSite, TArgument argument)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteRuntimeResolver.Resolve(ServiceCallSite callSite, ServiceProviderEngineScope scope)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.DynamicServiceProviderEngine.<>c__DisplayClass2_0.<RealizeService>b__0(ServiceProviderEngineScope scope)
+   at Microsoft.Extensions.DependencyInjection.ServiceProvider.GetService(ServiceIdentifier serviceIdentifier, ServiceProviderEngineScope serviceProviderEngineScope)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.ServiceProviderEngineScope.GetService(Type serviceType)
+   at Microsoft.Extensions.DependencyInjection.ServiceProviderServiceExtensions.GetRequiredService(IServiceProvider provider, Type serviceType)
+   at Microsoft.Extensions.DependencyInjection.ServiceProviderServiceExtensions.GetRequiredService[T](IServiceProvider provider)
+   at Microsoft.EntityFrameworkCore.DbContext.get_DbContextDependencies()
+   at Microsoft.EntityFrameworkCore.DbContext.get_ContextServices()
+   at Microsoft.EntityFrameworkCore.DbContext.get_InternalServiceProvider()
+   at Microsoft.EntityFrameworkCore.DbContext.get_DbContextDependencies()
+   at Microsoft.EntityFrameworkCore.DbContext.Set[TEntity]()
+   at Quote.Persistence.QuoteContext.Set[TEntity]() in /Users/iskandarovs/RiderProjects/YY/QuoteApp/Quote.Persistence/QuoteContext.cs:line 27
+   at Quote.Application.Category.Queries.GetCategories.GetCategoriesQueryhandler.Handle(GetCategoriesQuery request, CancellationToken cancellationToken) in /Users/iskandarovs/RiderProjects/YY/QuoteApp/Quote.Application/Category/Queries/GetCategories/GetCategoriesQueryhandler.cs:line 14
+   at Quote.Domain.Core.Primitives.Maybe.MaybeExtensions.Bind[TIn,TOut](Maybe`1 maybe, Func`2 func) in /Users/iskandarovs/RiderProjects/YY/QuoteApp/Quote.Domain/Core/Primitives/Maybe/MaybeExtensions.cs:line 19
+   at Quote.Domain.Core.Primitives.Maybe.MaybeExtensions.Match[TIn,TOut](Task`1 resultTask, Func`2 onSuccess, Func`1 onFailure) in /Users/iskandarovs/RiderProjects/YY/QuoteApp/Quote.Domain/Core/Primitives/Maybe/MaybeExtensions.cs:line 37
+   at Quote.Api.Controller.CategoryController.GetAll(GetCategoriesQuery request) in /Users/iskandarovs/RiderProjects/YY/QuoteApp/Quote.Api/Controller/CategoryController.cs:line 28
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.TaskOfIActionResultExecutor.Execute(ActionContext actionContext, IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Logged|12_1(ControllerActionInvoker invoker)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.InvokeInnerFilterAsync()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|7_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Swashbuckle.AspNetCore.SwaggerUI.SwaggerUIMiddleware.Invoke(HttpContext httpContext)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext, ISwaggerProvider swaggerProvider)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddlewareImpl.Invoke(HttpContext context)
+2025-06-14 10:41:15.237 +05:00 [INF] Request finished HTTP/1.1 GET http://localhost:5050/api/category?Page=0&PageSize=10 - 500 null text/plain; charset=utf-8 116.2044ms
+2025-06-14 10:41:39.845 +05:00 [INF] Application is shutting down...
+2025-06-14 11:07:25.706 +05:00 [INF] 🔄 Quote notification cycle starting at "2025-06-14T06:07:25.7042410+00:00"
+2025-06-14 11:07:25.742 +05:00 [INF] Sending quotes to all subscribers for demo at "2025-06-14T06:07:25.7424430+00:00"
+2025-06-14 11:07:26.401 +05:00 [INF] Starting quote cleanup at "2025-06-14T06:07:26.4018800+00:00"
+2025-06-14 11:07:26.426 +05:00 [ERR] Failed to cleanup old quotes
+System.InvalidOperationException: A second operation was started on this context instance before a previous operation completed. This is usually caused by different threads concurrently using the same instance of DbContext. For more information on how to avoid threading issues with DbContext, see https://go.microsoft.com/fwlink/?linkid=2097913.
+   at Microsoft.EntityFrameworkCore.Infrastructure.Internal.ConcurrencyDetector.EnterCriticalSection()
+   at Microsoft.EntityFrameworkCore.Query.RelationalShapedQueryCompilingExpressionVisitor.NonQueryResultAsync(RelationalQueryContext relationalQueryContext, RelationalCommandResolver relationalCommandResolver, Type contextType, CommandSource commandSource, Boolean threadSafetyChecksEnabled)
+   at Microsoft.EntityFrameworkCore.Query.Internal.QueryCompiler.ExecuteCore[TResult](Expression query, Boolean async, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.QueryCompiler.ExecuteAsync[TResult](Expression query, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.EntityQueryProvider.ExecuteAsync[TResult](Expression expression, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.EntityFrameworkQueryableExtensions.ExecuteDeleteAsync[TSource](IQueryable`1 source, CancellationToken cancellationToken)
+   at Quote.Persistence.QuoteSingletonDbContext.ExecuteDeleteAsync[TEntity](IQueryable`1 query, CancellationToken cancellationToken) in /Users/iskandarovs/RiderProjects/YY/QuoteApp/Quote.Persistence/QuoteSingletonDbContext.cs:line 32
+   at Quote.Services.BackgroundTasks.Services.CleanUpOldQuotesService.CleanUpQuotes(CancellationToken stoppingToken) in /Users/iskandarovs/RiderProjects/YY/QuoteApp/Quote.Services.BackgroundTasks/Services/CleanUpOldQuotesService.cs:line 43
+2025-06-14 11:07:26.475 +05:00 [INF] Now listening on: http://localhost:5050
+2025-06-14 11:07:26.476 +05:00 [INF] Application started. Press Ctrl+C to shut down.
+2025-06-14 11:07:26.476 +05:00 [INF] Hosting environment: Development
+2025-06-14 11:07:26.476 +05:00 [INF] Content root path: /Users/iskandarovs/RiderProjects/YY/QuoteApp/Quote.Api
+2025-06-14 11:07:26.655 +05:00 [INF] Request starting HTTP/1.1 GET http://localhost:5050/swagger/index.html - null null
+2025-06-14 11:07:26.751 +05:00 [INF] Request finished HTTP/1.1 GET http://localhost:5050/swagger/index.html - 200 null text/html;charset=utf-8 100.5624ms
+2025-06-14 11:07:26.802 +05:00 [INF] Request starting HTTP/1.1 GET http://localhost:5050/swagger/v1/swagger.json - null null
+2025-06-14 11:07:26.879 +05:00 [INF] Request finished HTTP/1.1 GET http://localhost:5050/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 78.1771ms
+2025-06-14 11:07:26.922 +05:00 [WRN] Sensitive data logging is enabled. Log entries and exception messages may include sensitive application data; this mode should only be enabled during development.
+2025-06-14 11:07:27.019 +05:00 [INF] Executed DbCommand (6ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT q.id, q.author, q.quote_text, q.category_id, c0.category_name
+FROM "Quote" AS q
+INNER JOIN (
+    SELECT c.id, c.category_name
+    FROM "Category" AS c
+    WHERE NOT (c.is_deleted)
+) AS c0 ON q.category_id = c0.id
+WHERE NOT (q.is_deleted)
+ORDER BY q.created_at DESC
+2025-06-14 11:07:27.022 +05:00 [INF] Daily Quote sent to Iskandarov1327@icloud.com
+2025-06-14 11:07:27.023 +05:00 [INF] Sending email to Iskandarov1327@icloud.com with subjects : Your daily Quotes
+2025-06-14 11:07:27.182 +05:00 [INF] Telegram bot QuoteSenderWBot started
+2025-06-14 11:07:29.850 +05:00 [INF] Email successfully sent to Iskandarov1327@icloud.com
+2025-06-14 11:07:29.851 +05:00 [INF] 📧 Quote sent to Iskandarov1327@icloud.com: "Always async all the things—expose asynchronous methods end-to-end to keep your web API threads free." by Scott Hanselman
+2025-06-14 11:07:29.888 +05:00 [INF] Successfully sent quotes to 0 subscribers
+2025-06-14 11:07:30.788 +05:00 [INF] Request starting HTTP/1.1 GET http://localhost:5050/api/category?Page=0&PageSize=10 - null null
+2025-06-14 11:07:30.797 +05:00 [WRN] Failed to determine the https port for redirect.
+2025-06-14 11:07:30.802 +05:00 [INF] Executing endpoint 'Quote.Api.Controller.CategoryController.GetAll (Quote.Api)'
+2025-06-14 11:07:30.834 +05:00 [INF] Route matched with {action = "GetAll", controller = "Category"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetAll(Quote.Application.Category.Queries.GetCategories.GetCategoriesQuery) on controller Quote.Api.Controller.CategoryController (Quote.Api).
+2025-06-14 11:07:30.854 +05:00 [INF] Executing action method Quote.Api.Controller.CategoryController.GetAll (Quote.Api) - Validation state: "Valid"
+2025-06-14 11:07:30.896 +05:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT EXISTS (
+    SELECT 1
+    FROM "Category" AS c
+    WHERE NOT (c.is_deleted))
+2025-06-14 11:07:30.912 +05:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT count(*)::int
+FROM "Category" AS c
+WHERE NOT (c.is_deleted)
+2025-06-14 11:07:30.934 +05:00 [INF] Executed DbCommand (8ms) [Parameters=[@__p_1='10', @__p_0='0'], CommandType='"Text"', CommandTimeout='30']
+SELECT c.id, c.category_name, c.created_at, c.updated_at
+FROM "Category" AS c
+WHERE NOT (c.is_deleted)
+ORDER BY c.category_name
+LIMIT @__p_1 OFFSET @__p_0
+2025-06-14 11:07:30.938 +05:00 [INF] Executed action method Quote.Api.Controller.CategoryController.GetAll (Quote.Api), returned result Microsoft.AspNetCore.Mvc.OkObjectResult in 82.4171ms.
+2025-06-14 11:07:30.945 +05:00 [INF] Executing OkObjectResult, writing value of type 'Quote.Contracts.Common.PagedList`1[[Quote.Contracts.Responses.CategoriesResponse.CategoryResponse, Quote.Contracts, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2025-06-14 11:07:30.975 +05:00 [INF] Executed action Quote.Api.Controller.CategoryController.GetAll (Quote.Api) in 137.7593ms
+2025-06-14 11:07:30.975 +05:00 [INF] Executed endpoint 'Quote.Api.Controller.CategoryController.GetAll (Quote.Api)'
+2025-06-14 11:07:30.982 +05:00 [INF] Request finished HTTP/1.1 GET http://localhost:5050/api/category?Page=0&PageSize=10 - 200 null application/json; charset=utf-8 193.8482ms
+2025-06-14 11:07:52.785 +05:00 [INF] Request starting HTTP/1.1 GET http://localhost:5050/subscription/active?Page=0&PageSize=10 - null null
+2025-06-14 11:07:52.792 +05:00 [INF] Executing endpoint 'Quote.Api.Controller.SubscriptionController.GetActiveSubscribers (Quote.Api)'
+2025-06-14 11:07:52.803 +05:00 [INF] Route matched with {action = "GetActiveSubscribers", controller = "Subscription"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetActiveSubscribers(Quote.Application.Subscribers.Queries.GetActiveSubscribers.GetActiveSubscribersQuery) on controller Quote.Api.Controller.SubscriptionController (Quote.Api).
+2025-06-14 11:07:52.807 +05:00 [INF] Executing action method Quote.Api.Controller.SubscriptionController.GetActiveSubscribers (Quote.Api) - Validation state: "Valid"
+2025-06-14 11:07:52.838 +05:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT count(*)::int
+FROM "Subscriber" AS s
+WHERE s.is_active
+2025-06-14 11:07:52.841 +05:00 [WRN] The query uses a row limiting operator ('Skip'/'Take') without an 'OrderBy' operator. This may lead to unpredictable results. If the 'Distinct' operator is used after 'OrderBy', then make sure to use the 'OrderBy' operator after 'Distinct' as the ordering would otherwise get erased.
+2025-06-14 11:07:52.841 +05:00 [WRN] The query uses a row limiting operator ('Skip'/'Take') without an 'OrderBy' operator. This may lead to unpredictable results. If the 'Distinct' operator is used after 'OrderBy', then make sure to use the 'OrderBy' operator after 'Distinct' as the ordering would otherwise get erased.
+2025-06-14 11:07:52.855 +05:00 [INF] Executed DbCommand (1ms) [Parameters=[@__p_1='10', @__p_0='0'], CommandType='"Text"', CommandTimeout='30']
+SELECT s.id, s.attached_file_path, s.created_at, s.email, s.first_name, s.is_active, s.is_deleted, s.last_name, s."PreferredNotificationMethod", s.telegram_user, s.updated_at
+FROM "Subscriber" AS s
+WHERE s.is_active
+LIMIT @__p_1 OFFSET @__p_0
+2025-06-14 11:07:52.856 +05:00 [INF] Executed action method Quote.Api.Controller.SubscriptionController.GetActiveSubscribers (Quote.Api), returned result Microsoft.AspNetCore.Mvc.OkObjectResult in 48.9041ms.
+2025-06-14 11:07:52.857 +05:00 [INF] Executing OkObjectResult, writing value of type 'Quote.Contracts.Common.PagedList`1[[Quote.Domain.Entities.Subscriber, Quote.Domain, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2025-06-14 11:07:52.875 +05:00 [INF] Executed action Quote.Api.Controller.SubscriptionController.GetActiveSubscribers (Quote.Api) in 71.195ms
+2025-06-14 11:07:52.875 +05:00 [INF] Executed endpoint 'Quote.Api.Controller.SubscriptionController.GetActiveSubscribers (Quote.Api)'
+2025-06-14 11:07:52.875 +05:00 [INF] Request finished HTTP/1.1 GET http://localhost:5050/subscription/active?Page=0&PageSize=10 - 200 null application/json; charset=utf-8 90.468ms
+2025-06-14 11:08:29.891 +05:00 [INF] 🔄 Quote notification cycle starting at "2025-06-14T06:08:29.8909860+00:00"
+2025-06-14 11:08:29.892 +05:00 [INF] Sending quotes to all subscribers for demo at "2025-06-14T06:08:29.8925740+00:00"
+2025-06-14 11:08:29.910 +05:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT q.id, q.author, q.quote_text, q.category_id, c0.category_name
+FROM "Quote" AS q
+INNER JOIN (
+    SELECT c.id, c.category_name
+    FROM "Category" AS c
+    WHERE NOT (c.is_deleted)
+) AS c0 ON q.category_id = c0.id
+WHERE NOT (q.is_deleted)
+ORDER BY q.created_at DESC
+2025-06-14 11:08:29.911 +05:00 [INF] Daily Quote sent to Iskandarov1327@icloud.com
+2025-06-14 11:08:29.912 +05:00 [INF] Sending email to Iskandarov1327@icloud.com with subjects : Your daily Quotes
+2025-06-14 11:08:32.318 +05:00 [INF] Email successfully sent to Iskandarov1327@icloud.com
+2025-06-14 11:08:32.319 +05:00 [INF] 📧 Quote sent to Iskandarov1327@icloud.com: "Always async all the things—expose asynchronous methods end-to-end to keep your web API threads free." by Scott Hanselman
+2025-06-14 11:08:32.320 +05:00 [INF] Successfully sent quotes to 0 subscribers
+2025-06-14 11:08:33.474 +05:00 [INF] Request starting HTTP/1.1 DELETE http://localhost:5050/api/category/category/26847973-0b27-4aee-827d-112195c40f8f - null null
+2025-06-14 11:08:33.475 +05:00 [INF] Executing endpoint 'Quote.Api.Controller.CategoryController.Delete (Quote.Api)'
+2025-06-14 11:08:33.480 +05:00 [INF] Route matched with {action = "Delete", controller = "Category"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Delete(System.Guid) on controller Quote.Api.Controller.CategoryController (Quote.Api).
+2025-06-14 11:08:33.480 +05:00 [INF] Executing action method Quote.Api.Controller.CategoryController.Delete (Quote.Api) - Validation state: "Valid"
+2025-06-14 11:08:33.504 +05:00 [INF] Executed DbCommand (1ms) [Parameters=[@__id_0='26847973-0b27-4aee-827d-112195c40f8f'], CommandType='"Text"', CommandTimeout='30']
+SELECT c.id, c.created_at, c.is_deleted, c.category_name, c.updated_at
+FROM "Category" AS c
+WHERE NOT (c.is_deleted) AND c.id = @__id_0
+LIMIT 1
+2025-06-14 11:08:33.572 +05:00 [INF] Executed DbCommand (7ms) [Parameters=[@p0='26847973-0b27-4aee-827d-112195c40f8f'], CommandType='"Text"', CommandTimeout='30']
+DELETE FROM "Category"
+WHERE id = @p0;
+2025-06-14 11:08:33.579 +05:00 [INF] Executed action method Quote.Api.Controller.CategoryController.Delete (Quote.Api), returned result Microsoft.AspNetCore.Mvc.OkResult in 98.3605ms.
+2025-06-14 11:08:33.581 +05:00 [INF] Executing StatusCodeResult, setting HTTP status code 200
+2025-06-14 11:08:33.582 +05:00 [INF] Executed action Quote.Api.Controller.CategoryController.Delete (Quote.Api) in 101.9308ms
+2025-06-14 11:08:33.582 +05:00 [INF] Executed endpoint 'Quote.Api.Controller.CategoryController.Delete (Quote.Api)'
+2025-06-14 11:08:33.582 +05:00 [INF] Request finished HTTP/1.1 DELETE http://localhost:5050/api/category/category/26847973-0b27-4aee-827d-112195c40f8f - 200 0 null 107.8006ms
+2025-06-14 11:08:44.257 +05:00 [INF] Request starting HTTP/1.1 GET http://localhost:5050/api/category/category/{id} - null null
+2025-06-14 11:08:44.258 +05:00 [INF] Request finished HTTP/1.1 GET http://localhost:5050/api/category/category/{id} - 404 0 null 0.9361ms
+2025-06-14 11:08:44.258 +05:00 [INF] Request reached the end of the middleware pipeline without being handled by application code. Request path: GET http://localhost:5050/api/category/category/%7Bid%7D, Response status code: 404
+2025-06-14 11:09:21.864 +05:00 [INF] Application is shutting down...
+2025-06-14 11:19:48.291 +05:00 [INF] 🔄 Quote notification cycle starting at "2025-06-14T06:19:48.2889750+00:00"
+2025-06-14 11:19:48.338 +05:00 [INF] Sending quotes to all subscribers for demo at "2025-06-14T06:19:48.3384400+00:00"
+2025-06-14 11:19:48.993 +05:00 [INF] Starting quote cleanup at "2025-06-14T06:19:48.9935350+00:00"
+2025-06-14 11:19:49.012 +05:00 [ERR] Failed to cleanup old quotes
+System.InvalidOperationException: A second operation was started on this context instance before a previous operation completed. This is usually caused by different threads concurrently using the same instance of DbContext. For more information on how to avoid threading issues with DbContext, see https://go.microsoft.com/fwlink/?linkid=2097913.
+   at Microsoft.EntityFrameworkCore.Infrastructure.Internal.ConcurrencyDetector.EnterCriticalSection()
+   at Microsoft.EntityFrameworkCore.Query.RelationalShapedQueryCompilingExpressionVisitor.NonQueryResultAsync(RelationalQueryContext relationalQueryContext, RelationalCommandResolver relationalCommandResolver, Type contextType, CommandSource commandSource, Boolean threadSafetyChecksEnabled)
+   at Microsoft.EntityFrameworkCore.Query.Internal.QueryCompiler.ExecuteCore[TResult](Expression query, Boolean async, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.QueryCompiler.ExecuteAsync[TResult](Expression query, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.EntityQueryProvider.ExecuteAsync[TResult](Expression expression, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.EntityFrameworkQueryableExtensions.ExecuteDeleteAsync[TSource](IQueryable`1 source, CancellationToken cancellationToken)
+   at Quote.Persistence.QuoteSingletonDbContext.ExecuteDeleteAsync[TEntity](IQueryable`1 query, CancellationToken cancellationToken) in /Users/iskandarovs/RiderProjects/YY/QuoteApp/Quote.Persistence/QuoteSingletonDbContext.cs:line 32
+   at Quote.Services.BackgroundTasks.Services.CleanUpOldQuotesService.CleanUpQuotes(CancellationToken stoppingToken) in /Users/iskandarovs/RiderProjects/YY/QuoteApp/Quote.Services.BackgroundTasks/Services/CleanUpOldQuotesService.cs:line 43
+2025-06-14 11:19:49.041 +05:00 [INF] Now listening on: http://localhost:5050
+2025-06-14 11:19:49.042 +05:00 [INF] Application started. Press Ctrl+C to shut down.
+2025-06-14 11:19:49.042 +05:00 [INF] Hosting environment: Development
+2025-06-14 11:19:49.042 +05:00 [INF] Content root path: /Users/iskandarovs/RiderProjects/YY/QuoteApp/Quote.Api
+2025-06-14 11:19:49.243 +05:00 [INF] Request starting HTTP/1.1 GET http://localhost:5050/swagger/index.html - null null
+2025-06-14 11:19:49.334 +05:00 [INF] Request finished HTTP/1.1 GET http://localhost:5050/swagger/index.html - 200 null text/html;charset=utf-8 91.3044ms
+2025-06-14 11:19:49.383 +05:00 [INF] Request starting HTTP/1.1 GET http://localhost:5050/swagger/v1/swagger.json - null null
+2025-06-14 11:19:49.395 +05:00 [WRN] Sensitive data logging is enabled. Log entries and exception messages may include sensitive application data; this mode should only be enabled during development.
+2025-06-14 11:19:49.465 +05:00 [INF] Request finished HTTP/1.1 GET http://localhost:5050/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 82.8534ms
+2025-06-14 11:19:49.484 +05:00 [INF] Executed DbCommand (6ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT q.id, q.author, q.quote_text, q.category_id, c0.category_name
+FROM "Quote" AS q
+INNER JOIN (
+    SELECT c.id, c.category_name
+    FROM "Category" AS c
+    WHERE NOT (c.is_deleted)
+) AS c0 ON q.category_id = c0.id
+WHERE NOT (q.is_deleted)
+ORDER BY q.created_at DESC
+2025-06-14 11:19:49.487 +05:00 [INF] Daily Quote sent to Iskandarov1327@icloud.com
+2025-06-14 11:19:49.489 +05:00 [INF] Sending email to Iskandarov1327@icloud.com with subjects : Your daily Quotes
+2025-06-14 11:19:49.759 +05:00 [INF] Telegram bot QuoteSenderWBot started
+2025-06-14 11:19:52.683 +05:00 [INF] Email successfully sent to Iskandarov1327@icloud.com
+2025-06-14 11:19:52.684 +05:00 [INF] 📧 Quote sent to Iskandarov1327@icloud.com: "Always async all the things—expose asynchronous methods end-to-end to keep your web API threads free." by Scott Hanselman
+2025-06-14 11:19:52.726 +05:00 [INF] Successfully sent quotes to 0 subscribers
+2025-06-14 11:19:54.509 +05:00 [INF] Request starting HTTP/1.1 GET http://localhost:5050/api/category?Page=0&PageSize=10 - null null
+2025-06-14 11:19:54.524 +05:00 [WRN] Failed to determine the https port for redirect.
+2025-06-14 11:19:54.527 +05:00 [INF] Executing endpoint 'Quote.Api.Controller.CategoryController.GetAll (Quote.Api)'
+2025-06-14 11:19:54.557 +05:00 [INF] Route matched with {action = "GetAll", controller = "Category"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetAll(Quote.Application.Category.Queries.GetCategories.GetCategoriesQuery) on controller Quote.Api.Controller.CategoryController (Quote.Api).
+2025-06-14 11:19:54.575 +05:00 [INF] Executing action method Quote.Api.Controller.CategoryController.GetAll (Quote.Api) - Validation state: "Valid"
+2025-06-14 11:19:54.617 +05:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT EXISTS (
+    SELECT 1
+    FROM "Category" AS c
+    WHERE NOT (c.is_deleted))
+2025-06-14 11:19:54.634 +05:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT count(*)::int
+FROM "Category" AS c
+WHERE NOT (c.is_deleted)
+2025-06-14 11:19:54.651 +05:00 [INF] Executed DbCommand (6ms) [Parameters=[@__p_1='10', @__p_0='0'], CommandType='"Text"', CommandTimeout='30']
+SELECT c.id, c.category_name, c.created_at, c.updated_at
+FROM "Category" AS c
+WHERE NOT (c.is_deleted)
+ORDER BY c.category_name
+LIMIT @__p_1 OFFSET @__p_0
+2025-06-14 11:19:54.655 +05:00 [INF] Executed action method Quote.Api.Controller.CategoryController.GetAll (Quote.Api), returned result Microsoft.AspNetCore.Mvc.OkObjectResult in 77.789ms.
+2025-06-14 11:19:54.662 +05:00 [INF] Executing OkObjectResult, writing value of type 'Quote.Contracts.Common.PagedList`1[[Quote.Contracts.Responses.CategoriesResponse.CategoryResponse, Quote.Contracts, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2025-06-14 11:19:54.691 +05:00 [INF] Executed action Quote.Api.Controller.CategoryController.GetAll (Quote.Api) in 131.2521ms
+2025-06-14 11:19:54.692 +05:00 [INF] Executed endpoint 'Quote.Api.Controller.CategoryController.GetAll (Quote.Api)'
+2025-06-14 11:19:54.698 +05:00 [INF] Request finished HTTP/1.1 GET http://localhost:5050/api/category?Page=0&PageSize=10 - 200 null application/json; charset=utf-8 189.3877ms
+2025-06-14 11:20:07.269 +05:00 [INF] Request starting HTTP/1.1 DELETE http://localhost:5050/api/category/category/42c9d56c-4122-4a4c-8346-400ba5d36ff3 - null null
+2025-06-14 11:20:07.271 +05:00 [INF] Executing endpoint 'Quote.Api.Controller.CategoryController.Delete (Quote.Api)'
+2025-06-14 11:20:07.275 +05:00 [INF] Route matched with {action = "Delete", controller = "Category"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Delete(System.Guid) on controller Quote.Api.Controller.CategoryController (Quote.Api).
+2025-06-14 11:20:07.276 +05:00 [INF] Executing action method Quote.Api.Controller.CategoryController.Delete (Quote.Api) - Validation state: "Valid"
+2025-06-14 11:20:07.314 +05:00 [INF] Executed DbCommand (1ms) [Parameters=[@__id_0='42c9d56c-4122-4a4c-8346-400ba5d36ff3'], CommandType='"Text"', CommandTimeout='30']
+SELECT c.id, c.created_at, c.is_deleted, c.category_name, c.updated_at
+FROM "Category" AS c
+WHERE NOT (c.is_deleted) AND c.id = @__id_0
+LIMIT 1
+2025-06-14 11:20:07.339 +05:00 [INF] Executed action Quote.Api.Controller.CategoryController.Delete (Quote.Api) in 64.1048ms
+2025-06-14 11:20:07.339 +05:00 [INF] Executed endpoint 'Quote.Api.Controller.CategoryController.Delete (Quote.Api)'
+2025-06-14 11:20:07.339 +05:00 [ERR] An unhandled exception has occurred while executing the request.
+System.InvalidOperationException: The property 'Category.DeletedAt' could not be found. Ensure that the property exists and has been included in the model.
+   at Microsoft.EntityFrameworkCore.Metadata.IReadOnlyTypeBase.GetProperty(String name)
+   at Microsoft.EntityFrameworkCore.Metadata.IEntityType.GetProperty(String name)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.EntityEntry.Property(String propertyName)
+   at Quote.Persistence.QuoteContext.UpdateSoftDeletableEntities(DateTime utcNow, CancellationToken cancellationToken) in /Users/iskandarovs/RiderProjects/YY/QuoteApp/Quote.Persistence/QuoteContext.cs:line 126
+   at Quote.Persistence.QuoteContext.SaveChangesAsync(CancellationToken cancellationToken) in /Users/iskandarovs/RiderProjects/YY/QuoteApp/Quote.Persistence/QuoteContext.cs:line 81
+   at Quote.Application.Category.Commands.DeleteCategory.DeleteCategoryCommandHandler.Handle(DeleteCategoryCommand request, CancellationToken cancellationToken) in /Users/iskandarovs/RiderProjects/YY/QuoteApp/Quote.Application/Category/Commands/DeleteCategory/DeleteCategoryCommandHandler.cs:line 22
+   at Quote.Domain.Core.Primitives.Result.ResultExtensions.Bind[TIn](Result`1 result, Func`2 func) in /Users/iskandarovs/RiderProjects/YY/QuoteApp/Quote.Domain/Core/Primitives/Result/ResultExtensions.cs:line 52
+   at Quote.Domain.Core.Primitives.Result.ResultExtensions.Match[T](Task`1 resultTask, Func`1 onSuccess, Func`2 onFailure) in /Users/iskandarovs/RiderProjects/YY/QuoteApp/Quote.Domain/Core/Primitives/Result/ResultExtensions.cs:line 79
+   at Quote.Api.Controller.CategoryController.Delete(Guid id) in /Users/iskandarovs/RiderProjects/YY/QuoteApp/Quote.Api/Controller/CategoryController.cs:line 69
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.TaskOfIActionResultExecutor.Execute(ActionContext actionContext, IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Logged|12_1(ControllerActionInvoker invoker)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeInnerFilterAsync>g__Awaited|13_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|7_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Swashbuckle.AspNetCore.SwaggerUI.SwaggerUIMiddleware.Invoke(HttpContext httpContext)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext, ISwaggerProvider swaggerProvider)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddlewareImpl.Invoke(HttpContext context)
+2025-06-14 11:20:07.346 +05:00 [INF] Request finished HTTP/1.1 DELETE http://localhost:5050/api/category/category/42c9d56c-4122-4a4c-8346-400ba5d36ff3 - 500 null text/plain; charset=utf-8 77.6453ms
+2025-06-14 11:20:52.731 +05:00 [INF] 🔄 Quote notification cycle starting at "2025-06-14T06:20:52.7309600+00:00"
+2025-06-14 11:20:52.732 +05:00 [INF] Sending quotes to all subscribers for demo at "2025-06-14T06:20:52.7325100+00:00"
+2025-06-14 11:20:52.755 +05:00 [INF] Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT q.id, q.author, q.quote_text, q.category_id, c0.category_name
+FROM "Quote" AS q
+INNER JOIN (
+    SELECT c.id, c.category_name
+    FROM "Category" AS c
+    WHERE NOT (c.is_deleted)
+) AS c0 ON q.category_id = c0.id
+WHERE NOT (q.is_deleted)
+ORDER BY q.created_at DESC
+2025-06-14 11:20:52.757 +05:00 [INF] Daily Quote sent to Iskandarov1327@icloud.com
+2025-06-14 11:20:52.757 +05:00 [INF] Sending email to Iskandarov1327@icloud.com with subjects : Your daily Quotes
+2025-06-14 11:20:55.215 +05:00 [INF] Email successfully sent to Iskandarov1327@icloud.com
+2025-06-14 11:20:55.216 +05:00 [INF] 📧 Quote sent to Iskandarov1327@icloud.com: "Prefer using expression-bodied members and pattern matching to keep C# code concise and readable." by Jon Skeet
+2025-06-14 11:20:55.217 +05:00 [INF] Successfully sent quotes to 0 subscribers
+2025-06-14 11:21:55.222 +05:00 [INF] 🔄 Quote notification cycle starting at "2025-06-14T06:21:55.2218130+00:00"
+2025-06-14 11:21:55.225 +05:00 [INF] Sending quotes to all subscribers for demo at "2025-06-14T06:21:55.2259040+00:00"
+2025-06-14 11:21:55.249 +05:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT q.id, q.author, q.quote_text, q.category_id, c0.category_name
+FROM "Quote" AS q
+INNER JOIN (
+    SELECT c.id, c.category_name
+    FROM "Category" AS c
+    WHERE NOT (c.is_deleted)
+) AS c0 ON q.category_id = c0.id
+WHERE NOT (q.is_deleted)
+ORDER BY q.created_at DESC
+2025-06-14 11:21:55.249 +05:00 [INF] Daily Quote sent to Iskandarov1327@icloud.com
+2025-06-14 11:21:55.250 +05:00 [INF] Sending email to Iskandarov1327@icloud.com with subjects : Your daily Quotes
+2025-06-14 11:21:57.476 +05:00 [INF] Email successfully sent to Iskandarov1327@icloud.com
+2025-06-14 11:21:57.476 +05:00 [INF] 📧 Quote sent to Iskandarov1327@icloud.com: "Always async all the things—expose asynchronous methods end-to-end to keep your web API threads free." by Scott Hanselman
+2025-06-14 11:21:57.477 +05:00 [INF] Successfully sent quotes to 0 subscribers
+2025-06-14 11:22:57.480 +05:00 [INF] 🔄 Quote notification cycle starting at "2025-06-14T06:22:57.4793490+00:00"
+2025-06-14 11:22:57.483 +05:00 [INF] Sending quotes to all subscribers for demo at "2025-06-14T06:22:57.4834130+00:00"
+2025-06-14 11:22:57.501 +05:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT q.id, q.author, q.quote_text, q.category_id, c0.category_name
+FROM "Quote" AS q
+INNER JOIN (
+    SELECT c.id, c.category_name
+    FROM "Category" AS c
+    WHERE NOT (c.is_deleted)
+) AS c0 ON q.category_id = c0.id
+WHERE NOT (q.is_deleted)
+ORDER BY q.created_at DESC
+2025-06-14 11:22:57.502 +05:00 [INF] Daily Quote sent to Iskandarov1327@icloud.com
+2025-06-14 11:22:57.502 +05:00 [INF] Sending email to Iskandarov1327@icloud.com with subjects : Your daily Quotes
+2025-06-14 11:23:00.760 +05:00 [INF] Email successfully sent to Iskandarov1327@icloud.com
+2025-06-14 11:23:00.760 +05:00 [INF] 📧 Quote sent to Iskandarov1327@icloud.com: "Always async all the things—expose asynchronous methods end-to-end to keep your web API threads free." by Scott Hanselman
+2025-06-14 11:23:00.760 +05:00 [INF] Successfully sent quotes to 0 subscribers
+2025-06-14 11:23:18.774 +05:00 [INF] Application is shutting down...
+2025-06-14 11:23:21.494 +05:00 [INF] 🔄 Quote notification cycle starting at "2025-06-14T06:23:21.4920110+00:00"
+2025-06-14 11:23:21.529 +05:00 [INF] Sending quotes to all subscribers for demo at "2025-06-14T06:23:21.5295130+00:00"
+2025-06-14 11:23:22.132 +05:00 [INF] Starting quote cleanup at "2025-06-14T06:23:22.1320520+00:00"
+2025-06-14 11:23:22.147 +05:00 [ERR] Failed to cleanup old quotes
+System.InvalidOperationException: A second operation was started on this context instance before a previous operation completed. This is usually caused by different threads concurrently using the same instance of DbContext. For more information on how to avoid threading issues with DbContext, see https://go.microsoft.com/fwlink/?linkid=2097913.
+   at Microsoft.EntityFrameworkCore.Infrastructure.Internal.ConcurrencyDetector.EnterCriticalSection()
+   at Microsoft.EntityFrameworkCore.Query.RelationalShapedQueryCompilingExpressionVisitor.NonQueryResultAsync(RelationalQueryContext relationalQueryContext, RelationalCommandResolver relationalCommandResolver, Type contextType, CommandSource commandSource, Boolean threadSafetyChecksEnabled)
+   at Microsoft.EntityFrameworkCore.Query.Internal.QueryCompiler.ExecuteCore[TResult](Expression query, Boolean async, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.QueryCompiler.ExecuteAsync[TResult](Expression query, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.EntityQueryProvider.ExecuteAsync[TResult](Expression expression, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.EntityFrameworkQueryableExtensions.ExecuteDeleteAsync[TSource](IQueryable`1 source, CancellationToken cancellationToken)
+   at Quote.Persistence.QuoteSingletonDbContext.ExecuteDeleteAsync[TEntity](IQueryable`1 query, CancellationToken cancellationToken) in /Users/iskandarovs/RiderProjects/YY/QuoteApp/Quote.Persistence/QuoteSingletonDbContext.cs:line 32
+   at Quote.Services.BackgroundTasks.Services.CleanUpOldQuotesService.CleanUpQuotes(CancellationToken stoppingToken) in /Users/iskandarovs/RiderProjects/YY/QuoteApp/Quote.Services.BackgroundTasks/Services/CleanUpOldQuotesService.cs:line 43
+2025-06-14 11:23:22.168 +05:00 [INF] Now listening on: http://localhost:5050
+2025-06-14 11:23:22.168 +05:00 [INF] Application started. Press Ctrl+C to shut down.
+2025-06-14 11:23:22.168 +05:00 [INF] Hosting environment: Development
+2025-06-14 11:23:22.168 +05:00 [INF] Content root path: /Users/iskandarovs/RiderProjects/YY/QuoteApp/Quote.Api
+2025-06-14 11:23:22.469 +05:00 [WRN] Entity 'Category' has a global query filter defined and is the required end of a relationship with the entity 'Quote'. This may lead to unexpected results when the required entity is filtered out. Either configure the navigation as optional, or define matching query filters for both entities in the navigation. See https://go.microsoft.com/fwlink/?linkid=2131316 for more information.
+2025-06-14 11:23:22.472 +05:00 [WRN] Sensitive data logging is enabled. Log entries and exception messages may include sensitive application data; this mode should only be enabled during development.
+2025-06-14 11:23:22.474 +05:00 [INF] Request starting HTTP/1.1 GET http://localhost:5050/swagger/index.html - null null
+2025-06-14 11:23:22.545 +05:00 [INF] Request finished HTTP/1.1 GET http://localhost:5050/swagger/index.html - 200 null text/html;charset=utf-8 71.9985ms
+2025-06-14 11:23:22.571 +05:00 [INF] Executed DbCommand (7ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT q.id, q.author, q.quote_text, q.category_id, c0.category_name
+FROM "Quote" AS q
+INNER JOIN (
+    SELECT c.id, c.category_name
+    FROM "Category" AS c
+    WHERE NOT (c.is_deleted)
+) AS c0 ON q.category_id = c0.id
+ORDER BY q.created_at DESC
+2025-06-14 11:23:22.574 +05:00 [INF] Daily Quote sent to Iskandarov1327@icloud.com
+2025-06-14 11:23:22.576 +05:00 [INF] Sending email to Iskandarov1327@icloud.com with subjects : Your daily Quotes
+2025-06-14 11:23:22.592 +05:00 [INF] Request starting HTTP/1.1 GET http://localhost:5050/swagger/v1/swagger.json - null null
+2025-06-14 11:23:22.607 +05:00 [INF] Telegram bot QuoteSenderWBot started
+2025-06-14 11:23:22.664 +05:00 [INF] Request finished HTTP/1.1 GET http://localhost:5050/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 72.9073ms
+2025-06-14 11:23:25.645 +05:00 [INF] Email successfully sent to Iskandarov1327@icloud.com
+2025-06-14 11:23:25.647 +05:00 [INF] 📧 Quote sent to Iskandarov1327@icloud.com: "Always async all the things—expose asynchronous methods end-to-end to keep your web API threads free." by Scott Hanselman
+2025-06-14 11:23:25.689 +05:00 [INF] Successfully sent quotes to 0 subscribers
+2025-06-14 11:23:29.292 +05:00 [INF] Request starting HTTP/1.1 GET http://localhost:5050/api/category?Page=0&PageSize=10 - null null
+2025-06-14 11:23:29.297 +05:00 [WRN] Failed to determine the https port for redirect.
+2025-06-14 11:23:29.301 +05:00 [INF] Executing endpoint 'Quote.Api.Controller.CategoryController.GetAll (Quote.Api)'
+2025-06-14 11:23:29.335 +05:00 [INF] Route matched with {action = "GetAll", controller = "Category"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetAll(Quote.Application.Category.Queries.GetCategories.GetCategoriesQuery) on controller Quote.Api.Controller.CategoryController (Quote.Api).
+2025-06-14 11:23:29.355 +05:00 [INF] Executing action method Quote.Api.Controller.CategoryController.GetAll (Quote.Api) - Validation state: "Valid"
+2025-06-14 11:23:29.397 +05:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT EXISTS (
+    SELECT 1
+    FROM "Category" AS c
+    WHERE NOT (c.is_deleted))
+2025-06-14 11:23:29.410 +05:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT count(*)::int
+FROM "Category" AS c
+WHERE NOT (c.is_deleted)
+2025-06-14 11:23:29.431 +05:00 [INF] Executed DbCommand (7ms) [Parameters=[@__p_1='10', @__p_0='0'], CommandType='"Text"', CommandTimeout='30']
+SELECT c.id, c.category_name, c.created_at, c.updated_at
+FROM "Category" AS c
+WHERE NOT (c.is_deleted)
+ORDER BY c.category_name
+LIMIT @__p_1 OFFSET @__p_0
+2025-06-14 11:23:29.436 +05:00 [INF] Executed action method Quote.Api.Controller.CategoryController.GetAll (Quote.Api), returned result Microsoft.AspNetCore.Mvc.OkObjectResult in 77.9584ms.
+2025-06-14 11:23:29.440 +05:00 [INF] Executing OkObjectResult, writing value of type 'Quote.Contracts.Common.PagedList`1[[Quote.Contracts.Responses.CategoriesResponse.CategoryResponse, Quote.Contracts, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2025-06-14 11:23:29.469 +05:00 [INF] Executed action Quote.Api.Controller.CategoryController.GetAll (Quote.Api) in 130.5689ms
+2025-06-14 11:23:29.469 +05:00 [INF] Executed endpoint 'Quote.Api.Controller.CategoryController.GetAll (Quote.Api)'
+2025-06-14 11:23:29.476 +05:00 [INF] Request finished HTTP/1.1 GET http://localhost:5050/api/category?Page=0&PageSize=10 - 200 null application/json; charset=utf-8 183.4828ms
+2025-06-14 11:23:40.333 +05:00 [INF] Request starting HTTP/1.1 DELETE http://localhost:5050/api/category/category/42c9d56c-4122-4a4c-8346-400ba5d36ff3 - null null
+2025-06-14 11:23:40.339 +05:00 [INF] Executing endpoint 'Quote.Api.Controller.CategoryController.Delete (Quote.Api)'
+2025-06-14 11:23:40.346 +05:00 [INF] Route matched with {action = "Delete", controller = "Category"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Delete(System.Guid) on controller Quote.Api.Controller.CategoryController (Quote.Api).
+2025-06-14 11:23:40.349 +05:00 [INF] Executing action method Quote.Api.Controller.CategoryController.Delete (Quote.Api) - Validation state: "Valid"
+2025-06-14 11:23:40.403 +05:00 [ERR] Failed executing DbCommand (7ms) [Parameters=[@__id_0='42c9d56c-4122-4a4c-8346-400ba5d36ff3'], CommandType='"Text"', CommandTimeout='30']
+SELECT c.id, c.created_at, c.deleted_at, c.is_deleted, c.category_name, c.updated_at
+FROM "Category" AS c
+WHERE NOT (c.is_deleted) AND c.id = @__id_0
+LIMIT 1
+2025-06-14 11:23:40.411 +05:00 [ERR] An exception occurred while iterating over the results of a query for context type 'Quote.Persistence.QuoteContext'.
+Npgsql.PostgresException (0x80004005): 42703: column c.deleted_at does not exist
+
+POSITION: 28
+   at Npgsql.Internal.NpgsqlConnector.ReadMessageLong(Boolean async, DataRowLoadingMode dataRowLoadingMode, Boolean readingNotifications, Boolean isReadingPrependedMessage)
+   at System.Runtime.CompilerServices.PoolingAsyncValueTaskMethodBuilder`1.StateMachineBox`1.System.Threading.Tasks.Sources.IValueTaskSource<TResult>.GetResult(Int16 token)
+   at Npgsql.NpgsqlDataReader.NextResult(Boolean async, Boolean isConsuming, CancellationToken cancellationToken)
+   at Npgsql.NpgsqlDataReader.NextResult(Boolean async, Boolean isConsuming, CancellationToken cancellationToken)
+   at Npgsql.NpgsqlCommand.ExecuteReader(Boolean async, CommandBehavior behavior, CancellationToken cancellationToken)
+   at Npgsql.NpgsqlCommand.ExecuteReader(Boolean async, CommandBehavior behavior, CancellationToken cancellationToken)
+   at Npgsql.NpgsqlCommand.ExecuteDbDataReaderAsync(CommandBehavior behavior, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.InitializeReaderAsync(AsyncEnumerator enumerator, CancellationToken cancellationToken)
+   at Npgsql.EntityFrameworkCore.PostgreSQL.Storage.Internal.NpgsqlExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.MoveNextAsync()
+  Exception data:
+    Severity: ERROR
+    SqlState: 42703
+    MessageText: column c.deleted_at does not exist
+    Position: 28
+    File: parse_relation.c
+    Line: 3657
+    Routine: errorMissingColumn
+Npgsql.PostgresException (0x80004005): 42703: column c.deleted_at does not exist
+
+POSITION: 28
+   at Npgsql.Internal.NpgsqlConnector.ReadMessageLong(Boolean async, DataRowLoadingMode dataRowLoadingMode, Boolean readingNotifications, Boolean isReadingPrependedMessage)
+   at System.Runtime.CompilerServices.PoolingAsyncValueTaskMethodBuilder`1.StateMachineBox`1.System.Threading.Tasks.Sources.IValueTaskSource<TResult>.GetResult(Int16 token)
+   at Npgsql.NpgsqlDataReader.NextResult(Boolean async, Boolean isConsuming, CancellationToken cancellationToken)
+   at Npgsql.NpgsqlDataReader.NextResult(Boolean async, Boolean isConsuming, CancellationToken cancellationToken)
+   at Npgsql.NpgsqlCommand.ExecuteReader(Boolean async, CommandBehavior behavior, CancellationToken cancellationToken)
+   at Npgsql.NpgsqlCommand.ExecuteReader(Boolean async, CommandBehavior behavior, CancellationToken cancellationToken)
+   at Npgsql.NpgsqlCommand.ExecuteDbDataReaderAsync(CommandBehavior behavior, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.InitializeReaderAsync(AsyncEnumerator enumerator, CancellationToken cancellationToken)
+   at Npgsql.EntityFrameworkCore.PostgreSQL.Storage.Internal.NpgsqlExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.MoveNextAsync()
+  Exception data:
+    Severity: ERROR
+    SqlState: 42703
+    MessageText: column c.deleted_at does not exist
+    Position: 28
+    File: parse_relation.c
+    Line: 3657
+    Routine: errorMissingColumn
+2025-06-14 11:23:40.414 +05:00 [INF] Executed action Quote.Api.Controller.CategoryController.Delete (Quote.Api) in 67.8196ms
+2025-06-14 11:23:40.417 +05:00 [INF] Executed endpoint 'Quote.Api.Controller.CategoryController.Delete (Quote.Api)'
+2025-06-14 11:23:40.417 +05:00 [ERR] An unhandled exception has occurred while executing the request.
+Npgsql.PostgresException (0x80004005): 42703: column c.deleted_at does not exist
+
+POSITION: 28
+   at Npgsql.Internal.NpgsqlConnector.ReadMessageLong(Boolean async, DataRowLoadingMode dataRowLoadingMode, Boolean readingNotifications, Boolean isReadingPrependedMessage)
+   at System.Runtime.CompilerServices.PoolingAsyncValueTaskMethodBuilder`1.StateMachineBox`1.System.Threading.Tasks.Sources.IValueTaskSource<TResult>.GetResult(Int16 token)
+   at Npgsql.NpgsqlDataReader.NextResult(Boolean async, Boolean isConsuming, CancellationToken cancellationToken)
+   at Npgsql.NpgsqlDataReader.NextResult(Boolean async, Boolean isConsuming, CancellationToken cancellationToken)
+   at Npgsql.NpgsqlCommand.ExecuteReader(Boolean async, CommandBehavior behavior, CancellationToken cancellationToken)
+   at Npgsql.NpgsqlCommand.ExecuteReader(Boolean async, CommandBehavior behavior, CancellationToken cancellationToken)
+   at Npgsql.NpgsqlCommand.ExecuteDbDataReaderAsync(CommandBehavior behavior, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.InitializeReaderAsync(AsyncEnumerator enumerator, CancellationToken cancellationToken)
+   at Npgsql.EntityFrameworkCore.PostgreSQL.Storage.Internal.NpgsqlExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.MoveNextAsync()
+   at Microsoft.EntityFrameworkCore.Query.ShapedQueryCompilingExpressionVisitor.SingleOrDefaultAsync[TSource](IAsyncEnumerable`1 asyncEnumerable, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.ShapedQueryCompilingExpressionVisitor.SingleOrDefaultAsync[TSource](IAsyncEnumerable`1 asyncEnumerable, CancellationToken cancellationToken)
+   at Quote.Persistence.QuoteContext.GetBydIdAsync[TEntity](Guid id, CancellationToken cancellationToken) in /Users/iskandarovs/RiderProjects/YY/QuoteApp/Quote.Persistence/QuoteContext.cs:line 32
+   at Quote.Persistence.Repositories.GenericRepository`1.GetByIdAsync(Guid id, CancellationToken cancellationToken) in /Users/iskandarovs/RiderProjects/YY/QuoteApp/Quote.Persistence/Repositories/GenericRepository.cs:line 32
+   at Quote.Application.Category.Commands.DeleteCategory.DeleteCategoryCommandHandler.Handle(DeleteCategoryCommand request, CancellationToken cancellationToken) in /Users/iskandarovs/RiderProjects/YY/QuoteApp/Quote.Application/Category/Commands/DeleteCategory/DeleteCategoryCommandHandler.cs:line 16
+   at Quote.Domain.Core.Primitives.Result.ResultExtensions.Bind[TIn](Result`1 result, Func`2 func) in /Users/iskandarovs/RiderProjects/YY/QuoteApp/Quote.Domain/Core/Primitives/Result/ResultExtensions.cs:line 52
+   at Quote.Domain.Core.Primitives.Result.ResultExtensions.Match[T](Task`1 resultTask, Func`1 onSuccess, Func`2 onFailure) in /Users/iskandarovs/RiderProjects/YY/QuoteApp/Quote.Domain/Core/Primitives/Result/ResultExtensions.cs:line 79
+   at Quote.Api.Controller.CategoryController.Delete(Guid id) in /Users/iskandarovs/RiderProjects/YY/QuoteApp/Quote.Api/Controller/CategoryController.cs:line 69
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.TaskOfIActionResultExecutor.Execute(ActionContext actionContext, IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Logged|12_1(ControllerActionInvoker invoker)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeInnerFilterAsync>g__Awaited|13_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|7_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Swashbuckle.AspNetCore.SwaggerUI.SwaggerUIMiddleware.Invoke(HttpContext httpContext)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext, ISwaggerProvider swaggerProvider)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddlewareImpl.Invoke(HttpContext context)
+  Exception data:
+    Severity: ERROR
+    SqlState: 42703
+    MessageText: column c.deleted_at does not exist
+    Position: 28
+    File: parse_relation.c
+    Line: 3657
+    Routine: errorMissingColumn
+2025-06-14 11:23:40.428 +05:00 [INF] Request finished HTTP/1.1 DELETE http://localhost:5050/api/category/category/42c9d56c-4122-4a4c-8346-400ba5d36ff3 - 500 null text/plain; charset=utf-8 94.8614ms
+2025-06-14 11:23:50.501 +05:00 [INF] Application is shutting down...
+2025-06-14 11:25:35.763 +05:00 [WRN] Entity 'Category' has a global query filter defined and is the required end of a relationship with the entity 'Quote'. This may lead to unexpected results when the required entity is filtered out. Either configure the navigation as optional, or define matching query filters for both entities in the navigation. See https://go.microsoft.com/fwlink/?linkid=2131316 for more information.
+2025-06-14 11:25:35.801 +05:00 [WRN] Sensitive data logging is enabled. Log entries and exception messages may include sensitive application data; this mode should only be enabled during development.
+2025-06-14 11:25:42.402 +05:00 [WRN] Entity 'Category' has a global query filter defined and is the required end of a relationship with the entity 'Quote'. This may lead to unexpected results when the required entity is filtered out. Either configure the navigation as optional, or define matching query filters for both entities in the navigation. See https://go.microsoft.com/fwlink/?linkid=2131316 for more information.
+2025-06-14 11:25:42.434 +05:00 [WRN] Sensitive data logging is enabled. Log entries and exception messages may include sensitive application data; this mode should only be enabled during development.
+2025-06-14 11:25:42.566 +05:00 [INF] Executed DbCommand (9ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT "MigrationId", "ProductVersion"
+FROM "__EFMigrationsHistory"
+ORDER BY "MigrationId";
+2025-06-14 11:25:42.672 +05:00 [INF] Executed DbCommand (4ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE TABLE IF NOT EXISTS "__EFMigrationsHistory" (
+    "MigrationId" character varying(150) NOT NULL,
+    "ProductVersion" character varying(32) NOT NULL,
+    CONSTRAINT "PK___EFMigrationsHistory" PRIMARY KEY ("MigrationId")
+);
+2025-06-14 11:25:42.675 +05:00 [INF] Acquiring an exclusive lock for migration application. See https://aka.ms/efcore-docs-migrations-lock for more information if this takes too long.
+2025-06-14 11:25:42.675 +05:00 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+LOCK TABLE "__EFMigrationsHistory" IN ACCESS EXCLUSIVE MODE
+2025-06-14 11:25:42.676 +05:00 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT "MigrationId", "ProductVersion"
+FROM "__EFMigrationsHistory"
+ORDER BY "MigrationId";
+2025-06-14 11:25:42.680 +05:00 [INF] Applying migration '20250614062536_AuditablesFixed'.
+2025-06-14 11:25:42.696 +05:00 [INF] Executed DbCommand (6ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+DROP INDEX "IX_Subscriber_email";
+2025-06-14 11:25:42.696 +05:00 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+DROP INDEX "IX_Subscriber_telegram_user";
+2025-06-14 11:25:42.697 +05:00 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+DROP INDEX "IX_Quote_is_deleted";
+2025-06-14 11:25:42.697 +05:00 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+DROP INDEX "IX_Category_is_deleted";
+2025-06-14 11:25:42.699 +05:00 [INF] Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+ALTER TABLE "Subscriber" ALTER COLUMN is_deleted SET DEFAULT FALSE;
+2025-06-14 11:25:42.700 +05:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+ALTER TABLE "Subscriber" ADD deleted_at timestamp with time zone;
+2025-06-14 11:25:42.700 +05:00 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+ALTER TABLE "Quote" ADD deleted_at timestamp with time zone;
+2025-06-14 11:25:42.701 +05:00 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+ALTER TABLE "Category" ADD deleted_at timestamp with time zone;
+2025-06-14 11:25:42.705 +05:00 [INF] Executed DbCommand (4ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE UNIQUE INDEX "IX_Subscriber_email" ON "Subscriber" (email);
+2025-06-14 11:25:42.706 +05:00 [INF] Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE UNIQUE INDEX "IX_Subscriber_telegram_user" ON "Subscriber" (telegram_user);
+2025-06-14 11:25:42.707 +05:00 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+INSERT INTO "__EFMigrationsHistory" ("MigrationId", "ProductVersion")
+VALUES ('20250614062536_AuditablesFixed', '9.0.5');
+2025-06-14 11:25:51.723 +05:00 [INF] 🔄 Quote notification cycle starting at "2025-06-14T06:25:51.7210740+00:00"
+2025-06-14 11:25:51.757 +05:00 [INF] Sending quotes to all subscribers for demo at "2025-06-14T06:25:51.7578040+00:00"
+2025-06-14 11:25:52.329 +05:00 [INF] Starting quote cleanup at "2025-06-14T06:25:52.3298860+00:00"
+2025-06-14 11:25:52.344 +05:00 [ERR] Failed to cleanup old quotes
+System.InvalidOperationException: A second operation was started on this context instance before a previous operation completed. This is usually caused by different threads concurrently using the same instance of DbContext. For more information on how to avoid threading issues with DbContext, see https://go.microsoft.com/fwlink/?linkid=2097913.
+   at Microsoft.EntityFrameworkCore.Infrastructure.Internal.ConcurrencyDetector.EnterCriticalSection()
+   at Microsoft.EntityFrameworkCore.Query.RelationalShapedQueryCompilingExpressionVisitor.NonQueryResultAsync(RelationalQueryContext relationalQueryContext, RelationalCommandResolver relationalCommandResolver, Type contextType, CommandSource commandSource, Boolean threadSafetyChecksEnabled)
+   at Microsoft.EntityFrameworkCore.Query.Internal.QueryCompiler.ExecuteCore[TResult](Expression query, Boolean async, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.QueryCompiler.ExecuteAsync[TResult](Expression query, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.EntityQueryProvider.ExecuteAsync[TResult](Expression expression, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.EntityFrameworkQueryableExtensions.ExecuteDeleteAsync[TSource](IQueryable`1 source, CancellationToken cancellationToken)
+   at Quote.Persistence.QuoteSingletonDbContext.ExecuteDeleteAsync[TEntity](IQueryable`1 query, CancellationToken cancellationToken) in /Users/iskandarovs/RiderProjects/YY/QuoteApp/Quote.Persistence/QuoteSingletonDbContext.cs:line 32
+   at Quote.Services.BackgroundTasks.Services.CleanUpOldQuotesService.CleanUpQuotes(CancellationToken stoppingToken) in /Users/iskandarovs/RiderProjects/YY/QuoteApp/Quote.Services.BackgroundTasks/Services/CleanUpOldQuotesService.cs:line 43
+2025-06-14 11:25:52.369 +05:00 [INF] Now listening on: http://localhost:5050
+2025-06-14 11:25:52.369 +05:00 [INF] Application started. Press Ctrl+C to shut down.
+2025-06-14 11:25:52.369 +05:00 [INF] Hosting environment: Development
+2025-06-14 11:25:52.370 +05:00 [INF] Content root path: /Users/iskandarovs/RiderProjects/YY/QuoteApp/Quote.Api
+2025-06-14 11:25:52.547 +05:00 [WRN] Entity 'Category' has a global query filter defined and is the required end of a relationship with the entity 'Quote'. This may lead to unexpected results when the required entity is filtered out. Either configure the navigation as optional, or define matching query filters for both entities in the navigation. See https://go.microsoft.com/fwlink/?linkid=2131316 for more information.
+2025-06-14 11:25:52.550 +05:00 [WRN] Sensitive data logging is enabled. Log entries and exception messages may include sensitive application data; this mode should only be enabled during development.
+2025-06-14 11:25:52.621 +05:00 [INF] Executed DbCommand (3ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT q.id, q.author, q.quote_text, q.category_id, c0.category_name
+FROM "Quote" AS q
+INNER JOIN (
+    SELECT c.id, c.category_name
+    FROM "Category" AS c
+    WHERE NOT (c.is_deleted)
+) AS c0 ON q.category_id = c0.id
+ORDER BY q.created_at DESC
+2025-06-14 11:25:52.623 +05:00 [INF] Daily Quote sent to Iskandarov1327@icloud.com
+2025-06-14 11:25:52.624 +05:00 [INF] Sending email to Iskandarov1327@icloud.com with subjects : Your daily Quotes
+2025-06-14 11:25:52.920 +05:00 [INF] Request starting HTTP/1.1 GET http://localhost:5050/swagger/index.html - null null
+2025-06-14 11:25:52.925 +05:00 [INF] Telegram bot QuoteSenderWBot started
+2025-06-14 11:25:52.979 +05:00 [INF] Request finished HTTP/1.1 GET http://localhost:5050/swagger/index.html - 200 null text/html;charset=utf-8 59.484ms
+2025-06-14 11:25:53.027 +05:00 [INF] Request starting HTTP/1.1 GET http://localhost:5050/swagger/v1/swagger.json - null null
+2025-06-14 11:25:53.089 +05:00 [INF] Request finished HTTP/1.1 GET http://localhost:5050/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 62.187ms
+2025-06-14 11:25:55.353 +05:00 [INF] Email successfully sent to Iskandarov1327@icloud.com
+2025-06-14 11:25:55.354 +05:00 [INF] 📧 Quote sent to Iskandarov1327@icloud.com: "Let EF Core track only what’s needed—use AsNoTracking() for read-only queries to boost performance." by Julie Lerman
+2025-06-14 11:25:55.411 +05:00 [INF] Successfully sent quotes to 0 subscribers
+2025-06-14 11:25:56.775 +05:00 [INF] Request starting HTTP/1.1 GET http://localhost:5050/api/category?Page=0&PageSize=10 - null null
+2025-06-14 11:25:56.779 +05:00 [WRN] Failed to determine the https port for redirect.
+2025-06-14 11:25:56.781 +05:00 [INF] Executing endpoint 'Quote.Api.Controller.CategoryController.GetAll (Quote.Api)'
+2025-06-14 11:25:56.797 +05:00 [INF] Route matched with {action = "GetAll", controller = "Category"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetAll(Quote.Application.Category.Queries.GetCategories.GetCategoriesQuery) on controller Quote.Api.Controller.CategoryController (Quote.Api).
+2025-06-14 11:25:56.810 +05:00 [INF] Executing action method Quote.Api.Controller.CategoryController.GetAll (Quote.Api) - Validation state: "Valid"
+2025-06-14 11:25:56.845 +05:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT EXISTS (
+    SELECT 1
+    FROM "Category" AS c
+    WHERE NOT (c.is_deleted))
+2025-06-14 11:25:56.864 +05:00 [INF] Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT count(*)::int
+FROM "Category" AS c
+WHERE NOT (c.is_deleted)
+2025-06-14 11:25:56.888 +05:00 [INF] Executed DbCommand (8ms) [Parameters=[@__p_1='10', @__p_0='0'], CommandType='"Text"', CommandTimeout='30']
+SELECT c.id, c.category_name, c.created_at, c.updated_at
+FROM "Category" AS c
+WHERE NOT (c.is_deleted)
+ORDER BY c.category_name
+LIMIT @__p_1 OFFSET @__p_0
+2025-06-14 11:25:56.892 +05:00 [INF] Executed action method Quote.Api.Controller.CategoryController.GetAll (Quote.Api), returned result Microsoft.AspNetCore.Mvc.OkObjectResult in 79.7218ms.
+2025-06-14 11:25:56.897 +05:00 [INF] Executing OkObjectResult, writing value of type 'Quote.Contracts.Common.PagedList`1[[Quote.Contracts.Responses.CategoriesResponse.CategoryResponse, Quote.Contracts, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2025-06-14 11:25:56.926 +05:00 [INF] Executed action Quote.Api.Controller.CategoryController.GetAll (Quote.Api) in 126.2837ms
+2025-06-14 11:25:56.927 +05:00 [INF] Executed endpoint 'Quote.Api.Controller.CategoryController.GetAll (Quote.Api)'
+2025-06-14 11:25:56.934 +05:00 [INF] Request finished HTTP/1.1 GET http://localhost:5050/api/category?Page=0&PageSize=10 - 200 null application/json; charset=utf-8 159.4141ms
+2025-06-14 11:26:13.388 +05:00 [INF] Request starting HTTP/1.1 DELETE http://localhost:5050/api/category/category/42c9d56c-4122-4a4c-8346-400ba5d36ff3 - null null
+2025-06-14 11:26:13.390 +05:00 [INF] Executing endpoint 'Quote.Api.Controller.CategoryController.Delete (Quote.Api)'
+2025-06-14 11:26:13.398 +05:00 [INF] Route matched with {action = "Delete", controller = "Category"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Delete(System.Guid) on controller Quote.Api.Controller.CategoryController (Quote.Api).
+2025-06-14 11:26:13.399 +05:00 [INF] Executing action method Quote.Api.Controller.CategoryController.Delete (Quote.Api) - Validation state: "Valid"
+2025-06-14 11:26:13.448 +05:00 [INF] Executed DbCommand (2ms) [Parameters=[@__id_0='42c9d56c-4122-4a4c-8346-400ba5d36ff3'], CommandType='"Text"', CommandTimeout='30']
+SELECT c.id, c.created_at, c.deleted_at, c.is_deleted, c.category_name, c.updated_at
+FROM "Category" AS c
+WHERE NOT (c.is_deleted) AND c.id = @__id_0
+LIMIT 1
+2025-06-14 11:26:13.527 +05:00 [INF] Executed DbCommand (5ms) [Parameters=[@p5='42c9d56c-4122-4a4c-8346-400ba5d36ff3', @p0='2025-06-13T07:34:03.3679580Z' (DbType = DateTime), @p1='2025-06-14T06:26:13.4690820Z' (Nullable = true) (DbType = DateTime), @p2='True', @p3='aaaaaaa' (Nullable = false), @p4='2025-06-13T10:29:27.5272990Z' (Nullable = true) (DbType = DateTime)], CommandType='"Text"', CommandTimeout='30']
+UPDATE "Category" SET created_at = @p0, deleted_at = @p1, is_deleted = @p2, category_name = @p3, updated_at = @p4
+WHERE id = @p5;
+2025-06-14 11:26:13.532 +05:00 [INF] Executed action method Quote.Api.Controller.CategoryController.Delete (Quote.Api), returned result Microsoft.AspNetCore.Mvc.OkResult in 131.9859ms.
+2025-06-14 11:26:13.535 +05:00 [INF] Executing StatusCodeResult, setting HTTP status code 200
+2025-06-14 11:26:13.535 +05:00 [INF] Executed action Quote.Api.Controller.CategoryController.Delete (Quote.Api) in 136.8959ms
+2025-06-14 11:26:13.535 +05:00 [INF] Executed endpoint 'Quote.Api.Controller.CategoryController.Delete (Quote.Api)'
+2025-06-14 11:26:13.535 +05:00 [INF] Request finished HTTP/1.1 DELETE http://localhost:5050/api/category/category/42c9d56c-4122-4a4c-8346-400ba5d36ff3 - 200 0 null 147.4583ms
+2025-06-14 11:26:23.578 +05:00 [INF] Request starting HTTP/1.1 GET http://localhost:5050/api/category/category/{id} - null null
+2025-06-14 11:26:23.579 +05:00 [INF] Request finished HTTP/1.1 GET http://localhost:5050/api/category/category/{id} - 404 0 null 0.9706ms
+2025-06-14 11:26:23.579 +05:00 [INF] Request reached the end of the middleware pipeline without being handled by application code. Request path: GET http://localhost:5050/api/category/category/%7Bid%7D, Response status code: 404
+2025-06-14 11:26:55.417 +05:00 [INF] 🔄 Quote notification cycle starting at "2025-06-14T06:26:55.4174470+00:00"
+2025-06-14 11:26:55.419 +05:00 [INF] Sending quotes to all subscribers for demo at "2025-06-14T06:26:55.4193120+00:00"
+2025-06-14 11:26:55.435 +05:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT q.id, q.author, q.quote_text, q.category_id, c0.category_name
+FROM "Quote" AS q
+INNER JOIN (
+    SELECT c.id, c.category_name
+    FROM "Category" AS c
+    WHERE NOT (c.is_deleted)
+) AS c0 ON q.category_id = c0.id
+ORDER BY q.created_at DESC
+2025-06-14 11:26:55.436 +05:00 [INF] Daily Quote sent to Iskandarov1327@icloud.com
+2025-06-14 11:26:55.436 +05:00 [INF] Sending email to Iskandarov1327@icloud.com with subjects : Your daily Quotes
+2025-06-14 11:26:58.429 +05:00 [INF] Email successfully sent to Iskandarov1327@icloud.com
+2025-06-14 11:26:58.429 +05:00 [INF] 📧 Quote sent to Iskandarov1327@icloud.com: "Let EF Core track only what’s needed—use AsNoTracking() for read-only queries to boost performance." by Julie Lerman
+2025-06-14 11:26:58.430 +05:00 [INF] Successfully sent quotes to 0 subscribers
+2025-06-14 11:27:54.073 +05:00 [INF] Application is shutting down...
+2025-06-14 11:30:10.941 +05:00 [INF] 🔄 Quote notification cycle starting at "2025-06-14T06:30:10.9388160+00:00"
+2025-06-14 11:30:10.975 +05:00 [INF] Sending quotes to all subscribers for demo at "2025-06-14T06:30:10.9754860+00:00"
+2025-06-14 11:30:11.564 +05:00 [INF] Starting quote cleanup at "2025-06-14T06:30:11.5645580+00:00"
+2025-06-14 11:30:11.582 +05:00 [ERR] Failed to cleanup old quotes
+System.InvalidOperationException: A second operation was started on this context instance before a previous operation completed. This is usually caused by different threads concurrently using the same instance of DbContext. For more information on how to avoid threading issues with DbContext, see https://go.microsoft.com/fwlink/?linkid=2097913.
+   at Microsoft.EntityFrameworkCore.Infrastructure.Internal.ConcurrencyDetector.EnterCriticalSection()
+   at Microsoft.EntityFrameworkCore.Query.RelationalShapedQueryCompilingExpressionVisitor.NonQueryResultAsync(RelationalQueryContext relationalQueryContext, RelationalCommandResolver relationalCommandResolver, Type contextType, CommandSource commandSource, Boolean threadSafetyChecksEnabled)
+   at Microsoft.EntityFrameworkCore.Query.Internal.QueryCompiler.ExecuteCore[TResult](Expression query, Boolean async, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.QueryCompiler.ExecuteAsync[TResult](Expression query, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.EntityQueryProvider.ExecuteAsync[TResult](Expression expression, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.EntityFrameworkQueryableExtensions.ExecuteDeleteAsync[TSource](IQueryable`1 source, CancellationToken cancellationToken)
+   at Quote.Persistence.QuoteSingletonDbContext.ExecuteDeleteAsync[TEntity](IQueryable`1 query, CancellationToken cancellationToken) in /Users/iskandarovs/RiderProjects/YY/QuoteApp/Quote.Persistence/QuoteSingletonDbContext.cs:line 32
+   at Quote.Services.BackgroundTasks.Services.CleanUpOldQuotesService.CleanUpQuotes(CancellationToken stoppingToken) in /Users/iskandarovs/RiderProjects/YY/QuoteApp/Quote.Services.BackgroundTasks/Services/CleanUpOldQuotesService.cs:line 43
+2025-06-14 11:30:11.622 +05:00 [INF] Now listening on: http://localhost:5050
+2025-06-14 11:30:11.622 +05:00 [INF] Application started. Press Ctrl+C to shut down.
+2025-06-14 11:30:11.622 +05:00 [INF] Hosting environment: Development
+2025-06-14 11:30:11.622 +05:00 [INF] Content root path: /Users/iskandarovs/RiderProjects/YY/QuoteApp/Quote.Api
+2025-06-14 11:30:11.803 +05:00 [WRN] Entity 'Category' has a global query filter defined and is the required end of a relationship with the entity 'Quote'. This may lead to unexpected results when the required entity is filtered out. Either configure the navigation as optional, or define matching query filters for both entities in the navigation. See https://go.microsoft.com/fwlink/?linkid=2131316 for more information.
+2025-06-14 11:30:11.806 +05:00 [WRN] Sensitive data logging is enabled. Log entries and exception messages may include sensitive application data; this mode should only be enabled during development.
+2025-06-14 11:30:11.947 +05:00 [INF] Executed DbCommand (26ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT q.id, q.author, q.quote_text, q.category_id, c0.category_name
+FROM "Quote" AS q
+INNER JOIN (
+    SELECT c.id, c.category_name
+    FROM "Category" AS c
+    WHERE NOT (c.is_deleted)
+) AS c0 ON q.category_id = c0.id
+ORDER BY q.created_at DESC
+2025-06-14 11:30:11.951 +05:00 [INF] Daily Quote sent to Iskandarov1327@icloud.com
+2025-06-14 11:30:11.952 +05:00 [INF] Sending email to Iskandarov1327@icloud.com with subjects : Your daily Quotes
+2025-06-14 11:30:11.958 +05:00 [INF] Request starting HTTP/1.1 GET http://localhost:5050/swagger/index.html - null null
+2025-06-14 11:30:12.028 +05:00 [INF] Request finished HTTP/1.1 GET http://localhost:5050/swagger/index.html - 200 null text/html;charset=utf-8 70.0977ms
+2025-06-14 11:30:12.073 +05:00 [INF] Request starting HTTP/1.1 GET http://localhost:5050/swagger/v1/swagger.json - null null
+2025-06-14 11:30:12.139 +05:00 [INF] Request finished HTTP/1.1 GET http://localhost:5050/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 66.7ms
+2025-06-14 11:30:12.653 +05:00 [INF] Telegram bot QuoteSenderWBot started
+2025-06-14 11:30:14.219 +05:00 [INF] Email successfully sent to Iskandarov1327@icloud.com
+2025-06-14 11:30:14.220 +05:00 [INF] 📧 Quote sent to Iskandarov1327@icloud.com: "Let EF Core track only what’s needed—use AsNoTracking() for read-only queries to boost performance." by Julie Lerman
+2025-06-14 11:30:14.275 +05:00 [INF] Successfully sent quotes to 0 subscribers
+2025-06-14 11:30:17.186 +05:00 [INF] Request starting HTTP/1.1 GET http://localhost:5050/api/quote?Page=0&PageSize=10 - null null
+2025-06-14 11:30:17.192 +05:00 [WRN] Failed to determine the https port for redirect.
+2025-06-14 11:30:17.197 +05:00 [INF] Executing endpoint 'Quote.Api.Controller.QuoteController.GetAll (Quote.Api)'
+2025-06-14 11:30:17.225 +05:00 [INF] Route matched with {action = "GetAll", controller = "Quote"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetAll(Quote.Application.Quote.Queries.GetQuotes.GetQuotesQuery) on controller Quote.Api.Controller.QuoteController (Quote.Api).
+2025-06-14 11:30:17.245 +05:00 [INF] Executing action method Quote.Api.Controller.QuoteController.GetAll (Quote.Api) - Validation state: "Valid"
+2025-06-14 11:30:17.295 +05:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT count(*)::int
+FROM "Quote" AS q
+INNER JOIN (
+    SELECT c.id
+    FROM "Category" AS c
+    WHERE NOT (c.is_deleted)
+) AS c0 ON q.category_id = c0.id
+2025-06-14 11:30:17.311 +05:00 [INF] Executed DbCommand (5ms) [Parameters=[@__p_1='10', @__p_0='0'], CommandType='"Text"', CommandTimeout='30']
+SELECT q.id, q.author, q.quote_text, q.category_id, c0.category_name
+FROM "Quote" AS q
+INNER JOIN (
+    SELECT c.id, c.category_name
+    FROM "Category" AS c
+    WHERE NOT (c.is_deleted)
+) AS c0 ON q.category_id = c0.id
+ORDER BY q.created_at DESC
+LIMIT @__p_1 OFFSET @__p_0
+2025-06-14 11:30:17.316 +05:00 [INF] Executed action method Quote.Api.Controller.QuoteController.GetAll (Quote.Api), returned result Microsoft.AspNetCore.Mvc.OkObjectResult in 68.6073ms.
+2025-06-14 11:30:17.320 +05:00 [INF] Executing OkObjectResult, writing value of type 'Quote.Contracts.Common.PagedList`1[[Quote.Contracts.Responses.QuotesResponse.QuoteResponse, Quote.Contracts, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2025-06-14 11:30:17.348 +05:00 [INF] Executed action Quote.Api.Controller.QuoteController.GetAll (Quote.Api) in 119.8974ms
+2025-06-14 11:30:17.349 +05:00 [INF] Executed endpoint 'Quote.Api.Controller.QuoteController.GetAll (Quote.Api)'
+2025-06-14 11:30:17.355 +05:00 [INF] Request finished HTTP/1.1 GET http://localhost:5050/api/quote?Page=0&PageSize=10 - 200 null application/json; charset=utf-8 168.9934ms
+2025-06-14 11:31:09.037 +05:00 [INF] Request starting HTTP/1.1 DELETE http://localhost:5050/api/quote/quote/c6eb1bd0-2cbc-4061-8cdb-6b169dff5d30 - null null
+2025-06-14 11:31:09.040 +05:00 [INF] Executing endpoint 'Quote.Api.Controller.QuoteController.Delete (Quote.Api)'
+2025-06-14 11:31:09.047 +05:00 [INF] Route matched with {action = "Delete", controller = "Quote"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Delete(System.Guid) on controller Quote.Api.Controller.QuoteController (Quote.Api).
+2025-06-14 11:31:09.050 +05:00 [INF] Executing action method Quote.Api.Controller.QuoteController.Delete (Quote.Api) - Validation state: "Valid"
+2025-06-14 11:31:09.097 +05:00 [INF] Executed DbCommand (2ms) [Parameters=[@__id_0='c6eb1bd0-2cbc-4061-8cdb-6b169dff5d30'], CommandType='"Text"', CommandTimeout='30']
+SELECT q.id, q.author, q.category_id, q.created_at, q.deleted_at, q.is_deleted, q.quote_text, q.updated_at
+FROM "Quote" AS q
+WHERE q.id = @__id_0
+LIMIT 1
+2025-06-14 11:31:09.178 +05:00 [INF] Executed DbCommand (5ms) [Parameters=[@p7='c6eb1bd0-2cbc-4061-8cdb-6b169dff5d30', @p0='Jon Skeet' (Nullable = false), @p1='46c49993-befb-494a-bd78-4ab68a902b42', @p2='2025-06-13T07:33:20.1407140Z' (DbType = DateTime), @p3='2025-06-14T06:31:09.1176500Z' (Nullable = true) (DbType = DateTime), @p4='True', @p5='Prefer using expression-bodied members and pattern matching to keep C# code concise and readable.' (Nullable = false), @p6=NULL (DbType = DateTime)], CommandType='"Text"', CommandTimeout='30']
+UPDATE "Quote" SET author = @p0, category_id = @p1, created_at = @p2, deleted_at = @p3, is_deleted = @p4, quote_text = @p5, updated_at = @p6
+WHERE id = @p7;
+2025-06-14 11:31:09.183 +05:00 [INF] Executed action method Quote.Api.Controller.QuoteController.Delete (Quote.Api), returned result Microsoft.AspNetCore.Mvc.OkResult in 132.664ms.
+2025-06-14 11:31:09.185 +05:00 [INF] Executing StatusCodeResult, setting HTTP status code 200
+2025-06-14 11:31:09.185 +05:00 [INF] Executed action Quote.Api.Controller.QuoteController.Delete (Quote.Api) in 137.4576ms
+2025-06-14 11:31:09.185 +05:00 [INF] Executed endpoint 'Quote.Api.Controller.QuoteController.Delete (Quote.Api)'
+2025-06-14 11:31:09.185 +05:00 [INF] Request finished HTTP/1.1 DELETE http://localhost:5050/api/quote/quote/c6eb1bd0-2cbc-4061-8cdb-6b169dff5d30 - 200 0 null 148.5317ms
+2025-06-14 11:31:14.279 +05:00 [INF] 🔄 Quote notification cycle starting at "2025-06-14T06:31:14.2787240+00:00"
+2025-06-14 11:31:14.279 +05:00 [INF] Sending quotes to all subscribers for demo at "2025-06-14T06:31:14.2795620+00:00"
+2025-06-14 11:31:14.303 +05:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT q.id, q.author, q.quote_text, q.category_id, c0.category_name
+FROM "Quote" AS q
+INNER JOIN (
+    SELECT c.id, c.category_name
+    FROM "Category" AS c
+    WHERE NOT (c.is_deleted)
+) AS c0 ON q.category_id = c0.id
+ORDER BY q.created_at DESC
+2025-06-14 11:31:14.304 +05:00 [INF] Daily Quote sent to Iskandarov1327@icloud.com
+2025-06-14 11:31:14.305 +05:00 [INF] Sending email to Iskandarov1327@icloud.com with subjects : Your daily Quotes
+2025-06-14 11:31:16.682 +05:00 [INF] Email successfully sent to Iskandarov1327@icloud.com
+2025-06-14 11:31:16.683 +05:00 [INF] 📧 Quote sent to Iskandarov1327@icloud.com: "Let EF Core track only what’s needed—use AsNoTracking() for read-only queries to boost performance." by Julie Lerman
+2025-06-14 11:31:16.683 +05:00 [INF] Successfully sent quotes to 0 subscribers
+2025-06-14 11:31:23.468 +05:00 [INF] Request starting HTTP/1.1 GET http://localhost:5050/api/quote/quote/c6eb1bd0-2cbc-4061-8cdb-6b169dff5d30 - null null
+2025-06-14 11:31:23.469 +05:00 [INF] Executing endpoint 'Quote.Api.Controller.QuoteController.GetById (Quote.Api)'
+2025-06-14 11:31:23.475 +05:00 [INF] Route matched with {action = "GetById", controller = "Quote"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetById(System.Guid) on controller Quote.Api.Controller.QuoteController (Quote.Api).
+2025-06-14 11:31:23.476 +05:00 [INF] Executing action method Quote.Api.Controller.QuoteController.GetById (Quote.Api) - Validation state: "Valid"
+2025-06-14 11:31:23.494 +05:00 [INF] Executed DbCommand (1ms) [Parameters=[@__request_Id_0='c6eb1bd0-2cbc-4061-8cdb-6b169dff5d30'], CommandType='"Text"', CommandTimeout='30']
+SELECT q.id, q.author, q.quote_text, q.category_id, c0.category_name
+FROM "Quote" AS q
+INNER JOIN (
+    SELECT c.id, c.category_name
+    FROM "Category" AS c
+    WHERE NOT (c.is_deleted)
+) AS c0 ON q.category_id = c0.id
+WHERE q.id = @__request_Id_0
+LIMIT 1
+2025-06-14 11:31:23.495 +05:00 [INF] Executed action method Quote.Api.Controller.QuoteController.GetById (Quote.Api), returned result Microsoft.AspNetCore.Mvc.OkObjectResult in 18.5395ms.
+2025-06-14 11:31:23.495 +05:00 [INF] Executing OkObjectResult, writing value of type 'Quote.Contracts.Responses.QuotesResponse.QuoteResponse'.
+2025-06-14 11:31:23.496 +05:00 [INF] Executed action Quote.Api.Controller.QuoteController.GetById (Quote.Api) in 20.486ms
+2025-06-14 11:31:23.496 +05:00 [INF] Executed endpoint 'Quote.Api.Controller.QuoteController.GetById (Quote.Api)'
+2025-06-14 11:31:23.496 +05:00 [INF] Request finished HTTP/1.1 GET http://localhost:5050/api/quote/quote/c6eb1bd0-2cbc-4061-8cdb-6b169dff5d30 - 200 null application/json; charset=utf-8 27.924ms
+2025-06-14 11:32:14.399 +05:00 [INF] Request starting HTTP/1.1 GET http://localhost:5050/api/quote?Page=0&PageSize=10 - null null
+2025-06-14 11:32:14.406 +05:00 [INF] Executing endpoint 'Quote.Api.Controller.QuoteController.GetAll (Quote.Api)'
+2025-06-14 11:32:14.407 +05:00 [INF] Route matched with {action = "GetAll", controller = "Quote"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetAll(Quote.Application.Quote.Queries.GetQuotes.GetQuotesQuery) on controller Quote.Api.Controller.QuoteController (Quote.Api).
+2025-06-14 11:32:14.411 +05:00 [INF] Executing action method Quote.Api.Controller.QuoteController.GetAll (Quote.Api) - Validation state: "Valid"
+2025-06-14 11:32:14.421 +05:00 [INF] Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT count(*)::int
+FROM "Quote" AS q
+INNER JOIN (
+    SELECT c.id
+    FROM "Category" AS c
+    WHERE NOT (c.is_deleted)
+) AS c0 ON q.category_id = c0.id
+2025-06-14 11:32:14.426 +05:00 [INF] Executed DbCommand (2ms) [Parameters=[@__p_1='10', @__p_0='0'], CommandType='"Text"', CommandTimeout='30']
+SELECT q.id, q.author, q.quote_text, q.category_id, c0.category_name
+FROM "Quote" AS q
+INNER JOIN (
+    SELECT c.id, c.category_name
+    FROM "Category" AS c
+    WHERE NOT (c.is_deleted)
+) AS c0 ON q.category_id = c0.id
+ORDER BY q.created_at DESC
+LIMIT @__p_1 OFFSET @__p_0
+2025-06-14 11:32:14.427 +05:00 [INF] Executed action method Quote.Api.Controller.QuoteController.GetAll (Quote.Api), returned result Microsoft.AspNetCore.Mvc.OkObjectResult in 15.4417ms.
+2025-06-14 11:32:14.427 +05:00 [INF] Executing OkObjectResult, writing value of type 'Quote.Contracts.Common.PagedList`1[[Quote.Contracts.Responses.QuotesResponse.QuoteResponse, Quote.Contracts, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2025-06-14 11:32:14.428 +05:00 [INF] Executed action Quote.Api.Controller.QuoteController.GetAll (Quote.Api) in 20.2801ms
+2025-06-14 11:32:14.428 +05:00 [INF] Executed endpoint 'Quote.Api.Controller.QuoteController.GetAll (Quote.Api)'
+2025-06-14 11:32:14.428 +05:00 [INF] Request finished HTTP/1.1 GET http://localhost:5050/api/quote?Page=0&PageSize=10 - 200 null application/json; charset=utf-8 29.4352ms
+2025-06-14 11:32:16.684 +05:00 [INF] 🔄 Quote notification cycle starting at "2025-06-14T06:32:16.6846930+00:00"
+2025-06-14 11:32:16.685 +05:00 [INF] Sending quotes to all subscribers for demo at "2025-06-14T06:32:16.6851830+00:00"
+2025-06-14 11:32:16.707 +05:00 [INF] Executed DbCommand (9ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT q.id, q.author, q.quote_text, q.category_id, c0.category_name
+FROM "Quote" AS q
+INNER JOIN (
+    SELECT c.id, c.category_name
+    FROM "Category" AS c
+    WHERE NOT (c.is_deleted)
+) AS c0 ON q.category_id = c0.id
+ORDER BY q.created_at DESC
+2025-06-14 11:32:16.709 +05:00 [INF] Daily Quote sent to Iskandarov1327@icloud.com
+2025-06-14 11:32:16.711 +05:00 [INF] Sending email to Iskandarov1327@icloud.com with subjects : Your daily Quotes
+2025-06-14 11:32:20.167 +05:00 [INF] Email successfully sent to Iskandarov1327@icloud.com
+2025-06-14 11:32:20.168 +05:00 [INF] 📧 Quote sent to Iskandarov1327@icloud.com: "Let EF Core track only what’s needed—use AsNoTracking() for read-only queries to boost performance." by Julie Lerman
+2025-06-14 11:32:20.170 +05:00 [INF] Successfully sent quotes to 0 subscribers
+2025-06-14 11:32:25.057 +05:00 [INF] Request starting HTTP/1.1 DELETE http://localhost:5050/api/quote/quote/c6eb1bd0-2cbc-4061-8cdb-6b169dff5d30 - null null
+2025-06-14 11:32:25.057 +05:00 [INF] Executing endpoint 'Quote.Api.Controller.QuoteController.Delete (Quote.Api)'
+2025-06-14 11:32:25.057 +05:00 [INF] Route matched with {action = "Delete", controller = "Quote"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Delete(System.Guid) on controller Quote.Api.Controller.QuoteController (Quote.Api).
+2025-06-14 11:32:25.058 +05:00 [INF] Executing action method Quote.Api.Controller.QuoteController.Delete (Quote.Api) - Validation state: "Valid"
+2025-06-14 11:32:25.061 +05:00 [INF] Executed DbCommand (1ms) [Parameters=[@__id_0='c6eb1bd0-2cbc-4061-8cdb-6b169dff5d30'], CommandType='"Text"', CommandTimeout='30']
+SELECT q.id, q.author, q.category_id, q.created_at, q.deleted_at, q.is_deleted, q.quote_text, q.updated_at
+FROM "Quote" AS q
+WHERE q.id = @__id_0
+LIMIT 1
+2025-06-14 11:32:25.067 +05:00 [INF] Executed DbCommand (2ms) [Parameters=[@p7='c6eb1bd0-2cbc-4061-8cdb-6b169dff5d30', @p0='Jon Skeet' (Nullable = false), @p1='46c49993-befb-494a-bd78-4ab68a902b42', @p2='2025-06-13T07:33:20.1407140Z' (DbType = DateTime), @p3='2025-06-14T06:32:25.0629300Z' (Nullable = true) (DbType = DateTime), @p4='True', @p5='Prefer using expression-bodied members and pattern matching to keep C# code concise and readable.' (Nullable = false), @p6=NULL (DbType = DateTime)], CommandType='"Text"', CommandTimeout='30']
+UPDATE "Quote" SET author = @p0, category_id = @p1, created_at = @p2, deleted_at = @p3, is_deleted = @p4, quote_text = @p5, updated_at = @p6
+WHERE id = @p7;
+2025-06-14 11:32:25.068 +05:00 [INF] Executed action method Quote.Api.Controller.QuoteController.Delete (Quote.Api), returned result Microsoft.AspNetCore.Mvc.OkResult in 9.8628ms.
+2025-06-14 11:32:25.068 +05:00 [INF] Executing StatusCodeResult, setting HTTP status code 200
+2025-06-14 11:32:25.068 +05:00 [INF] Executed action Quote.Api.Controller.QuoteController.Delete (Quote.Api) in 10.8259ms
+2025-06-14 11:32:25.068 +05:00 [INF] Executed endpoint 'Quote.Api.Controller.QuoteController.Delete (Quote.Api)'
+2025-06-14 11:32:25.068 +05:00 [INF] Request finished HTTP/1.1 DELETE http://localhost:5050/api/quote/quote/c6eb1bd0-2cbc-4061-8cdb-6b169dff5d30 - 200 0 null 11.8968ms
+2025-06-14 11:32:32.578 +05:00 [INF] Application is shutting down...
+2025-06-14 11:37:18.932 +05:00 [INF] 🔄 Quote notification cycle starting at "2025-06-14T06:37:18.9301990+00:00"
+2025-06-14 11:37:18.965 +05:00 [INF] Sending quotes to all subscribers for demo at "2025-06-14T06:37:18.9657050+00:00"
+2025-06-14 11:37:19.549 +05:00 [INF] Starting quote cleanup at "2025-06-14T06:37:19.5491990+00:00"
+2025-06-14 11:37:19.565 +05:00 [ERR] Failed to cleanup old quotes
+System.InvalidOperationException: A second operation was started on this context instance before a previous operation completed. This is usually caused by different threads concurrently using the same instance of DbContext. For more information on how to avoid threading issues with DbContext, see https://go.microsoft.com/fwlink/?linkid=2097913.
+   at Microsoft.EntityFrameworkCore.Infrastructure.Internal.ConcurrencyDetector.EnterCriticalSection()
+   at Microsoft.EntityFrameworkCore.Query.RelationalShapedQueryCompilingExpressionVisitor.NonQueryResultAsync(RelationalQueryContext relationalQueryContext, RelationalCommandResolver relationalCommandResolver, Type contextType, CommandSource commandSource, Boolean threadSafetyChecksEnabled)
+   at Microsoft.EntityFrameworkCore.Query.Internal.QueryCompiler.ExecuteCore[TResult](Expression query, Boolean async, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.QueryCompiler.ExecuteAsync[TResult](Expression query, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.EntityQueryProvider.ExecuteAsync[TResult](Expression expression, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.EntityFrameworkQueryableExtensions.ExecuteDeleteAsync[TSource](IQueryable`1 source, CancellationToken cancellationToken)
+   at Quote.Persistence.QuoteSingletonDbContext.ExecuteDeleteAsync[TEntity](IQueryable`1 query, CancellationToken cancellationToken) in /Users/iskandarovs/RiderProjects/YY/QuoteApp/Quote.Persistence/QuoteSingletonDbContext.cs:line 32
+   at Quote.Services.BackgroundTasks.Services.CleanUpOldQuotesService.CleanUpQuotes(CancellationToken stoppingToken) in /Users/iskandarovs/RiderProjects/YY/QuoteApp/Quote.Services.BackgroundTasks/Services/CleanUpOldQuotesService.cs:line 43
+2025-06-14 11:37:19.588 +05:00 [INF] Now listening on: http://localhost:5050
+2025-06-14 11:37:19.588 +05:00 [INF] Application started. Press Ctrl+C to shut down.
+2025-06-14 11:37:19.589 +05:00 [INF] Hosting environment: Development
+2025-06-14 11:37:19.589 +05:00 [INF] Content root path: /Users/iskandarovs/RiderProjects/YY/QuoteApp/Quote.Api
+2025-06-14 11:37:19.762 +05:00 [WRN] Entity 'Category' has a global query filter defined and is the required end of a relationship with the entity 'Quote'. This may lead to unexpected results when the required entity is filtered out. Either configure the navigation as optional, or define matching query filters for both entities in the navigation. See https://go.microsoft.com/fwlink/?linkid=2131316 for more information.
+2025-06-14 11:37:19.764 +05:00 [WRN] Sensitive data logging is enabled. Log entries and exception messages may include sensitive application data; this mode should only be enabled during development.
+2025-06-14 11:37:19.855 +05:00 [INF] Request starting HTTP/1.1 GET http://localhost:5050/swagger/index.html - null null
+2025-06-14 11:37:19.879 +05:00 [INF] Executed DbCommand (4ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT q.id, q.author, q.quote_text, q.category_id, c0.category_name
+FROM "Quote" AS q
+INNER JOIN (
+    SELECT c.id, c.category_name
+    FROM "Category" AS c
+    WHERE NOT (c.is_deleted)
+) AS c0 ON q.category_id = c0.id
+ORDER BY q.created_at DESC
+2025-06-14 11:37:19.881 +05:00 [INF] Daily Quote sent to Iskandarov1327@icloud.com
+2025-06-14 11:37:19.882 +05:00 [INF] Sending email to Iskandarov1327@icloud.com with subjects : Your daily Quotes
+2025-06-14 11:37:19.917 +05:00 [INF] Request finished HTTP/1.1 GET http://localhost:5050/swagger/index.html - 200 null text/html;charset=utf-8 62.665ms
+2025-06-14 11:37:19.960 +05:00 [INF] Request starting HTTP/1.1 GET http://localhost:5050/swagger/v1/swagger.json - null null
+2025-06-14 11:37:20.023 +05:00 [INF] Request finished HTTP/1.1 GET http://localhost:5050/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 63.0428ms
+2025-06-14 11:37:21.525 +05:00 [INF] Telegram bot QuoteSenderWBot started
+2025-06-14 11:37:22.937 +05:00 [INF] Email successfully sent to Iskandarov1327@icloud.com
+2025-06-14 11:37:22.938 +05:00 [INF] 📧 Quote sent to Iskandarov1327@icloud.com: "Let EF Core track only what’s needed—use AsNoTracking() for read-only queries to boost performance." by Julie Lerman
+2025-06-14 11:37:22.980 +05:00 [INF] Successfully sent quotes to 0 subscribers
+2025-06-14 11:37:31.833 +05:00 [INF] Request starting HTTP/1.1 GET http://localhost:5050/subscription/active?Page=0&PageSize=10 - null null
+2025-06-14 11:37:31.838 +05:00 [WRN] Failed to determine the https port for redirect.
+2025-06-14 11:37:31.844 +05:00 [INF] Executing endpoint 'Quote.Api.Controller.SubscriptionController.GetActiveSubscribers (Quote.Api)'
+2025-06-14 11:37:31.878 +05:00 [INF] Route matched with {action = "GetActiveSubscribers", controller = "Subscription"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetActiveSubscribers(Quote.Application.Subscribers.Queries.GetActiveSubscribers.GetActiveSubscribersQuery) on controller Quote.Api.Controller.SubscriptionController (Quote.Api).
+2025-06-14 11:37:31.898 +05:00 [INF] Executing action method Quote.Api.Controller.SubscriptionController.GetActiveSubscribers (Quote.Api) - Validation state: "Valid"
+2025-06-14 11:37:31.941 +05:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT count(*)::int
+FROM "Subscriber" AS s
+WHERE s.is_active
+2025-06-14 11:37:31.944 +05:00 [WRN] The query uses a row limiting operator ('Skip'/'Take') without an 'OrderBy' operator. This may lead to unpredictable results. If the 'Distinct' operator is used after 'OrderBy', then make sure to use the 'OrderBy' operator after 'Distinct' as the ordering would otherwise get erased.
+2025-06-14 11:37:31.944 +05:00 [WRN] The query uses a row limiting operator ('Skip'/'Take') without an 'OrderBy' operator. This may lead to unpredictable results. If the 'Distinct' operator is used after 'OrderBy', then make sure to use the 'OrderBy' operator after 'Distinct' as the ordering would otherwise get erased.
+2025-06-14 11:37:31.961 +05:00 [INF] Executed DbCommand (5ms) [Parameters=[@__p_1='10', @__p_0='0'], CommandType='"Text"', CommandTimeout='30']
+SELECT s.id, s.attached_file_path, s.created_at, s.deleted_at, s.email, s.first_name, s.is_active, s.is_deleted, s.last_name, s."PreferredNotificationMethod", s.telegram_user, s.updated_at
+FROM "Subscriber" AS s
+WHERE s.is_active
+LIMIT @__p_1 OFFSET @__p_0
+2025-06-14 11:37:31.965 +05:00 [INF] Executed action method Quote.Api.Controller.SubscriptionController.GetActiveSubscribers (Quote.Api), returned result Microsoft.AspNetCore.Mvc.OkObjectResult in 64.7755ms.
+2025-06-14 11:37:31.969 +05:00 [INF] Executing OkObjectResult, writing value of type 'Quote.Contracts.Common.PagedList`1[[Quote.Domain.Entities.Subscriber, Quote.Domain, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2025-06-14 11:37:32.004 +05:00 [INF] Executed action Quote.Api.Controller.SubscriptionController.GetActiveSubscribers (Quote.Api) in 123.1067ms
+2025-06-14 11:37:32.004 +05:00 [INF] Executed endpoint 'Quote.Api.Controller.SubscriptionController.GetActiveSubscribers (Quote.Api)'
+2025-06-14 11:37:32.010 +05:00 [INF] Request finished HTTP/1.1 GET http://localhost:5050/subscription/active?Page=0&PageSize=10 - 200 null application/json; charset=utf-8 177.6677ms
+2025-06-14 11:38:17.470 +05:00 [INF] Request starting HTTP/1.1 DELETE http://localhost:5050/subscription/subscriber/63ef6c27-1fc5-4cc8-852d-0ba231080a9c - application/json 63
+2025-06-14 11:38:17.474 +05:00 [INF] Executing endpoint 'Quote.Api.Controller.SubscriptionController.Unsubscribe (Quote.Api)'
+2025-06-14 11:38:17.482 +05:00 [INF] Route matched with {action = "Unsubscribe", controller = "Subscription"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Unsubscribe(Quote.Application.Subscribers.Commands.RemoveSubscriptionCommand.RemoveSubscriptionCommand, System.Threading.CancellationToken) on controller Quote.Api.Controller.SubscriptionController (Quote.Api).
+2025-06-14 11:38:17.504 +05:00 [INF] Executing action method Quote.Api.Controller.SubscriptionController.Unsubscribe (Quote.Api) - Validation state: "Valid"
+2025-06-14 11:38:17.544 +05:00 [INF] Executed DbCommand (3ms) [Parameters=[@__email_0='Iskandarov1327@icloud.com'], CommandType='"Text"', CommandTimeout='30']
+SELECT s.id, s.attached_file_path, s.created_at, s.deleted_at, s.email, s.first_name, s.is_active, s.is_deleted, s.last_name, s."PreferredNotificationMethod", s.telegram_user, s.updated_at
+FROM "Subscriber" AS s
+WHERE s.email = @__email_0
+LIMIT 1
+2025-06-14 11:38:17.619 +05:00 [INF] Executed DbCommand (4ms) [Parameters=[@p11='63ef6c27-1fc5-4cc8-852d-0ba231080a9c', @p0=NULL, @p1='2025-06-13T13:41:49.2005340Z' (DbType = DateTime), @p2=NULL (DbType = DateTime), @p3='Iskandarov1327@icloud.com', @p4='Sanjarbek', @p5='False', @p6='False', @p7='Iskandarov', @p8='1', @p9=NULL (DbType = Int64), @p10='2025-06-14T06:38:17.5686310Z' (Nullable = true) (DbType = DateTime)], CommandType='"Text"', CommandTimeout='30']
+UPDATE "Subscriber" SET attached_file_path = @p0, created_at = @p1, deleted_at = @p2, email = @p3, first_name = @p4, is_active = @p5, is_deleted = @p6, last_name = @p7, "PreferredNotificationMethod" = @p8, telegram_user = @p9, updated_at = @p10
+WHERE id = @p11;
+2025-06-14 11:38:17.625 +05:00 [INF] Executed action method Quote.Api.Controller.SubscriptionController.Unsubscribe (Quote.Api), returned result Microsoft.AspNetCore.Mvc.OkResult in 120.93ms.
+2025-06-14 11:38:17.628 +05:00 [INF] Executing StatusCodeResult, setting HTTP status code 200
+2025-06-14 11:38:17.628 +05:00 [INF] Executed action Quote.Api.Controller.SubscriptionController.Unsubscribe (Quote.Api) in 145.6916ms
+2025-06-14 11:38:17.628 +05:00 [INF] Executed endpoint 'Quote.Api.Controller.SubscriptionController.Unsubscribe (Quote.Api)'
+2025-06-14 11:38:17.628 +05:00 [INF] Request finished HTTP/1.1 DELETE http://localhost:5050/subscription/subscriber/63ef6c27-1fc5-4cc8-852d-0ba231080a9c - 200 0 null 157.7208ms
+2025-06-14 11:38:22.983 +05:00 [INF] 🔄 Quote notification cycle starting at "2025-06-14T06:38:22.9836750+00:00"
+2025-06-14 11:38:22.984 +05:00 [INF] Sending quotes to all subscribers for demo at "2025-06-14T06:38:22.9845400+00:00"
+2025-06-14 11:38:22.998 +05:00 [INF] No active subscribers found
+2025-06-14 11:38:25.348 +05:00 [INF] Request starting HTTP/1.1 GET http://localhost:5050/subscription/active?Page=0&PageSize=10 - null null
+2025-06-14 11:38:25.348 +05:00 [INF] Executing endpoint 'Quote.Api.Controller.SubscriptionController.GetActiveSubscribers (Quote.Api)'
+2025-06-14 11:38:25.349 +05:00 [INF] Route matched with {action = "GetActiveSubscribers", controller = "Subscription"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetActiveSubscribers(Quote.Application.Subscribers.Queries.GetActiveSubscribers.GetActiveSubscribersQuery) on controller Quote.Api.Controller.SubscriptionController (Quote.Api).
+2025-06-14 11:38:25.350 +05:00 [INF] Executing action method Quote.Api.Controller.SubscriptionController.GetActiveSubscribers (Quote.Api) - Validation state: "Valid"
+2025-06-14 11:38:25.356 +05:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT count(*)::int
+FROM "Subscriber" AS s
+WHERE s.is_active
+2025-06-14 11:38:25.359 +05:00 [INF] Executed DbCommand (1ms) [Parameters=[@__p_1='10', @__p_0='0'], CommandType='"Text"', CommandTimeout='30']
+SELECT s.id, s.attached_file_path, s.created_at, s.deleted_at, s.email, s.first_name, s.is_active, s.is_deleted, s.last_name, s."PreferredNotificationMethod", s.telegram_user, s.updated_at
+FROM "Subscriber" AS s
+WHERE s.is_active
+LIMIT @__p_1 OFFSET @__p_0
+2025-06-14 11:38:25.360 +05:00 [INF] Executed action method Quote.Api.Controller.SubscriptionController.GetActiveSubscribers (Quote.Api), returned result Microsoft.AspNetCore.Mvc.OkObjectResult in 8.9934ms.
+2025-06-14 11:38:25.361 +05:00 [INF] Executing OkObjectResult, writing value of type 'Quote.Contracts.Common.PagedList`1[[Quote.Domain.Entities.Subscriber, Quote.Domain, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2025-06-14 11:38:25.362 +05:00 [INF] Executed action Quote.Api.Controller.SubscriptionController.GetActiveSubscribers (Quote.Api) in 12.7192ms
+2025-06-14 11:38:25.362 +05:00 [INF] Executed endpoint 'Quote.Api.Controller.SubscriptionController.GetActiveSubscribers (Quote.Api)'
+2025-06-14 11:38:25.362 +05:00 [INF] Request finished HTTP/1.1 GET http://localhost:5050/subscription/active?Page=0&PageSize=10 - 200 null application/json; charset=utf-8 14.7619ms
+2025-06-14 11:38:44.512 +05:00 [INF] Request starting HTTP/1.1 GET http://localhost:5050/api/quote?Page=0&PageSize=10 - null null
+2025-06-14 11:38:44.513 +05:00 [INF] Executing endpoint 'Quote.Api.Controller.QuoteController.GetAll (Quote.Api)'
+2025-06-14 11:38:44.521 +05:00 [INF] Route matched with {action = "GetAll", controller = "Quote"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetAll(Quote.Application.Quote.Queries.GetQuotes.GetQuotesQuery) on controller Quote.Api.Controller.QuoteController (Quote.Api).
+2025-06-14 11:38:44.524 +05:00 [INF] Executing action method Quote.Api.Controller.QuoteController.GetAll (Quote.Api) - Validation state: "Valid"
+2025-06-14 11:38:44.545 +05:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT count(*)::int
+FROM "Quote" AS q
+INNER JOIN (
+    SELECT c.id
+    FROM "Category" AS c
+    WHERE NOT (c.is_deleted)
+) AS c0 ON q.category_id = c0.id
+2025-06-14 11:38:44.552 +05:00 [INF] Executed DbCommand (1ms) [Parameters=[@__p_1='10', @__p_0='0'], CommandType='"Text"', CommandTimeout='30']
+SELECT q.id, q.author, q.quote_text, q.category_id, c0.category_name
+FROM "Quote" AS q
+INNER JOIN (
+    SELECT c.id, c.category_name
+    FROM "Category" AS c
+    WHERE NOT (c.is_deleted)
+) AS c0 ON q.category_id = c0.id
+ORDER BY q.created_at DESC
+LIMIT @__p_1 OFFSET @__p_0
+2025-06-14 11:38:44.554 +05:00 [INF] Executed action method Quote.Api.Controller.QuoteController.GetAll (Quote.Api), returned result Microsoft.AspNetCore.Mvc.OkObjectResult in 29.8921ms.
+2025-06-14 11:38:44.555 +05:00 [INF] Executing OkObjectResult, writing value of type 'Quote.Contracts.Common.PagedList`1[[Quote.Contracts.Responses.QuotesResponse.QuoteResponse, Quote.Contracts, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2025-06-14 11:38:44.560 +05:00 [INF] Executed action Quote.Api.Controller.QuoteController.GetAll (Quote.Api) in 38.1406ms
+2025-06-14 11:38:44.560 +05:00 [INF] Executed endpoint 'Quote.Api.Controller.QuoteController.GetAll (Quote.Api)'
+2025-06-14 11:38:44.560 +05:00 [INF] Request finished HTTP/1.1 GET http://localhost:5050/api/quote?Page=0&PageSize=10 - 200 null application/json; charset=utf-8 47.9052ms
+2025-06-14 11:39:03.163 +05:00 [INF] Request starting HTTP/1.1 DELETE http://localhost:5050/api/quote/quote/c6eb1bd0-2cbc-4061-8cdb-6b169dff5d30 - null null
+2025-06-14 11:39:03.165 +05:00 [INF] Executing endpoint 'Quote.Api.Controller.QuoteController.Delete (Quote.Api)'
+2025-06-14 11:39:03.168 +05:00 [INF] Route matched with {action = "Delete", controller = "Quote"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Delete(System.Guid) on controller Quote.Api.Controller.QuoteController (Quote.Api).
+2025-06-14 11:39:03.168 +05:00 [INF] Executing action method Quote.Api.Controller.QuoteController.Delete (Quote.Api) - Validation state: "Valid"
+2025-06-14 11:39:03.186 +05:00 [INF] Executed DbCommand (1ms) [Parameters=[@__id_0='c6eb1bd0-2cbc-4061-8cdb-6b169dff5d30'], CommandType='"Text"', CommandTimeout='30']
+SELECT q.id, q.author, q.category_id, q.created_at, q.deleted_at, q.is_deleted, q.quote_text, q.updated_at
+FROM "Quote" AS q
+WHERE q.id = @__id_0
+LIMIT 1
+2025-06-14 11:39:03.215 +05:00 [INF] Executed DbCommand (2ms) [Parameters=[@p7='c6eb1bd0-2cbc-4061-8cdb-6b169dff5d30', @p0='Jon Skeet' (Nullable = false), @p1='46c49993-befb-494a-bd78-4ab68a902b42', @p2='2025-06-13T07:33:20.1407140Z' (DbType = DateTime), @p3='2025-06-14T06:39:03.1983900Z' (Nullable = true) (DbType = DateTime), @p4='True', @p5='Prefer using expression-bodied members and pattern matching to keep C# code concise and readable.' (Nullable = false), @p6=NULL (DbType = DateTime)], CommandType='"Text"', CommandTimeout='30']
+UPDATE "Quote" SET author = @p0, category_id = @p1, created_at = @p2, deleted_at = @p3, is_deleted = @p4, quote_text = @p5, updated_at = @p6
+WHERE id = @p7;
+2025-06-14 11:39:03.216 +05:00 [INF] Executed action method Quote.Api.Controller.QuoteController.Delete (Quote.Api), returned result Microsoft.AspNetCore.Mvc.OkResult in 47.4394ms.
+2025-06-14 11:39:03.216 +05:00 [INF] Executing StatusCodeResult, setting HTTP status code 200
+2025-06-14 11:39:03.216 +05:00 [INF] Executed action Quote.Api.Controller.QuoteController.Delete (Quote.Api) in 48.1752ms
+2025-06-14 11:39:03.216 +05:00 [INF] Executed endpoint 'Quote.Api.Controller.QuoteController.Delete (Quote.Api)'
+2025-06-14 11:39:03.216 +05:00 [INF] Request finished HTTP/1.1 DELETE http://localhost:5050/api/quote/quote/c6eb1bd0-2cbc-4061-8cdb-6b169dff5d30 - 200 0 null 53.0361ms
+2025-06-14 11:39:17.020 +05:00 [INF] Request starting HTTP/1.1 GET http://localhost:5050/api/quote?Page=0&PageSize=10 - null null
+2025-06-14 11:39:17.021 +05:00 [INF] Executing endpoint 'Quote.Api.Controller.QuoteController.GetAll (Quote.Api)'
+2025-06-14 11:39:17.021 +05:00 [INF] Route matched with {action = "GetAll", controller = "Quote"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetAll(Quote.Application.Quote.Queries.GetQuotes.GetQuotesQuery) on controller Quote.Api.Controller.QuoteController (Quote.Api).
+2025-06-14 11:39:17.024 +05:00 [INF] Executing action method Quote.Api.Controller.QuoteController.GetAll (Quote.Api) - Validation state: "Valid"
+2025-06-14 11:39:17.031 +05:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT count(*)::int
+FROM "Quote" AS q
+INNER JOIN (
+    SELECT c.id
+    FROM "Category" AS c
+    WHERE NOT (c.is_deleted)
+) AS c0 ON q.category_id = c0.id
+2025-06-14 11:39:17.033 +05:00 [INF] Executed DbCommand (1ms) [Parameters=[@__p_1='10', @__p_0='0'], CommandType='"Text"', CommandTimeout='30']
+SELECT q.id, q.author, q.quote_text, q.category_id, c0.category_name
+FROM "Quote" AS q
+INNER JOIN (
+    SELECT c.id, c.category_name
+    FROM "Category" AS c
+    WHERE NOT (c.is_deleted)
+) AS c0 ON q.category_id = c0.id
+ORDER BY q.created_at DESC
+LIMIT @__p_1 OFFSET @__p_0
+2025-06-14 11:39:17.034 +05:00 [INF] Executed action method Quote.Api.Controller.QuoteController.GetAll (Quote.Api), returned result Microsoft.AspNetCore.Mvc.OkObjectResult in 9.1636ms.
+2025-06-14 11:39:17.034 +05:00 [INF] Executing OkObjectResult, writing value of type 'Quote.Contracts.Common.PagedList`1[[Quote.Contracts.Responses.QuotesResponse.QuoteResponse, Quote.Contracts, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2025-06-14 11:39:17.035 +05:00 [INF] Executed action Quote.Api.Controller.QuoteController.GetAll (Quote.Api) in 12.8927ms
+2025-06-14 11:39:17.035 +05:00 [INF] Executed endpoint 'Quote.Api.Controller.QuoteController.GetAll (Quote.Api)'
+2025-06-14 11:39:17.035 +05:00 [INF] Request finished HTTP/1.1 GET http://localhost:5050/api/quote?Page=0&PageSize=10 - 200 null application/json; charset=utf-8 14.8706ms
+2025-06-14 11:39:22.999 +05:00 [INF] 🔄 Quote notification cycle starting at "2025-06-14T06:39:22.9996260+00:00"
+2025-06-14 11:39:23.000 +05:00 [INF] Sending quotes to all subscribers for demo at "2025-06-14T06:39:23.0001370+00:00"
+2025-06-14 11:39:23.009 +05:00 [INF] No active subscribers found
+2025-06-14 11:39:27.179 +05:00 [INF] Application is shutting down...
+2025-06-14 11:42:12.960 +05:00 [INF] 🔄 Quote notification cycle starting at "2025-06-14T06:42:12.9576090+00:00"
+2025-06-14 11:42:12.993 +05:00 [INF] Sending quotes to all subscribers for demo at "2025-06-14T06:42:12.9932360+00:00"
+2025-06-14 11:42:13.578 +05:00 [INF] Starting quote cleanup at "2025-06-14T06:42:13.5780390+00:00"
+2025-06-14 11:42:13.593 +05:00 [ERR] Failed to cleanup old quotes
+System.InvalidOperationException: A second operation was started on this context instance before a previous operation completed. This is usually caused by different threads concurrently using the same instance of DbContext. For more information on how to avoid threading issues with DbContext, see https://go.microsoft.com/fwlink/?linkid=2097913.
+   at Microsoft.EntityFrameworkCore.Infrastructure.Internal.ConcurrencyDetector.EnterCriticalSection()
+   at Microsoft.EntityFrameworkCore.Query.RelationalShapedQueryCompilingExpressionVisitor.NonQueryResultAsync(RelationalQueryContext relationalQueryContext, RelationalCommandResolver relationalCommandResolver, Type contextType, CommandSource commandSource, Boolean threadSafetyChecksEnabled)
+   at Microsoft.EntityFrameworkCore.Query.Internal.QueryCompiler.ExecuteCore[TResult](Expression query, Boolean async, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.QueryCompiler.ExecuteAsync[TResult](Expression query, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.EntityQueryProvider.ExecuteAsync[TResult](Expression expression, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.EntityFrameworkQueryableExtensions.ExecuteDeleteAsync[TSource](IQueryable`1 source, CancellationToken cancellationToken)
+   at Quote.Persistence.QuoteSingletonDbContext.ExecuteDeleteAsync[TEntity](IQueryable`1 query, CancellationToken cancellationToken) in /Users/iskandarovs/RiderProjects/YY/QuoteApp/Quote.Persistence/QuoteSingletonDbContext.cs:line 32
+   at Quote.Services.BackgroundTasks.Services.CleanUpOldQuotesService.CleanUpQuotes(CancellationToken stoppingToken) in /Users/iskandarovs/RiderProjects/YY/QuoteApp/Quote.Services.BackgroundTasks/Services/CleanUpOldQuotesService.cs:line 43
+2025-06-14 11:42:13.617 +05:00 [INF] Now listening on: http://localhost:5050
+2025-06-14 11:42:13.618 +05:00 [INF] Application started. Press Ctrl+C to shut down.
+2025-06-14 11:42:13.618 +05:00 [INF] Hosting environment: Development
+2025-06-14 11:42:13.618 +05:00 [INF] Content root path: /Users/iskandarovs/RiderProjects/YY/QuoteApp/Quote.Api
+2025-06-14 11:42:13.665 +05:00 [INF] No active subscribers found
+2025-06-14 11:42:13.956 +05:00 [INF] Request starting HTTP/1.1 GET http://localhost:5050/swagger/index.html - null null
+2025-06-14 11:42:14.026 +05:00 [INF] Request finished HTTP/1.1 GET http://localhost:5050/swagger/index.html - 200 null text/html;charset=utf-8 70.7849ms
+2025-06-14 11:42:14.072 +05:00 [INF] Request starting HTTP/1.1 GET http://localhost:5050/swagger/v1/swagger.json - null null
+2025-06-14 11:42:14.134 +05:00 [INF] Request finished HTTP/1.1 GET http://localhost:5050/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 62.0241ms
+2025-06-14 11:42:14.151 +05:00 [INF] Telegram bot QuoteSenderWBot started
+2025-06-14 11:42:20.548 +05:00 [INF] Request starting HTTP/1.1 GET http://localhost:5050/api/quote?Page=0&PageSize=10 - null null
+2025-06-14 11:42:20.560 +05:00 [WRN] Failed to determine the https port for redirect.
+2025-06-14 11:42:20.564 +05:00 [INF] Executing endpoint 'Quote.Api.Controller.QuoteController.GetAll (Quote.Api)'
+2025-06-14 11:42:20.594 +05:00 [INF] Route matched with {action = "GetAll", controller = "Quote"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetAll(Quote.Application.Quote.Queries.GetQuotes.GetQuotesQuery) on controller Quote.Api.Controller.QuoteController (Quote.Api).
+2025-06-14 11:42:20.613 +05:00 [INF] Executing action method Quote.Api.Controller.QuoteController.GetAll (Quote.Api) - Validation state: "Valid"
+2025-06-14 11:42:20.652 +05:00 [WRN] Entity 'Category' has a global query filter defined and is the required end of a relationship with the entity 'Quote'. This may lead to unexpected results when the required entity is filtered out. Either configure the navigation as optional, or define matching query filters for both entities in the navigation. See https://go.microsoft.com/fwlink/?linkid=2131316 for more information.
+2025-06-14 11:42:20.652 +05:00 [WRN] Sensitive data logging is enabled. Log entries and exception messages may include sensitive application data; this mode should only be enabled during development.
+2025-06-14 11:42:20.720 +05:00 [INF] Executed DbCommand (4ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT count(*)::int
+FROM "Quote" AS q
+INNER JOIN (
+    SELECT c.id
+    FROM "Category" AS c
+    WHERE NOT (c.is_deleted)
+) AS c0 ON q.category_id = c0.id
+2025-06-14 11:42:20.770 +05:00 [INF] Executed DbCommand (9ms) [Parameters=[@__p_1='10', @__p_0='0'], CommandType='"Text"', CommandTimeout='30']
+SELECT q.id, q.author, q.quote_text, q.category_id, c0.category_name
+FROM "Quote" AS q
+INNER JOIN (
+    SELECT c.id, c.category_name
+    FROM "Category" AS c
+    WHERE NOT (c.is_deleted)
+) AS c0 ON q.category_id = c0.id
+ORDER BY q.created_at DESC
+LIMIT @__p_1 OFFSET @__p_0
+2025-06-14 11:42:20.777 +05:00 [INF] Executed action method Quote.Api.Controller.QuoteController.GetAll (Quote.Api), returned result Microsoft.AspNetCore.Mvc.OkObjectResult in 161.1967ms.
+2025-06-14 11:42:20.781 +05:00 [INF] Executing OkObjectResult, writing value of type 'Quote.Contracts.Common.PagedList`1[[Quote.Contracts.Responses.QuotesResponse.QuoteResponse, Quote.Contracts, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2025-06-14 11:42:20.810 +05:00 [INF] Executed action Quote.Api.Controller.QuoteController.GetAll (Quote.Api) in 213.1459ms
+2025-06-14 11:42:20.811 +05:00 [INF] Executed endpoint 'Quote.Api.Controller.QuoteController.GetAll (Quote.Api)'
+2025-06-14 11:42:20.820 +05:00 [INF] Request finished HTTP/1.1 GET http://localhost:5050/api/quote?Page=0&PageSize=10 - 200 null application/json; charset=utf-8 272.0915ms
+2025-06-14 11:42:33.310 +05:00 [INF] Request starting HTTP/1.1 DELETE http://localhost:5050/api/quote/quote/c6eb1bd0-2cbc-4061-8cdb-6b169dff5d30 - null null
+2025-06-14 11:42:33.314 +05:00 [INF] Executing endpoint 'Quote.Api.Controller.QuoteController.Delete (Quote.Api)'
+2025-06-14 11:42:33.323 +05:00 [INF] Route matched with {action = "Delete", controller = "Quote"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Delete(System.Guid) on controller Quote.Api.Controller.QuoteController (Quote.Api).
+2025-06-14 11:42:33.325 +05:00 [INF] Executing action method Quote.Api.Controller.QuoteController.Delete (Quote.Api) - Validation state: "Valid"
+2025-06-14 11:42:33.390 +05:00 [INF] Executed DbCommand (2ms) [Parameters=[@__id_0='c6eb1bd0-2cbc-4061-8cdb-6b169dff5d30'], CommandType='"Text"', CommandTimeout='30']
+SELECT q.id, q.author, q.category_id, q.created_at, q.deleted_at, q.is_deleted, q.quote_text, q.updated_at
+FROM "Quote" AS q
+WHERE q.id = @__id_0
+LIMIT 1
+2025-06-14 11:42:33.510 +05:00 [INF] Executed DbCommand (4ms) [Parameters=[@p7='c6eb1bd0-2cbc-4061-8cdb-6b169dff5d30', @p0='Jon Skeet' (Nullable = false), @p1='46c49993-befb-494a-bd78-4ab68a902b42', @p2='2025-06-13T07:33:20.1407140Z' (DbType = DateTime), @p3='2025-06-14T06:42:33.4379000Z' (Nullable = true) (DbType = DateTime), @p4='True', @p5='Prefer using expression-bodied members and pattern matching to keep C# code concise and readable.' (Nullable = false), @p6=NULL (DbType = DateTime)], CommandType='"Text"', CommandTimeout='30']
+UPDATE "Quote" SET author = @p0, category_id = @p1, created_at = @p2, deleted_at = @p3, is_deleted = @p4, quote_text = @p5, updated_at = @p6
+WHERE id = @p7;
+2025-06-14 11:42:33.515 +05:00 [INF] Executed action method Quote.Api.Controller.QuoteController.Delete (Quote.Api), returned result Microsoft.AspNetCore.Mvc.OkResult in 189.3067ms.
+2025-06-14 11:42:33.518 +05:00 [INF] Executing StatusCodeResult, setting HTTP status code 200
+2025-06-14 11:42:33.518 +05:00 [INF] Executed action Quote.Api.Controller.QuoteController.Delete (Quote.Api) in 194.2715ms
+2025-06-14 11:42:33.518 +05:00 [INF] Executed endpoint 'Quote.Api.Controller.QuoteController.Delete (Quote.Api)'
+2025-06-14 11:42:33.518 +05:00 [INF] Request finished HTTP/1.1 DELETE http://localhost:5050/api/quote/quote/c6eb1bd0-2cbc-4061-8cdb-6b169dff5d30 - 200 0 null 208.1873ms
+2025-06-14 11:42:38.455 +05:00 [INF] Request starting HTTP/1.1 GET http://localhost:5050/api/quote?Page=0&PageSize=10 - null null
+2025-06-14 11:42:38.456 +05:00 [INF] Executing endpoint 'Quote.Api.Controller.QuoteController.GetAll (Quote.Api)'
+2025-06-14 11:42:38.456 +05:00 [INF] Route matched with {action = "GetAll", controller = "Quote"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetAll(Quote.Application.Quote.Queries.GetQuotes.GetQuotesQuery) on controller Quote.Api.Controller.QuoteController (Quote.Api).
+2025-06-14 11:42:38.457 +05:00 [INF] Executing action method Quote.Api.Controller.QuoteController.GetAll (Quote.Api) - Validation state: "Valid"
+2025-06-14 11:42:38.486 +05:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT count(*)::int
+FROM "Quote" AS q
+INNER JOIN (
+    SELECT c.id
+    FROM "Category" AS c
+    WHERE NOT (c.is_deleted)
+) AS c0 ON q.category_id = c0.id
+2025-06-14 11:42:38.488 +05:00 [INF] Executed DbCommand (1ms) [Parameters=[@__p_1='10', @__p_0='0'], CommandType='"Text"', CommandTimeout='30']
+SELECT q.id, q.author, q.quote_text, q.category_id, c0.category_name
+FROM "Quote" AS q
+INNER JOIN (
+    SELECT c.id, c.category_name
+    FROM "Category" AS c
+    WHERE NOT (c.is_deleted)
+) AS c0 ON q.category_id = c0.id
+ORDER BY q.created_at DESC
+LIMIT @__p_1 OFFSET @__p_0
+2025-06-14 11:42:38.489 +05:00 [INF] Executed action method Quote.Api.Controller.QuoteController.GetAll (Quote.Api), returned result Microsoft.AspNetCore.Mvc.OkObjectResult in 31.3828ms.
+2025-06-14 11:42:38.489 +05:00 [INF] Executing OkObjectResult, writing value of type 'Quote.Contracts.Common.PagedList`1[[Quote.Contracts.Responses.QuotesResponse.QuoteResponse, Quote.Contracts, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2025-06-14 11:42:38.490 +05:00 [INF] Executed action Quote.Api.Controller.QuoteController.GetAll (Quote.Api) in 33.7486ms
+2025-06-14 11:42:38.490 +05:00 [INF] Executed endpoint 'Quote.Api.Controller.QuoteController.GetAll (Quote.Api)'
+2025-06-14 11:42:38.490 +05:00 [INF] Request finished HTTP/1.1 GET http://localhost:5050/api/quote?Page=0&PageSize=10 - 200 null application/json; charset=utf-8 35.0658ms
+2025-06-14 11:42:48.114 +05:00 [INF] Request starting HTTP/1.1 GET http://localhost:5050/api/quote/quote/c6eb1bd0-2cbc-4061-8cdb-6b169dff5d30 - null null
+2025-06-14 11:42:48.116 +05:00 [INF] Executing endpoint 'Quote.Api.Controller.QuoteController.GetById (Quote.Api)'
+2025-06-14 11:42:48.120 +05:00 [INF] Route matched with {action = "GetById", controller = "Quote"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetById(System.Guid) on controller Quote.Api.Controller.QuoteController (Quote.Api).
+2025-06-14 11:42:48.121 +05:00 [INF] Executing action method Quote.Api.Controller.QuoteController.GetById (Quote.Api) - Validation state: "Valid"
+2025-06-14 11:42:48.138 +05:00 [INF] Executed DbCommand (1ms) [Parameters=[@__request_Id_0='c6eb1bd0-2cbc-4061-8cdb-6b169dff5d30'], CommandType='"Text"', CommandTimeout='30']
+SELECT q.id, q.author, q.quote_text, q.category_id, c0.category_name
+FROM "Quote" AS q
+INNER JOIN (
+    SELECT c.id, c.category_name
+    FROM "Category" AS c
+    WHERE NOT (c.is_deleted)
+) AS c0 ON q.category_id = c0.id
+WHERE q.id = @__request_Id_0
+LIMIT 1
+2025-06-14 11:42:48.139 +05:00 [INF] Executed action method Quote.Api.Controller.QuoteController.GetById (Quote.Api), returned result Microsoft.AspNetCore.Mvc.OkObjectResult in 18.1678ms.
+2025-06-14 11:42:48.140 +05:00 [INF] Executing OkObjectResult, writing value of type 'Quote.Contracts.Responses.QuotesResponse.QuoteResponse'.
+2025-06-14 11:42:48.140 +05:00 [INF] Executed action Quote.Api.Controller.QuoteController.GetById (Quote.Api) in 19.969ms
+2025-06-14 11:42:48.140 +05:00 [INF] Executed endpoint 'Quote.Api.Controller.QuoteController.GetById (Quote.Api)'
+2025-06-14 11:42:48.140 +05:00 [INF] Request finished HTTP/1.1 GET http://localhost:5050/api/quote/quote/c6eb1bd0-2cbc-4061-8cdb-6b169dff5d30 - 200 null application/json; charset=utf-8 26.278ms
+2025-06-14 11:42:58.664 +05:00 [INF] Request starting HTTP/1.1 GET http://localhost:5050/api/category?Page=0&PageSize=10 - null null
+2025-06-14 11:42:58.665 +05:00 [INF] Executing endpoint 'Quote.Api.Controller.CategoryController.GetAll (Quote.Api)'
+2025-06-14 11:42:58.672 +05:00 [INF] Route matched with {action = "GetAll", controller = "Category"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetAll(Quote.Application.Category.Queries.GetCategories.GetCategoriesQuery) on controller Quote.Api.Controller.CategoryController (Quote.Api).
+2025-06-14 11:42:58.675 +05:00 [INF] Executing action method Quote.Api.Controller.CategoryController.GetAll (Quote.Api) - Validation state: "Valid"
+2025-06-14 11:42:58.704 +05:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT EXISTS (
+    SELECT 1
+    FROM "Category" AS c
+    WHERE NOT (c.is_deleted))
+2025-06-14 11:42:58.712 +05:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT count(*)::int
+FROM "Category" AS c
+WHERE NOT (c.is_deleted)
+2025-06-14 11:42:58.718 +05:00 [INF] Executed DbCommand (1ms) [Parameters=[@__p_1='10', @__p_0='0'], CommandType='"Text"', CommandTimeout='30']
+SELECT c.id, c.category_name, c.created_at, c.updated_at
+FROM "Category" AS c
+WHERE NOT (c.is_deleted)
+ORDER BY c.category_name
+LIMIT @__p_1 OFFSET @__p_0
+2025-06-14 11:42:58.719 +05:00 [INF] Executed action method Quote.Api.Controller.CategoryController.GetAll (Quote.Api), returned result Microsoft.AspNetCore.Mvc.OkObjectResult in 43.3132ms.
+2025-06-14 11:42:58.719 +05:00 [INF] Executing OkObjectResult, writing value of type 'Quote.Contracts.Common.PagedList`1[[Quote.Contracts.Responses.CategoriesResponse.CategoryResponse, Quote.Contracts, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2025-06-14 11:42:58.726 +05:00 [INF] Executed action Quote.Api.Controller.CategoryController.GetAll (Quote.Api) in 53.5104ms
+2025-06-14 11:42:58.726 +05:00 [INF] Executed endpoint 'Quote.Api.Controller.CategoryController.GetAll (Quote.Api)'
+2025-06-14 11:42:58.727 +05:00 [INF] Request finished HTTP/1.1 GET http://localhost:5050/api/category?Page=0&PageSize=10 - 200 null application/json; charset=utf-8 62.3885ms
+2025-06-14 11:43:13.665 +05:00 [INF] 🔄 Quote notification cycle starting at "2025-06-14T06:43:13.6655640+00:00"
+2025-06-14 11:43:13.666 +05:00 [INF] Sending quotes to all subscribers for demo at "2025-06-14T06:43:13.6667530+00:00"
+2025-06-14 11:43:13.670 +05:00 [INF] No active subscribers found
+2025-06-14 11:43:25.953 +05:00 [INF] Request starting HTTP/1.1 DELETE http://localhost:5050/api/category/category/46c49993-befb-494a-bd78-4ab68a902b42 - null null
+2025-06-14 11:43:25.954 +05:00 [INF] Executing endpoint 'Quote.Api.Controller.CategoryController.Delete (Quote.Api)'
+2025-06-14 11:43:25.961 +05:00 [INF] Route matched with {action = "Delete", controller = "Category"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Delete(System.Guid) on controller Quote.Api.Controller.CategoryController (Quote.Api).
+2025-06-14 11:43:25.961 +05:00 [INF] Executing action method Quote.Api.Controller.CategoryController.Delete (Quote.Api) - Validation state: "Valid"
+2025-06-14 11:43:25.986 +05:00 [INF] Executed DbCommand (1ms) [Parameters=[@__id_0='46c49993-befb-494a-bd78-4ab68a902b42'], CommandType='"Text"', CommandTimeout='30']
+SELECT c.id, c.created_at, c.deleted_at, c.is_deleted, c.category_name, c.updated_at
+FROM "Category" AS c
+WHERE NOT (c.is_deleted) AND c.id = @__id_0
+LIMIT 1
+2025-06-14 11:43:26.019 +05:00 [INF] Executed DbCommand (2ms) [Parameters=[@p5='46c49993-befb-494a-bd78-4ab68a902b42', @p0='2025-06-13T07:32:38.7210820Z' (DbType = DateTime), @p1='2025-06-14T06:43:26.0031410Z' (Nullable = true) (DbType = DateTime), @p2='True', @p3='coding' (Nullable = false), @p4=NULL (DbType = DateTime)], CommandType='"Text"', CommandTimeout='30']
+UPDATE "Category" SET created_at = @p0, deleted_at = @p1, is_deleted = @p2, category_name = @p3, updated_at = @p4
+WHERE id = @p5;
+2025-06-14 11:43:26.020 +05:00 [INF] Executed action method Quote.Api.Controller.CategoryController.Delete (Quote.Api), returned result Microsoft.AspNetCore.Mvc.OkResult in 58.7249ms.
+2025-06-14 11:43:26.021 +05:00 [INF] Executing StatusCodeResult, setting HTTP status code 200
+2025-06-14 11:43:26.021 +05:00 [INF] Executed action Quote.Api.Controller.CategoryController.Delete (Quote.Api) in 59.636ms
+2025-06-14 11:43:26.021 +05:00 [INF] Executed endpoint 'Quote.Api.Controller.CategoryController.Delete (Quote.Api)'
+2025-06-14 11:43:26.021 +05:00 [INF] Request finished HTTP/1.1 DELETE http://localhost:5050/api/category/category/46c49993-befb-494a-bd78-4ab68a902b42 - 200 0 null 67.7698ms
+2025-06-14 11:43:30.574 +05:00 [INF] Request starting HTTP/1.1 GET http://localhost:5050/api/category?Page=0&PageSize=10 - null null
+2025-06-14 11:43:30.575 +05:00 [INF] Executing endpoint 'Quote.Api.Controller.CategoryController.GetAll (Quote.Api)'
+2025-06-14 11:43:30.575 +05:00 [INF] Route matched with {action = "GetAll", controller = "Category"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetAll(Quote.Application.Category.Queries.GetCategories.GetCategoriesQuery) on controller Quote.Api.Controller.CategoryController (Quote.Api).
+2025-06-14 11:43:30.576 +05:00 [INF] Executing action method Quote.Api.Controller.CategoryController.GetAll (Quote.Api) - Validation state: "Valid"
+2025-06-14 11:43:30.587 +05:00 [INF] Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT EXISTS (
+    SELECT 1
+    FROM "Category" AS c
+    WHERE NOT (c.is_deleted))
+2025-06-14 11:43:30.591 +05:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT count(*)::int
+FROM "Category" AS c
+WHERE NOT (c.is_deleted)
+2025-06-14 11:43:30.594 +05:00 [INF] Executed DbCommand (1ms) [Parameters=[@__p_1='10', @__p_0='0'], CommandType='"Text"', CommandTimeout='30']
+SELECT c.id, c.category_name, c.created_at, c.updated_at
+FROM "Category" AS c
+WHERE NOT (c.is_deleted)
+ORDER BY c.category_name
+LIMIT @__p_1 OFFSET @__p_0
+2025-06-14 11:43:30.594 +05:00 [INF] Executed action method Quote.Api.Controller.CategoryController.GetAll (Quote.Api), returned result Microsoft.AspNetCore.Mvc.OkObjectResult in 18.454ms.
+2025-06-14 11:43:30.595 +05:00 [INF] Executing OkObjectResult, writing value of type 'Quote.Contracts.Common.PagedList`1[[Quote.Contracts.Responses.CategoriesResponse.CategoryResponse, Quote.Contracts, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2025-06-14 11:43:30.595 +05:00 [INF] Executed action Quote.Api.Controller.CategoryController.GetAll (Quote.Api) in 19.8151ms
+2025-06-14 11:43:30.595 +05:00 [INF] Executed endpoint 'Quote.Api.Controller.CategoryController.GetAll (Quote.Api)'
+2025-06-14 11:43:30.595 +05:00 [INF] Request finished HTTP/1.1 GET http://localhost:5050/api/category?Page=0&PageSize=10 - 200 null application/json; charset=utf-8 21.0941ms
+2025-06-14 11:43:41.709 +05:00 [INF] Application is shutting down...
+2025-06-14 11:56:53.893 +05:00 [INF] 🔄 Quote notification cycle starting at "2025-06-14T06:56:53.8905520+00:00"
+2025-06-14 11:56:53.926 +05:00 [INF] Sending quotes to all subscribers for demo at "2025-06-14T06:56:53.9265090+00:00"
+2025-06-14 11:56:54.512 +05:00 [INF] Starting quote cleanup at "2025-06-14T06:56:54.5126020+00:00"
+2025-06-14 11:56:54.530 +05:00 [ERR] Failed to cleanup old quotes
+System.InvalidOperationException: A second operation was started on this context instance before a previous operation completed. This is usually caused by different threads concurrently using the same instance of DbContext. For more information on how to avoid threading issues with DbContext, see https://go.microsoft.com/fwlink/?linkid=2097913.
+   at Microsoft.EntityFrameworkCore.Infrastructure.Internal.ConcurrencyDetector.EnterCriticalSection()
+   at Microsoft.EntityFrameworkCore.Query.RelationalShapedQueryCompilingExpressionVisitor.NonQueryResultAsync(RelationalQueryContext relationalQueryContext, RelationalCommandResolver relationalCommandResolver, Type contextType, CommandSource commandSource, Boolean threadSafetyChecksEnabled)
+   at Microsoft.EntityFrameworkCore.Query.Internal.QueryCompiler.ExecuteCore[TResult](Expression query, Boolean async, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.QueryCompiler.ExecuteAsync[TResult](Expression query, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.EntityQueryProvider.ExecuteAsync[TResult](Expression expression, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.EntityFrameworkQueryableExtensions.ExecuteDeleteAsync[TSource](IQueryable`1 source, CancellationToken cancellationToken)
+   at Quote.Persistence.QuoteSingletonDbContext.ExecuteDeleteAsync[TEntity](IQueryable`1 query, CancellationToken cancellationToken) in /Users/iskandarovs/RiderProjects/YY/QuoteApp/Quote.Persistence/QuoteSingletonDbContext.cs:line 32
+   at Quote.Services.BackgroundTasks.Services.CleanUpOldQuotesService.CleanUpQuotes(CancellationToken stoppingToken) in /Users/iskandarovs/RiderProjects/YY/QuoteApp/Quote.Services.BackgroundTasks/Services/CleanUpOldQuotesService.cs:line 43
+2025-06-14 11:56:54.555 +05:00 [INF] Now listening on: http://localhost:5050
+2025-06-14 11:56:54.556 +05:00 [INF] Application started. Press Ctrl+C to shut down.
+2025-06-14 11:56:54.556 +05:00 [INF] Hosting environment: Development
+2025-06-14 11:56:54.556 +05:00 [INF] Content root path: /Users/iskandarovs/RiderProjects/YY/QuoteApp/Quote.Api
+2025-06-14 11:56:54.604 +05:00 [INF] No active subscribers found
+2025-06-14 11:56:54.988 +05:00 [INF] Request starting HTTP/1.1 GET http://localhost:5050/swagger/index.html - null null
+2025-06-14 11:56:55.059 +05:00 [INF] Request finished HTTP/1.1 GET http://localhost:5050/swagger/index.html - 200 null text/html;charset=utf-8 71.6868ms
+2025-06-14 11:56:55.104 +05:00 [INF] Request starting HTTP/1.1 GET http://localhost:5050/swagger/v1/swagger.json - null null
+2025-06-14 11:56:55.174 +05:00 [INF] Request finished HTTP/1.1 GET http://localhost:5050/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 70.1804ms
+2025-06-14 11:56:56.125 +05:00 [INF] Telegram bot QuoteSenderWBot started
+2025-06-14 11:56:59.935 +05:00 [INF] Request starting HTTP/1.1 GET http://localhost:5050/api/quote?Page=0&PageSize=10 - null null
+2025-06-14 11:56:59.941 +05:00 [WRN] Failed to determine the https port for redirect.
+2025-06-14 11:56:59.942 +05:00 [INF] Executing endpoint 'Quote.Api.Controller.QuoteController.GetAll (Quote.Api)'
+2025-06-14 11:56:59.956 +05:00 [INF] Route matched with {action = "GetAll", controller = "Quote"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetAll(Quote.Application.Quote.Queries.GetQuotes.GetQuotesQuery) on controller Quote.Api.Controller.QuoteController (Quote.Api).
+2025-06-14 11:56:59.967 +05:00 [INF] Executing action method Quote.Api.Controller.QuoteController.GetAll (Quote.Api) - Validation state: "Valid"
+2025-06-14 11:56:59.998 +05:00 [WRN] Sensitive data logging is enabled. Log entries and exception messages may include sensitive application data; this mode should only be enabled during development.
+2025-06-14 11:57:00.063 +05:00 [INF] Executed DbCommand (4ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT count(*)::int
+FROM "Quote" AS q
+INNER JOIN (
+    SELECT c.id
+    FROM "Category" AS c
+    WHERE NOT (c.is_deleted)
+) AS c0 ON q.category_id = c0.id
+WHERE NOT (q.is_deleted)
+2025-06-14 11:57:00.111 +05:00 [INF] Executed DbCommand (8ms) [Parameters=[@__p_1='10', @__p_0='0'], CommandType='"Text"', CommandTimeout='30']
+SELECT q.id, q.author, q.quote_text, q.category_id, c0.category_name
+FROM "Quote" AS q
+INNER JOIN (
+    SELECT c.id, c.category_name
+    FROM "Category" AS c
+    WHERE NOT (c.is_deleted)
+) AS c0 ON q.category_id = c0.id
+WHERE NOT (q.is_deleted)
+ORDER BY q.created_at DESC
+LIMIT @__p_1 OFFSET @__p_0
+2025-06-14 11:57:00.115 +05:00 [INF] Executed action method Quote.Api.Controller.QuoteController.GetAll (Quote.Api), returned result Microsoft.AspNetCore.Mvc.OkObjectResult in 145.4911ms.
+2025-06-14 11:57:00.122 +05:00 [INF] Executing OkObjectResult, writing value of type 'Quote.Contracts.Common.PagedList`1[[Quote.Contracts.Responses.QuotesResponse.QuoteResponse, Quote.Contracts, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2025-06-14 11:57:00.146 +05:00 [INF] Executed action Quote.Api.Controller.QuoteController.GetAll (Quote.Api) in 188.1163ms
+2025-06-14 11:57:00.147 +05:00 [INF] Executed endpoint 'Quote.Api.Controller.QuoteController.GetAll (Quote.Api)'
+2025-06-14 11:57:00.157 +05:00 [INF] Request finished HTTP/1.1 GET http://localhost:5050/api/quote?Page=0&PageSize=10 - 200 null application/json; charset=utf-8 221.495ms
+2025-06-14 11:57:48.713 +05:00 [INF] Request starting HTTP/1.1 GET http://localhost:5050/api/quote/quote/46c49993-befb-494a-bd78-4ab68a902b42 - null null
+2025-06-14 11:57:48.715 +05:00 [INF] Executing endpoint 'Quote.Api.Controller.QuoteController.GetById (Quote.Api)'
+2025-06-14 11:57:48.720 +05:00 [INF] Route matched with {action = "GetById", controller = "Quote"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetById(System.Guid) on controller Quote.Api.Controller.QuoteController (Quote.Api).
+2025-06-14 11:57:48.721 +05:00 [INF] Executing action method Quote.Api.Controller.QuoteController.GetById (Quote.Api) - Validation state: "Valid"
+2025-06-14 11:57:48.776 +05:00 [INF] Executed DbCommand (5ms) [Parameters=[@__request_Id_0='46c49993-befb-494a-bd78-4ab68a902b42'], CommandType='"Text"', CommandTimeout='30']
+SELECT q.id, q.author, q.quote_text, q.category_id, c0.category_name
+FROM "Quote" AS q
+INNER JOIN (
+    SELECT c.id, c.category_name
+    FROM "Category" AS c
+    WHERE NOT (c.is_deleted)
+) AS c0 ON q.category_id = c0.id
+WHERE NOT (q.is_deleted) AND q.id = @__request_Id_0
+LIMIT 1
+2025-06-14 11:57:48.777 +05:00 [INF] Executed action method Quote.Api.Controller.QuoteController.GetById (Quote.Api), returned result Microsoft.AspNetCore.Mvc.NotFoundResult in 55.653ms.
+2025-06-14 11:57:48.778 +05:00 [INF] Executing ObjectResult, writing value of type 'Microsoft.AspNetCore.Mvc.ProblemDetails'.
+2025-06-14 11:57:48.792 +05:00 [INF] Executed action Quote.Api.Controller.QuoteController.GetById (Quote.Api) in 71.5912ms
+2025-06-14 11:57:48.792 +05:00 [INF] Executed endpoint 'Quote.Api.Controller.QuoteController.GetById (Quote.Api)'
+2025-06-14 11:57:48.792 +05:00 [INF] Request finished HTTP/1.1 GET http://localhost:5050/api/quote/quote/46c49993-befb-494a-bd78-4ab68a902b42 - 404 null application/json; charset=utf-8 79.5098ms
+2025-06-14 11:57:54.606 +05:00 [INF] 🔄 Quote notification cycle starting at "2025-06-14T06:57:54.6058710+00:00"
+2025-06-14 11:57:54.606 +05:00 [INF] Sending quotes to all subscribers for demo at "2025-06-14T06:57:54.6067470+00:00"
+2025-06-14 11:57:54.619 +05:00 [INF] No active subscribers found
+2025-06-14 11:58:09.359 +05:00 [INF] Request starting HTTP/1.1 GET http://localhost:5050/api/category?Page=0&PageSize=10 - null null
+2025-06-14 11:58:09.360 +05:00 [INF] Executing endpoint 'Quote.Api.Controller.CategoryController.GetAll (Quote.Api)'
+2025-06-14 11:58:09.369 +05:00 [INF] Route matched with {action = "GetAll", controller = "Category"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetAll(Quote.Application.Category.Queries.GetCategories.GetCategoriesQuery) on controller Quote.Api.Controller.CategoryController (Quote.Api).
+2025-06-14 11:58:09.373 +05:00 [INF] Executing action method Quote.Api.Controller.CategoryController.GetAll (Quote.Api) - Validation state: "Valid"
+2025-06-14 11:58:09.412 +05:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT EXISTS (
+    SELECT 1
+    FROM "Category" AS c
+    WHERE NOT (c.is_deleted))
+2025-06-14 11:58:09.419 +05:00 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT count(*)::int
+FROM "Category" AS c
+WHERE NOT (c.is_deleted)
+2025-06-14 11:58:09.425 +05:00 [INF] Executed DbCommand (2ms) [Parameters=[@__p_1='10', @__p_0='0'], CommandType='"Text"', CommandTimeout='30']
+SELECT c.id, c.category_name, c.created_at, c.updated_at
+FROM "Category" AS c
+WHERE NOT (c.is_deleted)
+ORDER BY c.category_name
+LIMIT @__p_1 OFFSET @__p_0
+2025-06-14 11:58:09.434 +05:00 [INF] Executed action method Quote.Api.Controller.CategoryController.GetAll (Quote.Api), returned result Microsoft.AspNetCore.Mvc.OkObjectResult in 60.949ms.
+2025-06-14 11:58:09.434 +05:00 [INF] Executing OkObjectResult, writing value of type 'Quote.Contracts.Common.PagedList`1[[Quote.Contracts.Responses.CategoriesResponse.CategoryResponse, Quote.Contracts, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2025-06-14 11:58:09.441 +05:00 [INF] Executed action Quote.Api.Controller.CategoryController.GetAll (Quote.Api) in 71.4917ms
+2025-06-14 11:58:09.441 +05:00 [INF] Executed endpoint 'Quote.Api.Controller.CategoryController.GetAll (Quote.Api)'
+2025-06-14 11:58:09.441 +05:00 [INF] Request finished HTTP/1.1 GET http://localhost:5050/api/category?Page=0&PageSize=10 - 200 null application/json; charset=utf-8 81.9276ms
+2025-06-14 11:58:27.279 +05:00 [INF] Request starting HTTP/1.1 POST http://localhost:5050/api/quote/quote - application/json 109
+2025-06-14 11:58:27.281 +05:00 [INF] Executing endpoint 'Quote.Api.Controller.QuoteController.Create (Quote.Api)'
+2025-06-14 11:58:27.286 +05:00 [INF] Route matched with {action = "Create", controller = "Quote"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Create(Quote.Contracts.Requests.QuotesRequest.CreateQuoteRequest) on controller Quote.Api.Controller.QuoteController (Quote.Api).
+2025-06-14 11:58:27.309 +05:00 [INF] Executing action method Quote.Api.Controller.QuoteController.Create (Quote.Api) - Validation state: "Valid"
+2025-06-14 11:58:27.334 +05:00 [INF] Executed DbCommand (1ms) [Parameters=[@__id_0='66947fd1-0243-4e4d-a0b2-89746461b689'], CommandType='"Text"', CommandTimeout='30']
+SELECT c.id, c.created_at, c.deleted_at, c.is_deleted, c.category_name, c.updated_at
+FROM "Category" AS c
+WHERE NOT (c.is_deleted) AND c.id = @__id_0
+LIMIT 1
+2025-06-14 11:58:27.477 +05:00 [INF] Executed DbCommand (6ms) [Parameters=[@p0='86062700-786e-41d4-a872-0d303d9eb711', @p1='testtt' (Nullable = false), @p2='66947fd1-0243-4e4d-a0b2-89746461b689', @p3='2025-06-14T06:58:27.4072370Z' (DbType = DateTime), @p4=NULL (DbType = DateTime), @p5='strskjvsjvnsdking' (Nullable = false), @p6=NULL (DbType = DateTime)], CommandType='"Text"', CommandTimeout='30']
+INSERT INTO "Quote" (id, author, category_id, created_at, deleted_at, quote_text, updated_at)
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6)
+RETURNING is_deleted;
+2025-06-14 11:58:27.488 +05:00 [INF] Executed action method Quote.Api.Controller.QuoteController.Create (Quote.Api), returned result Microsoft.AspNetCore.Mvc.OkObjectResult in 178.8189ms.
+2025-06-14 11:58:27.488 +05:00 [INF] Executing OkObjectResult, writing value of type 'System.Guid'.
+2025-06-14 11:58:27.490 +05:00 [INF] Executed action Quote.Api.Controller.QuoteController.Create (Quote.Api) in 204.0715ms
+2025-06-14 11:58:27.490 +05:00 [INF] Executed endpoint 'Quote.Api.Controller.QuoteController.Create (Quote.Api)'
+2025-06-14 11:58:27.490 +05:00 [INF] Request finished HTTP/1.1 POST http://localhost:5050/api/quote/quote - 200 null application/json; charset=utf-8 211.5037ms
+2025-06-14 11:58:36.128 +05:00 [INF] Request starting HTTP/1.1 GET http://localhost:5050/api/quote?Page=0&PageSize=10 - null null
+2025-06-14 11:58:36.129 +05:00 [INF] Executing endpoint 'Quote.Api.Controller.QuoteController.GetAll (Quote.Api)'
+2025-06-14 11:58:36.129 +05:00 [INF] Route matched with {action = "GetAll", controller = "Quote"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetAll(Quote.Application.Quote.Queries.GetQuotes.GetQuotesQuery) on controller Quote.Api.Controller.QuoteController (Quote.Api).
+2025-06-14 11:58:36.130 +05:00 [INF] Executing action method Quote.Api.Controller.QuoteController.GetAll (Quote.Api) - Validation state: "Valid"
+2025-06-14 11:58:36.133 +05:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT count(*)::int
+FROM "Quote" AS q
+INNER JOIN (
+    SELECT c.id
+    FROM "Category" AS c
+    WHERE NOT (c.is_deleted)
+) AS c0 ON q.category_id = c0.id
+WHERE NOT (q.is_deleted)
+2025-06-14 11:58:36.135 +05:00 [INF] Executed DbCommand (1ms) [Parameters=[@__p_1='10', @__p_0='0'], CommandType='"Text"', CommandTimeout='30']
+SELECT q.id, q.author, q.quote_text, q.category_id, c0.category_name
+FROM "Quote" AS q
+INNER JOIN (
+    SELECT c.id, c.category_name
+    FROM "Category" AS c
+    WHERE NOT (c.is_deleted)
+) AS c0 ON q.category_id = c0.id
+WHERE NOT (q.is_deleted)
+ORDER BY q.created_at DESC
+LIMIT @__p_1 OFFSET @__p_0
+2025-06-14 11:58:36.135 +05:00 [INF] Executed action method Quote.Api.Controller.QuoteController.GetAll (Quote.Api), returned result Microsoft.AspNetCore.Mvc.OkObjectResult in 5.5061ms.
+2025-06-14 11:58:36.136 +05:00 [INF] Executing OkObjectResult, writing value of type 'Quote.Contracts.Common.PagedList`1[[Quote.Contracts.Responses.QuotesResponse.QuoteResponse, Quote.Contracts, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2025-06-14 11:58:36.137 +05:00 [INF] Executed action Quote.Api.Controller.QuoteController.GetAll (Quote.Api) in 7.9548ms
+2025-06-14 11:58:36.137 +05:00 [INF] Executed endpoint 'Quote.Api.Controller.QuoteController.GetAll (Quote.Api)'
+2025-06-14 11:58:36.138 +05:00 [INF] Request finished HTTP/1.1 GET http://localhost:5050/api/quote?Page=0&PageSize=10 - 200 null application/json; charset=utf-8 9.2635ms
+2025-06-14 11:58:54.620 +05:00 [INF] 🔄 Quote notification cycle starting at "2025-06-14T06:58:54.6198460+00:00"
+2025-06-14 11:58:54.621 +05:00 [INF] Sending quotes to all subscribers for demo at "2025-06-14T06:58:54.6217650+00:00"
+2025-06-14 11:58:54.632 +05:00 [INF] No active subscribers found
+2025-06-14 11:59:54.633 +05:00 [INF] 🔄 Quote notification cycle starting at "2025-06-14T06:59:54.6335240+00:00"
+2025-06-14 11:59:54.635 +05:00 [INF] Sending quotes to all subscribers for demo at "2025-06-14T06:59:54.6352540+00:00"
+2025-06-14 11:59:54.639 +05:00 [INF] No active subscribers found
+2025-06-14 11:59:58.673 +05:00 [INF] Request starting HTTP/1.1 GET http://localhost:5050/api/quote/quote/86062700-786e-41d4-a872-0d303d9eb711 - null null
+2025-06-14 11:59:58.675 +05:00 [INF] Executing endpoint 'Quote.Api.Controller.QuoteController.GetById (Quote.Api)'
+2025-06-14 11:59:58.675 +05:00 [INF] Route matched with {action = "GetById", controller = "Quote"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetById(System.Guid) on controller Quote.Api.Controller.QuoteController (Quote.Api).
+2025-06-14 11:59:58.677 +05:00 [INF] Executing action method Quote.Api.Controller.QuoteController.GetById (Quote.Api) - Validation state: "Valid"
+2025-06-14 11:59:58.696 +05:00 [INF] Executed DbCommand (6ms) [Parameters=[@__request_Id_0='86062700-786e-41d4-a872-0d303d9eb711'], CommandType='"Text"', CommandTimeout='30']
+SELECT q.id, q.author, q.quote_text, q.category_id, c0.category_name
+FROM "Quote" AS q
+INNER JOIN (
+    SELECT c.id, c.category_name
+    FROM "Category" AS c
+    WHERE NOT (c.is_deleted)
+) AS c0 ON q.category_id = c0.id
+WHERE NOT (q.is_deleted) AND q.id = @__request_Id_0
+LIMIT 1
+2025-06-14 11:59:58.697 +05:00 [INF] Executed action method Quote.Api.Controller.QuoteController.GetById (Quote.Api), returned result Microsoft.AspNetCore.Mvc.OkObjectResult in 20.3661ms.
+2025-06-14 11:59:58.698 +05:00 [INF] Executing OkObjectResult, writing value of type 'Quote.Contracts.Responses.QuotesResponse.QuoteResponse'.
+2025-06-14 11:59:58.699 +05:00 [INF] Executed action Quote.Api.Controller.QuoteController.GetById (Quote.Api) in 23.3941ms
+2025-06-14 11:59:58.699 +05:00 [INF] Executed endpoint 'Quote.Api.Controller.QuoteController.GetById (Quote.Api)'
+2025-06-14 11:59:58.699 +05:00 [INF] Request finished HTTP/1.1 GET http://localhost:5050/api/quote/quote/86062700-786e-41d4-a872-0d303d9eb711 - 200 null application/json; charset=utf-8 26.7539ms
+2025-06-14 12:00:03.181 +05:00 [INF] Request starting HTTP/1.1 DELETE http://localhost:5050/api/quote/quote/86062700-786e-41d4-a872-0d303d9eb711 - null null
+2025-06-14 12:00:03.181 +05:00 [INF] Executing endpoint 'Quote.Api.Controller.QuoteController.Delete (Quote.Api)'
+2025-06-14 12:00:03.184 +05:00 [INF] Route matched with {action = "Delete", controller = "Quote"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Delete(System.Guid) on controller Quote.Api.Controller.QuoteController (Quote.Api).
+2025-06-14 12:00:03.185 +05:00 [INF] Executing action method Quote.Api.Controller.QuoteController.Delete (Quote.Api) - Validation state: "Valid"
+2025-06-14 12:00:03.203 +05:00 [INF] Executed DbCommand (1ms) [Parameters=[@__id_0='86062700-786e-41d4-a872-0d303d9eb711'], CommandType='"Text"', CommandTimeout='30']
+SELECT q.id, q.author, q.category_id, q.created_at, q.deleted_at, q.is_deleted, q.quote_text, q.updated_at
+FROM "Quote" AS q
+WHERE NOT (q.is_deleted) AND q.id = @__id_0
+LIMIT 1
+2025-06-14 12:00:03.218 +05:00 [INF] Executed DbCommand (2ms) [Parameters=[@p7='86062700-786e-41d4-a872-0d303d9eb711', @p0='testtt' (Nullable = false), @p1='66947fd1-0243-4e4d-a0b2-89746461b689', @p2='2025-06-14T06:58:27.4072370Z' (DbType = DateTime), @p3='2025-06-14T07:00:03.2076410Z' (Nullable = true) (DbType = DateTime), @p4='True', @p5='strskjvsjvnsdking' (Nullable = false), @p6=NULL (DbType = DateTime)], CommandType='"Text"', CommandTimeout='30']
+UPDATE "Quote" SET author = @p0, category_id = @p1, created_at = @p2, deleted_at = @p3, is_deleted = @p4, quote_text = @p5, updated_at = @p6
+WHERE id = @p7;
+2025-06-14 12:00:03.219 +05:00 [INF] Executed action method Quote.Api.Controller.QuoteController.Delete (Quote.Api), returned result Microsoft.AspNetCore.Mvc.OkResult in 34.059ms.
+2025-06-14 12:00:03.222 +05:00 [INF] Executing StatusCodeResult, setting HTTP status code 200
+2025-06-14 12:00:03.222 +05:00 [INF] Executed action Quote.Api.Controller.QuoteController.Delete (Quote.Api) in 37.7832ms
+2025-06-14 12:00:03.222 +05:00 [INF] Executed endpoint 'Quote.Api.Controller.QuoteController.Delete (Quote.Api)'
+2025-06-14 12:00:03.222 +05:00 [INF] Request finished HTTP/1.1 DELETE http://localhost:5050/api/quote/quote/86062700-786e-41d4-a872-0d303d9eb711 - 200 0 null 41.6053ms
+2025-06-14 12:00:08.248 +05:00 [INF] Request starting HTTP/1.1 GET http://localhost:5050/api/quote/quote/86062700-786e-41d4-a872-0d303d9eb711 - null null
+2025-06-14 12:00:08.249 +05:00 [INF] Executing endpoint 'Quote.Api.Controller.QuoteController.GetById (Quote.Api)'
+2025-06-14 12:00:08.249 +05:00 [INF] Route matched with {action = "GetById", controller = "Quote"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetById(System.Guid) on controller Quote.Api.Controller.QuoteController (Quote.Api).
+2025-06-14 12:00:08.250 +05:00 [INF] Executing action method Quote.Api.Controller.QuoteController.GetById (Quote.Api) - Validation state: "Valid"
+2025-06-14 12:00:08.262 +05:00 [INF] Executed DbCommand (2ms) [Parameters=[@__request_Id_0='86062700-786e-41d4-a872-0d303d9eb711'], CommandType='"Text"', CommandTimeout='30']
+SELECT q.id, q.author, q.quote_text, q.category_id, c0.category_name
+FROM "Quote" AS q
+INNER JOIN (
+    SELECT c.id, c.category_name
+    FROM "Category" AS c
+    WHERE NOT (c.is_deleted)
+) AS c0 ON q.category_id = c0.id
+WHERE NOT (q.is_deleted) AND q.id = @__request_Id_0
+LIMIT 1
+2025-06-14 12:00:08.263 +05:00 [INF] Executed action method Quote.Api.Controller.QuoteController.GetById (Quote.Api), returned result Microsoft.AspNetCore.Mvc.NotFoundResult in 13.2736ms.
+2025-06-14 12:00:08.264 +05:00 [INF] Executing ObjectResult, writing value of type 'Microsoft.AspNetCore.Mvc.ProblemDetails'.
+2025-06-14 12:00:08.264 +05:00 [INF] Executed action Quote.Api.Controller.QuoteController.GetById (Quote.Api) in 14.597ms
+2025-06-14 12:00:08.264 +05:00 [INF] Executed endpoint 'Quote.Api.Controller.QuoteController.GetById (Quote.Api)'
+2025-06-14 12:00:08.264 +05:00 [INF] Request finished HTTP/1.1 GET http://localhost:5050/api/quote/quote/86062700-786e-41d4-a872-0d303d9eb711 - 404 null application/json; charset=utf-8 16.0634ms
+2025-06-14 12:00:54.640 +05:00 [INF] 🔄 Quote notification cycle starting at "2025-06-14T07:00:54.6401310+00:00"
+2025-06-14 12:00:54.641 +05:00 [INF] Sending quotes to all subscribers for demo at "2025-06-14T07:00:54.6410730+00:00"
+2025-06-14 12:00:54.643 +05:00 [INF] No active subscribers found
+2025-06-14 12:01:09.695 +05:00 [INF] Request starting HTTP/1.1 GET http://localhost:5050/api/quote?Page=0&PageSize=10 - null null
+2025-06-14 12:01:09.696 +05:00 [INF] Executing endpoint 'Quote.Api.Controller.QuoteController.GetAll (Quote.Api)'
+2025-06-14 12:01:09.696 +05:00 [INF] Route matched with {action = "GetAll", controller = "Quote"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetAll(Quote.Application.Quote.Queries.GetQuotes.GetQuotesQuery) on controller Quote.Api.Controller.QuoteController (Quote.Api).
+2025-06-14 12:01:09.696 +05:00 [INF] Executing action method Quote.Api.Controller.QuoteController.GetAll (Quote.Api) - Validation state: "Valid"
+2025-06-14 12:01:09.702 +05:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT count(*)::int
+FROM "Quote" AS q
+INNER JOIN (
+    SELECT c.id
+    FROM "Category" AS c
+    WHERE NOT (c.is_deleted)
+) AS c0 ON q.category_id = c0.id
+WHERE NOT (q.is_deleted)
+2025-06-14 12:01:09.711 +05:00 [INF] Executed DbCommand (6ms) [Parameters=[@__p_1='10', @__p_0='0'], CommandType='"Text"', CommandTimeout='30']
+SELECT q.id, q.author, q.quote_text, q.category_id, c0.category_name
+FROM "Quote" AS q
+INNER JOIN (
+    SELECT c.id, c.category_name
+    FROM "Category" AS c
+    WHERE NOT (c.is_deleted)
+) AS c0 ON q.category_id = c0.id
+WHERE NOT (q.is_deleted)
+ORDER BY q.created_at DESC
+LIMIT @__p_1 OFFSET @__p_0
+2025-06-14 12:01:09.711 +05:00 [INF] Executed action method Quote.Api.Controller.QuoteController.GetAll (Quote.Api), returned result Microsoft.AspNetCore.Mvc.OkObjectResult in 14.7135ms.
+2025-06-14 12:01:09.712 +05:00 [INF] Executing OkObjectResult, writing value of type 'Quote.Contracts.Common.PagedList`1[[Quote.Contracts.Responses.QuotesResponse.QuoteResponse, Quote.Contracts, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2025-06-14 12:01:09.713 +05:00 [INF] Executed action Quote.Api.Controller.QuoteController.GetAll (Quote.Api) in 16.7303ms
+2025-06-14 12:01:09.713 +05:00 [INF] Executed endpoint 'Quote.Api.Controller.QuoteController.GetAll (Quote.Api)'
+2025-06-14 12:01:09.713 +05:00 [INF] Request finished HTTP/1.1 GET http://localhost:5050/api/quote?Page=0&PageSize=10 - 200 null application/json; charset=utf-8 18.1262ms
+2025-06-14 12:01:20.486 +05:00 [INF] Request starting HTTP/1.1 GET http://localhost:5050/api/quote?Page=0&PageSize=10 - null null
+2025-06-14 12:01:20.486 +05:00 [INF] Executing endpoint 'Quote.Api.Controller.QuoteController.GetAll (Quote.Api)'
+2025-06-14 12:01:20.486 +05:00 [INF] Route matched with {action = "GetAll", controller = "Quote"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetAll(Quote.Application.Quote.Queries.GetQuotes.GetQuotesQuery) on controller Quote.Api.Controller.QuoteController (Quote.Api).
+2025-06-14 12:01:20.487 +05:00 [INF] Executing action method Quote.Api.Controller.QuoteController.GetAll (Quote.Api) - Validation state: "Valid"
+2025-06-14 12:01:20.494 +05:00 [INF] Executed DbCommand (5ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT count(*)::int
+FROM "Quote" AS q
+INNER JOIN (
+    SELECT c.id
+    FROM "Category" AS c
+    WHERE NOT (c.is_deleted)
+) AS c0 ON q.category_id = c0.id
+WHERE NOT (q.is_deleted)
+2025-06-14 12:01:20.497 +05:00 [INF] Executed DbCommand (1ms) [Parameters=[@__p_1='10', @__p_0='0'], CommandType='"Text"', CommandTimeout='30']
+SELECT q.id, q.author, q.quote_text, q.category_id, c0.category_name
+FROM "Quote" AS q
+INNER JOIN (
+    SELECT c.id, c.category_name
+    FROM "Category" AS c
+    WHERE NOT (c.is_deleted)
+) AS c0 ON q.category_id = c0.id
+WHERE NOT (q.is_deleted)
+ORDER BY q.created_at DESC
+LIMIT @__p_1 OFFSET @__p_0
+2025-06-14 12:01:20.497 +05:00 [INF] Executed action method Quote.Api.Controller.QuoteController.GetAll (Quote.Api), returned result Microsoft.AspNetCore.Mvc.OkObjectResult in 10.2212ms.
+2025-06-14 12:01:20.498 +05:00 [INF] Executing OkObjectResult, writing value of type 'Quote.Contracts.Common.PagedList`1[[Quote.Contracts.Responses.QuotesResponse.QuoteResponse, Quote.Contracts, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2025-06-14 12:01:20.498 +05:00 [INF] Executed action Quote.Api.Controller.QuoteController.GetAll (Quote.Api) in 11.4444ms
+2025-06-14 12:01:20.498 +05:00 [INF] Executed endpoint 'Quote.Api.Controller.QuoteController.GetAll (Quote.Api)'
+2025-06-14 12:01:20.498 +05:00 [INF] Request finished HTTP/1.1 GET http://localhost:5050/api/quote?Page=0&PageSize=10 - 200 null application/json; charset=utf-8 12.6564ms
+2025-06-14 12:01:40.636 +05:00 [INF] Request starting HTTP/1.1 GET http://localhost:5050/api/quote?Page=0&PageSize=10 - null null
+2025-06-14 12:01:40.638 +05:00 [INF] Executing endpoint 'Quote.Api.Controller.QuoteController.GetAll (Quote.Api)'
+2025-06-14 12:01:40.638 +05:00 [INF] Route matched with {action = "GetAll", controller = "Quote"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetAll(Quote.Application.Quote.Queries.GetQuotes.GetQuotesQuery) on controller Quote.Api.Controller.QuoteController (Quote.Api).
+2025-06-14 12:01:40.639 +05:00 [INF] Executing action method Quote.Api.Controller.QuoteController.GetAll (Quote.Api) - Validation state: "Valid"
+2025-06-14 12:01:40.643 +05:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT count(*)::int
+FROM "Quote" AS q
+INNER JOIN (
+    SELECT c.id
+    FROM "Category" AS c
+    WHERE NOT (c.is_deleted)
+) AS c0 ON q.category_id = c0.id
+WHERE NOT (q.is_deleted)
+2025-06-14 12:01:40.644 +05:00 [INF] Executed DbCommand (0ms) [Parameters=[@__p_1='10', @__p_0='0'], CommandType='"Text"', CommandTimeout='30']
+SELECT q.id, q.author, q.quote_text, q.category_id, c0.category_name
+FROM "Quote" AS q
+INNER JOIN (
+    SELECT c.id, c.category_name
+    FROM "Category" AS c
+    WHERE NOT (c.is_deleted)
+) AS c0 ON q.category_id = c0.id
+WHERE NOT (q.is_deleted)
+ORDER BY q.created_at DESC
+LIMIT @__p_1 OFFSET @__p_0
+2025-06-14 12:01:40.644 +05:00 [INF] Executed action method Quote.Api.Controller.QuoteController.GetAll (Quote.Api), returned result Microsoft.AspNetCore.Mvc.OkObjectResult in 4.9756ms.
+2025-06-14 12:01:40.644 +05:00 [INF] Executing OkObjectResult, writing value of type 'Quote.Contracts.Common.PagedList`1[[Quote.Contracts.Responses.QuotesResponse.QuoteResponse, Quote.Contracts, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2025-06-14 12:01:40.644 +05:00 [INF] Executed action Quote.Api.Controller.QuoteController.GetAll (Quote.Api) in 6.3592ms
+2025-06-14 12:01:40.644 +05:00 [INF] Executed endpoint 'Quote.Api.Controller.QuoteController.GetAll (Quote.Api)'
+2025-06-14 12:01:40.644 +05:00 [INF] Request finished HTTP/1.1 GET http://localhost:5050/api/quote?Page=0&PageSize=10 - 200 null application/json; charset=utf-8 8.0327ms
+2025-06-14 12:01:48.039 +05:00 [INF] Application is shutting down...
