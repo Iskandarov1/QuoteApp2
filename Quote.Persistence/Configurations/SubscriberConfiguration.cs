@@ -41,14 +41,6 @@ internal sealed class SubscriberConfiguration : IEntityTypeConfiguration<Subscri
             .IsRequired();
 
         builder.Property(item => item.UpdatedAt);
-
-        builder.HasIndex(item => item.Email)
-            .IsUnique();
-
-        builder.HasIndex(item => item.TelegramUser)
-            .IsUnique();
-
-        builder.HasIndex(item => item.CreatedAt);
         
         builder.Property(item => item.DeletedAt);
         builder.Property(item => item.IsDelete)

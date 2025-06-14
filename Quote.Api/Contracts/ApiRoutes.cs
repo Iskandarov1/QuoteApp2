@@ -5,7 +5,6 @@ namespace Quote.Api.Contracts
         public static class Quotes
         {
             public const string GetAll = "";
-           // public const string GetById = "{quoteId:guid}";
             public const string GetById = "quote/{Id:guid}";
             public const string Create = "quote";
             public const string Update = "quote/{Id:guid}";
@@ -14,10 +13,18 @@ namespace Quote.Api.Contracts
         }
         public static class Subscriptions
         {
-            public const string Subscribe = "subscriptions";
-            public const string Unsubscribe = "subscriptions/{subscriptionId:guid}";
-            public const string GetSentNotification = "sent";
-            public const string GetMyNotifications = "my-notifications";
+            public const string Subscribe = "subscribe";
+            public const string Unsubscribe = "subscriber/{id:Guid}";
+            public const string GetActiveSubscribers = "active";
+            
+        }
+        
+        public static class Categories
+        {
+            public const string GetById = "category/{id:Guid}";
+            public const string CreateCategory = "category";
+            public const string Delete = "category/{id:Guid}";
+            public const string Create = "category";
         }
 
     }

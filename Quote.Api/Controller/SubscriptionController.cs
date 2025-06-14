@@ -16,7 +16,7 @@ namespace Quote.Api.Controller;
 [Route("[controller]")]
 public class SubscriptionController(IMediator mediator,IUniqueFileStorage storage) : ApiController(mediator)
 {
-    [HttpPost("subscribe")]
+    [HttpPost(ApiRoutes.Subscriptions.Subscribe)]
     [ProducesResponseType(StatusCodes.Status200OK)]
     [ProducesResponseType(typeof(ApiErrorResponse), StatusCodes.Status400BadRequest)]
     [Produces("application/json")]
@@ -33,7 +33,7 @@ public class SubscriptionController(IMediator mediator,IUniqueFileStorage storag
                     { SubscriberId = id, Message = "Successfully subscribed!" }), BadRequest); 
 
     
-    [HttpDelete("subscriber/{id:Guid}")]
+    [HttpDelete(ApiRoutes.Subscriptions.Unsubscribe)]
     [ProducesResponseType(StatusCodes.Status200OK)]
     [ProducesResponseType(typeof(ApiErrorResponse), StatusCodes.Status400BadRequest)] 
     public async Task<IActionResult> Unsubscribe(RemoveSubscriptionCommand request, CancellationToken cancellationToken) =>
@@ -41,7 +41,7 @@ public class SubscriptionController(IMediator mediator,IUniqueFileStorage storag
             .Bind(cmd => Mediator.Send(cmd, HttpContext.RequestAborted))
             .Match(Ok, BadRequest);
 
-    [HttpGet("active")]
+    [HttpGet(ApiRoutes.Subscriptions.GetActiveSubscribers)]
     [ProducesResponseType(StatusCodes.Status200OK)]
     [ProducesResponseType(typeof(ApiErrorResponse), StatusCodes.Status400BadRequest)]
     [Produces("application/json")]

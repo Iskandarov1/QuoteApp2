@@ -35,8 +35,7 @@ internal sealed class QuoteConfiguration : IEntityTypeConfiguration<Domain.Entit
 
         builder.Property(quote => quote.CreatedAt)
             .IsRequired();
-
-        builder.HasIndex(quote => quote.CreatedAt);
+        
         
         builder.Property(q => q.DeletedAt);
         builder.Property(q => q.IsDelete)

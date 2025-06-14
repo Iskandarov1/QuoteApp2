@@ -14,10 +14,8 @@ internal sealed class CategoryConfiguration : IEntityTypeConfiguration<Category>
         builder.Property(c => c.Name)
             .HasMaxLength(100)
             .IsRequired();
-        builder.HasIndex(c => c.Name).IsUnique();
 
         builder.Property(c => c.CreatedAt).IsRequired();
-        builder.HasIndex(c => c.CreatedAt);
         
         builder.Property(c => c.DeletedAt);
         builder.Property(c => c.IsDelete)

@@ -30,7 +30,7 @@ public class CategoryController(IMediator mediator) : ApiController(mediator)
             .Bind(query => Mediator.Send(query, HttpContext.RequestAborted))
             .Match(Ok, NotFound);
     
-    [HttpGet("category/{id:Guid}")]
+    [HttpGet(ApiRoutes.Categories.GetById)]
     [ProducesResponseType(typeof(CategoryResponse), StatusCodes.Status200OK)]
     [ProducesResponseType(StatusCodes.Status404NotFound)]
     [Produces("application/json")]
@@ -40,7 +40,7 @@ public class CategoryController(IMediator mediator) : ApiController(mediator)
             .Bind(query => Mediator.Send(query, HttpContext.RequestAborted))
             .Match(Ok, NotFound);
     
-    [HttpPost("category")]
+    [HttpPost(ApiRoutes.Categories.Create)]
     [ProducesResponseType(StatusCodes.Status200OK)]
     [ProducesResponseType(typeof(ApiErrorResponse), StatusCodes.Status400BadRequest)]
     [Produces("application/json")]
@@ -61,7 +61,7 @@ public class CategoryController(IMediator mediator) : ApiController(mediator)
             .Bind(command => Mediator.Send(command, HttpContext.RequestAborted))
             .Match(Ok, BadRequest);
     
-    [HttpDelete("category/{id:Guid}")]
+    [HttpDelete(ApiRoutes.Categories.Delete)]
     [ProducesResponseType(StatusCodes.Status200OK)]
     [ProducesResponseType(typeof(ApiErrorResponse), StatusCodes.Status400BadRequest)]
     [Produces("application/json")]
