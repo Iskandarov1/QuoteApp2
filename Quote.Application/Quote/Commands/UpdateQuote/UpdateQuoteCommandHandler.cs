@@ -18,7 +18,7 @@ public sealed class UpdateQuoteCommandHandler(
 {
     public async Task<Result<Guid>> Handle(UpdateQuoteCommand request, CancellationToken cancellationToken)
     {
-        var maybeQuote = await quoteRepository.GetByIdAsync(request.QuoteId, cancellationToken);
+        var maybeQuote = await quoteRepository.GetByIdAsync(request.Id, cancellationToken);
         
         var maybeCategory = await categoryRepository.GetByIdAsync(request.CategoryId, cancellationToken);
         if (maybeCategory.HasNoValue)

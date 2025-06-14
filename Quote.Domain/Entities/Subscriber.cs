@@ -1,5 +1,6 @@
 using System.ComponentModel.DataAnnotations.Schema;
 using Quote.Domain.Core.Primitives;
+using Quote.Domain.Enumerations;
 using Quote.Domain.ValueObjects;
 
 namespace Quote.Domain.Entities;
@@ -31,12 +32,7 @@ public class Subscriber : AggregateRoot
     [Column("telegram_user")] public long? TelegramUser { get; private set; }
     [Column("attached_file_path")] public string? AttachedFilePath { get; private set; }
     public NotificationPreference PreferredNotificationMethod { get; private set; }
-
-    public enum NotificationPreference
-    {
-        Email=1,
-        Telegram = 2
-    }
+    
 
     public static Subscriber CreateWithEmail(string? email, string? firstName, string? lastName, string? attachedFilePath = null)
     {
@@ -51,7 +47,6 @@ public class Subscriber : AggregateRoot
         subscriber.PreferredNotificationMethod = NotificationPreference.Telegram;
         return subscriber;
     }
-
     public Subscriber Update(string firstName, string lastName, string email)
     {
         this.FirstName = firstName;

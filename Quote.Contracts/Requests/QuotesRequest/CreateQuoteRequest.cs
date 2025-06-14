@@ -4,14 +4,14 @@ using System.Text.Json.Serialization;
 namespace Quote.Contracts.Requests.QuotesRequest;
 
 public record CreateQuoteRequest
-{
+( 
     [property:JsonPropertyName("author")]
-    [Required] public string Author { get; init; }
+    [Required]  string Author ,
     
     [property:JsonPropertyName("text")]
     [Required, MaxLength(400) ]
-    public string Text { get; init; }
+     string Text ,
     
     [property:JsonPropertyName("category")]
-    [Required] public Guid CategoryId { get; init; }
-}
+    [Required]  Guid CategoryId 
+);

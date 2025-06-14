@@ -4,18 +4,18 @@ using Microsoft.AspNetCore.Http;
 namespace Quote.Contracts.Requests.SubscriberRequest;
 
 public record CreateSubscriberRequest
-{
+( 
     [property: JsonPropertyName("first_name")]
-    public string FirstName { get; set; }
+     string FirstName ,
 
     [property: JsonPropertyName("last_name")]
-    public string LastName { get; set; }
+     string LastName ,
 
     [property: JsonPropertyName("email")]
-    public string Email { get; set; }
+     string Email ,
 
     [property: JsonPropertyName("telegram_user")]
-    public long? TelegramUser { get; set; }
+     long? TelegramUser ,
     
-    public IFormFile? AttachedFile { get; set; }
-}
+     IFormFile? AttachedFile 
+);

@@ -1,6 +1,6 @@
 using Quote.Application.Core.Abstractions.Data;
 using Quote.Application.Core.Abstractions.Messaging;
-using Quote.Contracts.Requests.CategoriesRequest;
+using Quote.Contracts.Requests.CategoryRequest;
 using Quote.Domain.Core.Errors;
 using Quote.Domain.Core.Localizations;
 using Quote.Domain.Core.Primitives;

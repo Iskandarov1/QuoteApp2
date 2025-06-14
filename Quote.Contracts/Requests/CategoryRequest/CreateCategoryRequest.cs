@@ -1,11 +1,11 @@
 using System.ComponentModel.DataAnnotations;
 using System.Text.Json.Serialization;
 
-namespace Quote.Contracts.Requests.CategoriesRequest;
+namespace Quote.Contracts.Requests.CategoryRequest;
 
 public sealed record CreateCategoryRequest
-{
+(
     [property:JsonPropertyName("name")]
     [Required, MaxLength(100)]
-    public string Name { get; init; }
-}
+     string Name 
+);

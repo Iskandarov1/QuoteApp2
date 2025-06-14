@@ -1,6 +1,6 @@
 using System.Text.Json.Serialization;
 
-namespace Quote.Contracts.Responses.QuotesResponse;
+namespace Quote.Contracts.Responses;
 
 public record BaseResponse()
 {

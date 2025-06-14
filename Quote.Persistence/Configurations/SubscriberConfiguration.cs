@@ -1,6 +1,7 @@
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
 using Quote.Domain.Entities;
+using Quote.Domain.Enumerations;
 
 namespace Quote.Persistence.Configurations;
 
@@ -32,7 +33,9 @@ internal sealed class SubscriberConfiguration : IEntityTypeConfiguration<Subscri
 
         builder.Property(item => item.PreferredNotificationMethod)
             .IsRequired()
-            .HasConversion<int>();
+            .HasConversion(
+        v => v.Value,
+        v => NotificationPreference.FromValue(v).Value);
 
         builder.Property(item => item.CreatedAt)
             .IsRequired();
@@ -40,13 +43,15 @@ internal sealed class SubscriberConfiguration : IEntityTypeConfiguration<Subscri
         builder.Property(item => item.UpdatedAt);
 
         builder.HasIndex(item => item.Email)
-            .IsUnique()
-            .HasFilter("email IS NOT NULL");
+            .IsUnique();
 
         builder.HasIndex(item => item.TelegramUser)
-            .IsUnique()
-            .HasFilter("telegram_user IS NOT NULL");
+            .IsUnique();
 
         builder.HasIndex(item => item.CreatedAt);
+        
+        builder.Property(item => item.DeletedAt);
+        builder.Property(item => item.IsDelete)
+            .HasDefaultValue(false);
     }
 }

@@ -38,9 +38,12 @@ internal sealed class QuoteConfiguration : IEntityTypeConfiguration<Domain.Entit
 
         builder.HasIndex(quote => quote.CreatedAt);
         
-        builder.Property(q => q.IsDelete).HasDefaultValue(false);
-        builder.HasIndex(q => q.IsDelete);
+        builder.Property(q => q.DeletedAt);
+        builder.Property(q => q.IsDelete)
+            .HasDefaultValue(false);
         
         builder.HasQueryFilter(q => !q.IsDelete);
+
+        
     }
 }

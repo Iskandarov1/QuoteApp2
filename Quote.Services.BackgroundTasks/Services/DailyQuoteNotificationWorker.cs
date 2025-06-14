@@ -11,6 +11,7 @@ using Quote.Domain.Repositories;
 using Quote.Domain.ValueObjects;
 using Quote.Persistence;
 using Category = Quote.Domain.Entities.Category;
+using Quote.Domain.Enumerations;
 
 namespace Quote.Services.BackgroundTasks.Services;
 
@@ -79,25 +80,28 @@ public class DailyQuoteNotificationWorker(
             {
                 try
                 {
-                    switch (subscriber.PreferredNotificationMethod)
+                    if (subscriber.PreferredNotificationMethod == NotificationPreference.Email &&
+                        !string.IsNullOrEmpty(subscriber.Email))
                     {
-                        case Subscriber.NotificationPreference.Email when !string.IsNullOrEmpty(subscriber.Email):
-                            await quoteEmailService.SendDailyQuoteEmailAsync(
-                                subscriber.Email,
-                                quote.Author,
-                                quote.Text);
-                            logger.LogInformation("📧 Quote sent to {Email}: \"{Quote}\" by {Author}", 
-                                subscriber.Email, quote.Text, quote.Author);
-                            break;
 
-                        case Subscriber.NotificationPreference.Telegram when subscriber.TelegramUser.HasValue:
-                            await telegramService.SendMessageAsync(
-                                subscriber.TelegramUser.Value,
-                                telegramContent,
-                                cancellationToken);
-                            logger.LogInformation("📱 Quote sent to Telegram {UserId}: \"{Quote}\" by {Author}", 
-                                subscriber.TelegramUser.Value, quote.Text, quote.Author);
-                            break;
+                        await quoteEmailService.SendDailyQuoteEmailAsync(
+                            subscriber.Email,
+                            quote.Author,
+                            quote.Text);
+                        logger.LogInformation("📧 Quote sent to {Email}: \"{Quote}\" by {Author}",
+                            subscriber.Email, quote.Text, quote.Author);
+                        break;
+                    }
+
+                    else if (subscriber.PreferredNotificationMethod == NotificationPreference.Telegram && subscriber.TelegramUser.HasValue)
+                    {
+                        await telegramService.SendMessageAsync(
+                            subscriber.TelegramUser.Value,
+                            telegramContent,
+                            cancellationToken);
+                        logger.LogInformation("📱 Quote sent to Telegram {UserId}: \"{Quote}\" by {Author}", 
+                            subscriber.TelegramUser.Value, quote.Text, quote.Author);
+                        break;
                     }
                     successCount++;
                 }

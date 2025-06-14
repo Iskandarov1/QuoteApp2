@@ -49,6 +49,8 @@ public sealed class QuoteSingletonDbContext : DbContext
         {
             var utcNow = this.dateTime.UtcNow;
             this.UpdateAuditableEntities(utcNow);
+            this.UpdateSoftDeletableEntities(utcNow);        
+
             return await base.SaveChangesAsync(cancellationToken);
         }
         finally

@@ -12,15 +12,13 @@ public class DeleteQuoteCommandHandler(
 {
     public async Task<Result> Handle(DeleteQuoteCommand request, CancellationToken cancellationToken)
     {
-        var maybeQuote = await quoteRepository.GetByIdAsync(request.QuoteId, cancellationToken);
-
+        var maybeQuote = await quoteRepository.GetByIdAsync(request.Id, cancellationToken);
         if (maybeQuote.HasNoValue)
-        {
             return Result.Failure(DomainErrors.Quote.NotFound);
-        }
+        
 
-        maybeQuote.Value.IsDelete = true;
-        quoteRepository.Update(maybeQuote.Value);
+        
+        quoteRepository.Remove(maybeQuote.Value);
 
         await unitOfWork.SaveChangesAsync(cancellationToken);
 

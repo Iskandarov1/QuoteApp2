@@ -1,6 +1,6 @@
 using Quote.Application.Core.Abstractions.Data;
 using Quote.Application.Core.Abstractions.Messaging;
-using Quote.Contracts.Requests.CategoriesRequest;
+using Quote.Contracts.Requests.CategoryRequest;
 using Quote.Domain.Core.Errors;
 using Quote.Domain.Core.Localizations;
 using Quote.Domain.Core.Primitives;
@@ -18,7 +18,7 @@ public class UpdateCategoryCommandHandler(
     {
         var maybeCategory = await categoryRepository.GetByIdAsync(request.Id);
 
-        if (!maybeCategory.HasValue)
+        if (maybeCategory.HasNoValue)
             return Result.Failure<Guid>(DomainErrors.Category.NotFound);
 
         var category = Domain.ValueObjects.Category.Create(request.Name,

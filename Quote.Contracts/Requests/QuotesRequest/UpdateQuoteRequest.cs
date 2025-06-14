@@ -4,16 +4,16 @@ using System.Text.Json.Serialization;
 namespace Quote.Contracts.Requests.QuotesRequest;
 
 public record UpdateQuoteRequest
-{
+( 
     [property:JsonPropertyName("quote_id")]
-    [Required] Guid QuoteId { get; init; }
+    [Required] Guid Id ,
     
     [property:JsonPropertyName("author")]
-    [Required] public string Author { get; init; }
+    [Required]  string Author ,
     
     [property:JsonPropertyName("text")]
-    [Required, MaxLength(400) ] public string Text { get; init; }
+    [Required, MaxLength(400) ]  string Text ,
     
     [property:JsonPropertyName("category")]
-    [Required]public Guid CategoryId { get; init; }
-}
+    [Required] Guid CategoryId 
+);

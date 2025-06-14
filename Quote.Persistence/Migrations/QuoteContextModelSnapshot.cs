@@ -33,6 +33,10 @@ namespace Quote.Persistence.Migrations
                         .HasColumnType("timestamp with time zone")
                         .HasColumnName("created_at");
 
+                    b.Property<DateTime?>("DeletedAt")
+                        .HasColumnType("timestamp with time zone")
+                        .HasColumnName("deleted_at");
+
                     b.Property<bool>("IsDelete")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("boolean")
@@ -52,8 +56,6 @@ namespace Quote.Persistence.Migrations
                     b.HasKey("Id");
 
                     b.HasIndex("CreatedAt");
-
-                    b.HasIndex("IsDelete");
 
                     b.HasIndex("Name")
                         .IsUnique();
@@ -83,6 +85,10 @@ namespace Quote.Persistence.Migrations
                         .HasColumnType("timestamp with time zone")
                         .HasColumnName("created_at");
 
+                    b.Property<DateTime?>("DeletedAt")
+                        .HasColumnType("timestamp with time zone")
+                        .HasColumnName("deleted_at");
+
                     b.Property<bool>("IsDelete")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("boolean")
@@ -105,8 +111,6 @@ namespace Quote.Persistence.Migrations
 
                     b.HasIndex("CreatedAt");
 
-                    b.HasIndex("IsDelete");
-
                     b.ToTable("Quote");
                 });
 
@@ -126,6 +130,10 @@ namespace Quote.Persistence.Migrations
                         .HasColumnType("timestamp with time zone")
                         .HasColumnName("created_at");
 
+                    b.Property<DateTime?>("DeletedAt")
+                        .HasColumnType("timestamp with time zone")
+                        .HasColumnName("deleted_at");
+
                     b.Property<string>("Email")
                         .HasMaxLength(255)
                         .HasColumnType("character varying(255)")
@@ -143,7 +151,9 @@ namespace Quote.Persistence.Migrations
                         .HasColumnName("is_active");
 
                     b.Property<bool>("IsDelete")
+                        .ValueGeneratedOnAdd()
                         .HasColumnType("boolean")
+                        .HasDefaultValue(false)
                         .HasColumnName("is_deleted");
 
                     b.Property<string>("LastName")
@@ -167,12 +177,10 @@ namespace Quote.Persistence.Migrations
                     b.HasIndex("CreatedAt");
 
                     b.HasIndex("Email")
-                        .IsUnique()
-                        .HasFilter("email IS NOT NULL");
+                        .IsUnique();
 
                     b.HasIndex("TelegramUser")
-                        .IsUnique()
-                        .HasFilter("telegram_user IS NOT NULL");
+                        .IsUnique();
 
                     b.ToTable("Subscriber");
                 });

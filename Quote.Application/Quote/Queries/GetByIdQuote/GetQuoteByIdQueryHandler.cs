@@ -12,7 +12,7 @@ public class GetQuoteByIdQueryHandler(IDbContext dbContext):IQueryHandler<GetQuo
     {
         var response = await (from quote in dbContext.Set<Domain.Entities.Quote>().AsNoTracking()
             join category in dbContext.Set<Domain.Entities.Category>() on quote.CategoryId equals category.Id 
-            where quote.Id == request.QuoteId
+            where quote.Id == request.Id
             select new QuoteResponse(
                 quote.Id,
                 quote.Author,

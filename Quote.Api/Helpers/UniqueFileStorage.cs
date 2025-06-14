@@ -2,13 +2,13 @@ using System.Security.Cryptography;
 using System.Text.Json;
 using Quote.Domain.Repositories;
 
-namespace Quote.Api.Contracts;
+namespace Quote.Api.Helpers;
 
 public sealed class UniqueFileStorage(
     IWebHostEnvironment env,
     ILogger<UniqueFileStorage> logger) : IUniqueFileStorage
 {
-    private readonly string _root = Path.Combine(env.ContentRootPath, "Forms");  
+    private readonly string _root = Path.Combine(env.ContentRootPath, "Logs");  
     private const string LogName = "upload.log";
 
     public string Save(IFormFile file, CancellationToken ct = default)

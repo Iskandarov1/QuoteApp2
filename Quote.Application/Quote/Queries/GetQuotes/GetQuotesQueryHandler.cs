@@ -5,11 +5,11 @@ using Quote.Contracts.Common;
 using Quote.Contracts.Responses.QuotesResponse;
 using Quote.Domain.Core.Primitives.Maybe;
 
-namespace Quote.Application.Quote.Queries.GetAllQuotes;
+namespace Quote.Application.Quote.Queries.GetQuotes;
 
-public class GetAllQuotesQueryHandler(IDbContext dbContext):IQueryHandler<GetAllQuotesQuery,Maybe<PagedList<QuoteResponse>>>
+public class GetQuotesQueryHandler(IDbContext dbContext):IQueryHandler<GetQuotesQuery,Maybe<PagedList<QuoteResponse>>>
 {
-    public async Task<Maybe<PagedList<QuoteResponse>>> Handle(GetAllQuotesQuery request, CancellationToken cancellationToken)
+    public async Task<Maybe<PagedList<QuoteResponse>>> Handle(GetQuotesQuery request, CancellationToken cancellationToken)
     {
         var query = from quote in dbContext.Set<Domain.Entities.Quote>().AsNoTracking()
             join category in dbContext.Set<Domain.Entities.Category>().AsNoTracking()

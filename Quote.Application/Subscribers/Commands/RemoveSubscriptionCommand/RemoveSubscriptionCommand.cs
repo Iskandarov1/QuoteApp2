@@ -5,4 +5,4 @@ namespace Quote.Application.Subscribers.Commands.RemoveSubscriptionCommand;
 
 public record RemoveSubscriptionCommand(
     string? Email,
-    long? TelegramUser): ICommand<Result<bool>>;
+    long? TelegramUser): ICommand<Result>;

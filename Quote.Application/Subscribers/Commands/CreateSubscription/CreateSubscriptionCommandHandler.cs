@@ -21,7 +21,7 @@ public class CreateSubscriptionCommandHandler(
 {
     public async Task<Result<Guid>> Handle(CreateSubscriptionCommand request, CancellationToken cancellationToken)
     {
-        // Handle Email subscription
+
         if (!string.IsNullOrWhiteSpace(request.Email))
         {
             var emailResult = Email.Create(request.Email, CaseConverter.PascalToSnakeCase(nameof(CreateSubscriberRequest.Email)), sharedViewLocalizer);

@@ -5,8 +5,8 @@ using Quote.Application.Category.Commands.DeleteCategory;
 using Quote.Application.Quote.Commands.CreateQuote;
 using Quote.Application.Quote.Commands.DeleteQuote;
 using Quote.Application.Quote.Commands.UpdateQuote;
-using Quote.Application.Quote.Queries.GetAllQuotes;
 using Quote.Application.Quote.Queries.GetByIdQuote;
+using Quote.Application.Quote.Queries.GetQuotes;
 using Quote.Application.Quote.Queries.GetRandomQuote;
 using Quote.Contracts.Common;
 using Quote.Contracts.Requests.QuotesRequest;
@@ -25,8 +25,8 @@ public class QuoteController(IMediator mediator):ApiController(mediator)
     [ProducesResponseType(typeof(PagedList<QuoteResponse>), StatusCodes.Status200OK)]
     [ProducesResponseType(StatusCodes.Status404NotFound)]
     [Produces("application/json")]
-    public async Task<IActionResult> GetAll([FromQuery] GetAllQuotesQuery request) =>
-        await Maybe<GetAllQuotesQuery>
+    public async Task<IActionResult> GetAll([FromQuery] GetQuotesQuery request) =>
+        await Maybe<GetQuotesQuery>
             .From(request)
             .Bind(query => Mediator.Send(query, HttpContext.RequestAborted))
             .Match(Ok, NotFound);

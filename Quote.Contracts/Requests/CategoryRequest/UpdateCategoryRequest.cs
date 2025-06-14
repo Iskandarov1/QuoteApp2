@@ -1,7 +1,6 @@
-using System.ComponentModel.DataAnnotations;
 using System.Text.Json.Serialization;
 
-namespace Quote.Contracts.Requests.CategoriesRequest;
+namespace Quote.Contracts.Requests.CategoryRequest;
 
 public record UpdateCategoryRequest(
     [property: JsonPropertyName("id")]

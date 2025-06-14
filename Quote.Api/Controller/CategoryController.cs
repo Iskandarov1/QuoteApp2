@@ -4,10 +4,10 @@ using Quote.Api.Contracts;
 using Quote.Application.Category.Commands.CreateCategory;
 using Quote.Application.Category.Commands.DeleteCategory;
 using Quote.Application.Category.Commands.UpdateCategory;
-using Quote.Application.Category.Queries.GetAllCategories;
 using Quote.Application.Category.Queries.GetByIdCategory;
+using Quote.Application.Category.Queries.GetCategories;
 using Quote.Contracts.Common;
-using Quote.Contracts.Requests.CategoriesRequest;
+using Quote.Contracts.Requests.CategoryRequest;
 using Quote.Contracts.Responses.CategoriesResponse;
 using Quote.Domain.Core.Errors;
 using Quote.Domain.Core.Primitives.Maybe;
@@ -24,8 +24,8 @@ public class CategoryController(IMediator mediator) : ApiController(mediator)
     [ProducesResponseType(typeof(PagedList<CategoryResponse>), StatusCodes.Status200OK)]
     [ProducesResponseType(StatusCodes.Status404NotFound)]
     [Produces("application/json")]
-    public async Task<IActionResult> GetAll([FromQuery] GetAllCategoriesQuery request) =>
-        await Maybe<GetAllCategoriesQuery>
+    public async Task<IActionResult> GetAll([FromQuery] GetCategoriesQuery request) =>
+        await Maybe<GetCategoriesQuery>
             .From(request)
             .Bind(query => Mediator.Send(query, HttpContext.RequestAborted))
             .Match(Ok, NotFound);

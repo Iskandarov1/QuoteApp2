@@ -78,7 +78,7 @@ public sealed class QuoteContext(
         var utcNow = dateTime.UtcNow;
 
         await UpdateAuditableEntities(utcNow, cancellationToken);
-        
+        await UpdateSoftDeletableEntities(utcNow, cancellationToken);        
         return await base.SaveChangesAsync(cancellationToken);
     }
 

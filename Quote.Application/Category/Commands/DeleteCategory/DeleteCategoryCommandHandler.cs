@@ -16,9 +16,8 @@ public class DeleteCategoryCommandHandler(
         var maybeCategory = await categoryRepository.GetByIdAsync(request.Id, cancellationToken);
         if (maybeCategory.HasNoValue)
             return Result.Failure(DomainErrors.Category.NotFound);
-
-        maybeCategory.Value.IsDelete = true;
-        categoryRepository.Update(maybeCategory.Value);
+        
+        categoryRepository.Remove(maybeCategory.Value);
         await unitOfWork.SaveChangesAsync(cancellationToken);
 
         return Result.Success();

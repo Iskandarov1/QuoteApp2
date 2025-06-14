@@ -4,9 +4,9 @@ using Quote.Contracts.Common;
 using Quote.Contracts.Responses.CategoriesResponse;
 using Quote.Domain.Core.Primitives.Maybe;
 
-namespace Quote.Application.Category.Queries.GetAllCategories;
+namespace Quote.Application.Category.Queries.GetCategories;
 
-public sealed record GetAllCategoriesQuery (
+public sealed record GetCategoriesQuery (
     string? Text,
     Guid? CategoryId,
     //[property: Required]

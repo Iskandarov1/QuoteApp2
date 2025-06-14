@@ -39,7 +39,7 @@ public class SubscriptionController(IMediator mediator,IUniqueFileStorage storag
     public async Task<IActionResult> Unsubscribe(RemoveSubscriptionCommand request, CancellationToken cancellationToken) =>
         await Result.Success(new RemoveSubscriptionCommand(request.Email,request.TelegramUser))
             .Bind(cmd => Mediator.Send(cmd, HttpContext.RequestAborted))
-            .Match(_ => Ok(new { Message = "Successfully unsubscribed!" }), BadRequest);
+            .Match(Ok, BadRequest);
 
     [HttpGet("active")]
     [ProducesResponseType(StatusCodes.Status200OK)]
